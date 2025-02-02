@@ -9,7 +9,7 @@
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - 01/31/2025 - 1 hours - Reading all the material for week 2
 - 02/01/2025 - 2 hours - Watching videos
-- 02/01/2025 - 2 hours - Created `BoulderingTracker` and added the changes to it
+- 02/01/2025 - 5 hours - Created `BoulderingTracker` and added the changes to it
 - 02/01/2025 - 2 hours - Created `README.md` and documented problem statement
 - 02/01/2025 - 1 hours - Created `timeLog.md`, reviewed commit process, and planned initial files  
 - 
