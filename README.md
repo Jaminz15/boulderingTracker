@@ -1,6 +1,6 @@
-BoulderBook: A Bouldering Progress Tracking App
+# BoulderBook: A Bouldering Progress Tracking App
 
-Problem Statement
+## Problem Statement
 Many climbing gyms do not provide a way for climbers to track their progress, log climbs, or analyze improvements over 
 time. Climbers often rely on memory or scattered notes to keep track of their ascents, making it difficult to see trends 
 in their performance or compare results across different locations.
