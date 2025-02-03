@@ -11,8 +11,8 @@
 - 02/01/2025 - 2 hours - Watching videos
 - 02/01/2025 - 5 hours - Created `BoulderingTracker` and added the changes to it
 - 02/01/2025 - 2 hours - Created `README.md` and documented problem statement
-- 02/01/2025 - 1 hours - Created `timeLog.md`, reviewed commit process, and planned initial files  
-- 
+- 02/01/2025 - .5 hours - Created `timeLog.md`, reviewed commit process, and planned initial files  
+- 02/02/2025 - 8 hours - Worked on exercise 2
 
 ## **Week 3**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
