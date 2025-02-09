@@ -16,8 +16,9 @@
 
 ## **Week 3**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
-
-
+- 01/31/2025 - 1.5 hours - Reading all the material for week 3
+- 02/01/2025 - 5 hours - Watching videos, demo, and setup
+- 02/02/2025 - 6 hours - Worked on exercise 3
 ## **Week 4**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 
