@@ -46,6 +46,7 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
   - CI tools in AWS (AWS CodePipeline or GitHub Actions)
   - Google Charts API for progress visualization
   - Hibernate Search (if full-text search is needed)
+- **Project Lombok**
 - **Unit Testing**
   - JUnit for test coverage
 - **IDE**
