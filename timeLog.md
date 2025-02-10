@@ -22,4 +22,4 @@
 - 02/09/2025 - 4 hours - Worked on Checkpoint 1
 ## **Week 4**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
-
+- 02/10/2025 - 3 hours - Worked on Checkpoint 1 (Wireframes/Screens.md)
