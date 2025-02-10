@@ -15,8 +15,8 @@
 - [X] Write **Project Plan**
 - [X] Document **User Stories** and select MVP stories
 - [X] Confirm MVP stories meet **Enterprise Java Project Objectives**
-- [ ] Design screens - ensure all MVP user stories are covered
-- [ ] Triple-check for **Checkpoint 1**
+- [X] Design screens - ensure all MVP user stories are covered
+- [X] Triple-check for **Checkpoint 1**
 - [X] Update **journal/time log/reflection**
 
 ---
@@ -28,8 +28,8 @@
 - [ ] Create **development version** of the database (Gym & Climb tables)
 - [ ] Create **Climb Entity**
 - [ ] Create **Gym Entity**
-- [ ] Push **screen design** to GitHub
-- [ ] Ensure **Problem Statement, User Stories, Project Plan, and Reflection Statements** are all pushed to GitHub
+- [X] Push **screen design** to GitHub
+- [X] Ensure **Problem Statement, User Stories, Project Plan, and Reflection Statements** are all pushed to GitHub
 - [ ] Confirm all MVP stories are clearly identified
 - [ ] Weekly reflection
 
