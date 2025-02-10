@@ -65,8 +65,6 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
 
 ---
 
-## Examples of documentation of progress, reflections, and time spent on this class
+## Time spent on this class
 
-#### [Weekly Reflection](WeeklyReflection.md)
-#### [Journal](Journal.md)
-#### [TimeLog](TimeLog.md)  
+#### [TimeLog](timeLog.md)  
