@@ -23,3 +23,5 @@
 ## **Week 4**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - 02/10/2025 - 3 hours - Worked on Checkpoint 1 (Wireframes/Screens.md)
+- 02/14/2025 - 2 hours - Reading all the material for week 3
+- 02/14/2025 - 3 hours - Watching videos
