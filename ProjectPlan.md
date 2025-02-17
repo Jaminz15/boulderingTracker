@@ -31,7 +31,7 @@
 - [X] Push **screen design** to GitHub
 - [X] Ensure **Problem Statement, User Stories, Project Plan, and Reflection Statements** are all pushed to GitHub
 - [ ] Confirm all MVP stories are clearly identified
-- [ ] Weekly reflection
+- [ ] Weekly time log
 
 ---
 
