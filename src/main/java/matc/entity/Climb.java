@@ -36,4 +36,32 @@ public class Climb {
 
     @Column(name = "notes")
     private String notes;
+
+    /**
+     * Instantiates a new Climb.
+     */
+    public Climb() {
+    }
+
+    /**
+     * Instantiates a new Climb.
+     *
+     * @param gym       the gym where the climb took place
+     * @param date      the date of the climb
+     * @param climbType the type of climb (e.g., Slab, Overhang)
+     * @param grade     the grade of the climb
+     * @param attempts  number of attempts
+     * @param success   whether the climb was completed
+     * @param notes     optional notes
+     */
+    public Climb(Gym gym, LocalDate date, String climbType, String grade, int attempts, boolean success, String notes) {
+        this.gym = gym;
+        this.date = date;
+        this.climbType = climbType;
+        this.grade = grade;
+        this.attempts = attempts;
+        this.success = success;
+        this.notes = notes;
+    }
+
 }
