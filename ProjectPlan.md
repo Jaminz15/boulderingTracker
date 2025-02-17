@@ -24,14 +24,14 @@
 ## **Week 4 (2/10 - 2/16) - Data Access Objects (DAOs) & Hibernate**
 #### *Checkpoint 1 Due (2/12)*
 #### This week my focus is on **finalizing documentation and starting the database setup**
-- [ ] First draft of **database design**
-- [ ] Create **development version** of the database (Gym & Climb tables)
-- [ ] Create **Climb Entity**
-- [ ] Create **Gym Entity**
+- [X] First draft of **database design**
+- [X] Create **development version** of the database (Gym & Climb tables)
+- [X] Create **Climb Entity**
+- [X] Create **Gym Entity**
 - [X] Push **screen design** to GitHub
 - [X] Ensure **Problem Statement, User Stories, Project Plan, and Reflection Statements** are all pushed to GitHub
-- [ ] Confirm all MVP stories are clearly identified
-- [ ] Weekly time log
+- [X] Confirm all MVP stories are clearly identified
+- [X] Weekly time log
 
 ---
 
