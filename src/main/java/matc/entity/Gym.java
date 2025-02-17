@@ -27,3 +27,22 @@ public class Gym {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 }
+
+/**
+ * Instantiates a new Gym.
+ */
+public Gym() {
+    this.createdAt = LocalDateTime.now();
+}
+
+/**
+ * Instantiates a new Gym.
+ *
+ * @param name     the name of the gym
+ * @param location the location of the gym
+ */
+public Gym(String name, String location) {
+    this.name = name;
+    this.location = location;
+    this.createdAt = LocalDateTime.now();
+}
