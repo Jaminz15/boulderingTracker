@@ -7,6 +7,7 @@
 
 ## **Week 2**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
 - 01/31/2025 - 1 hours - Reading all the material for week 2
 - 02/01/2025 - 2 hours - Watching videos
 - 02/01/2025 - 5 hours - Created `BoulderingTracker` and added the changes to it
@@ -16,24 +17,25 @@
 
 ## **Week 3**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
-- 01/31/2025 - 1.5 hours - Reading all the material for week 3
-- 02/01/2025 - 5 hours - Watching videos, demo, and setup
-- 02/02/2025 - 6 hours - Worked on exercise 3
+- ### **Weekly Course Material**
+- 01/06/2025 - 1.5 hours - Reading all the material for week 3
+- 02/06/2025 - 5 hours - Watching videos, demo, and setup
+- 02/07/2025 - 6 hours - Worked on exercise 3
 - ### **Individual Project (BoulderBook)**
 - 02/09/2025 - 4 hours - Worked on Checkpoint 1
 ## **Week 4**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
-- 02/10/2025 - 3 hours - Worked on Checkpoint 1 (Wireframes/Screens.md)
 - 02/14/2025 - 2 hours - Reading all the material for week 3
 - 02/14/2025 - 2 hours - Watching demo videos
 - 02/15/2025 - 2 hours - Watching demo videos
 - 02/15/2025 - 3 hours - Exercise 4 walkthrough, finishing the test
 - ### **Individual Project (BoulderBook)**
-- 02/16/2025 - 1 hours - First draft of database design
-- 02/16/2025 - 1 hours - Created development version of the database (Gym & Climb tables)
-- 02/16/2025 - 1 hours - Implemented Climb Entity
-- 02/16/2025 - 1 hours - Implemented Gym Entity
+- 02/10/2025 - 3 hours - Worked on Checkpoint 1 (Wireframes/Screens.md)
+- 02/16/2025 - 1 hour - First draft of database design
+- 02/16/2025 - 1 hour - Created development version of the database (Gym & Climb tables)
+- 02/16/2025 - 1 hour - Implemented Climb Entity
+- 02/16/2025 - 1 hour - Implemented Gym Entity
 
 ## **Week 5**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
