@@ -24,21 +24,15 @@ Users log climb details (date, type, grade, attempts) under a selected gym.
 
 ---
 
+### **Log a Climb (Edit) Page**
+Users edit an existing climb, pre-filled with details from their climbing history.  
+![Log a Climb (Edit)](wireframes/Log-a-Climb-Edit.png)
+
+---
+
 ### **Track Progress Page**
 Shows climbing trends, progress over time, highest climbs, and statistics.  
 ![Track Progress](wireframes/Track-Progress.png)
-
----
-
-### **Login Page**
-Users enter credentials to log in.  
-![Login](wireframes/Login.png)
-
----
-
-### **Sign-Up Page**
-New users register an account.  
-![Sign Up](wireframes/Sign-Up.png)
 
 ---
 
