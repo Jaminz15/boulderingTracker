@@ -44,35 +44,85 @@ public class User {
 
     // Getters and Setters
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets email or username.
+     *
+     * @return the email or username
+     */
     public String getEmailOrUsername() {
         return emailOrUsername;
     }
 
+    /**
+     * Sets email or username.
+     *
+     * @param emailOrUsername the email or username
+     */
     public void setEmailOrUsername(String emailOrUsername) {
         this.emailOrUsername = emailOrUsername;
     }
 
+    /**
+     * Gets created at.
+     *
+     * @return the created at
+     */
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
+    /**
+     * Sets created at.
+     *
+     * @param createdAt the created at
+     */
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
+    /**
+     * Gets climbs.
+     *
+     * @return the climbs
+     */
     public List<Climb> getClimbs() {
         return climbs;
     }
 
+    /**
+     * Sets climbs.
+     *
+     * @param climbs the climbs
+     */
     public void setClimbs(List<Climb> climbs) {
         this.climbs = climbs;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", emailOrUsername='" + emailOrUsername + '\'' +
+                ", createdAt=" + createdAt +
+                ", climbs=" + climbs +
+                '}';
     }
 }
