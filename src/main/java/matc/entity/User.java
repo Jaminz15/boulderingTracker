@@ -3,6 +3,7 @@ package matc.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * A class to represent a User.
@@ -20,6 +21,9 @@ public class User {
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Climb> climbs;
 
     /**
      * Instantiates a new User.
@@ -40,57 +44,35 @@ public class User {
 
     // Getters and Setters
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * Gets email or username.
-     *
-     * @return the email or username
-     */
     public String getEmailOrUsername() {
         return emailOrUsername;
     }
 
-    /**
-     * Sets email or username.
-     *
-     * @param emailOrUsername the email or username
-     */
     public void setEmailOrUsername(String emailOrUsername) {
         this.emailOrUsername = emailOrUsername;
     }
 
-    /**
-     * Gets created at.
-     *
-     * @return the created at
-     */
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    /**
-     * Sets created at.
-     *
-     * @param createdAt the created at
-     */
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public List<Climb> getClimbs() {
+        return climbs;
+    }
+
+    public void setClimbs(List<Climb> climbs) {
+        this.climbs = climbs;
     }
 }
