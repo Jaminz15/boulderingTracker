@@ -41,5 +41,7 @@
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 - 
-- ### **Individual Project (BoulderBook)**
-- 
+- ### **Individual Project (BoulderBook)** 
+- 02/18/2025 - 2 hours - Added changes from Checkpoint 1 feedback (updated project plan, user stories, and wireframes).
+- 02/18/2025 - 2 hours - Updated database schema (added `users` table, linked `climb` to `user_id`).
+- 02/18/2025 - 2 hours - Updated `Climb.java`, `Gym.java`, and created `User.java` with correct relationships and `toString()` fixes.
