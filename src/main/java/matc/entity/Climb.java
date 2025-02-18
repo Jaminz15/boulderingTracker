@@ -19,6 +19,10 @@ public class Climb {
     @JoinColumn(name = "gym_id", nullable = false)
     private Gym gym;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false) // Link climb to user
+    private User user;
+
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
@@ -47,6 +51,7 @@ public class Climb {
      * Instantiates a new Climb.
      *
      * @param gym       the gym where the climb took place
+     * @param user      the user who logged the climb
      * @param date      the date of the climb
      * @param climbType the type of climb (e.g., Slab, Overhang)
      * @param grade     the grade of the climb
@@ -54,8 +59,9 @@ public class Climb {
      * @param success   whether the climb was completed
      * @param notes     optional notes
      */
-    public Climb(Gym gym, LocalDate date, String climbType, String grade, int attempts, boolean success, String notes) {
+    public Climb(Gym gym, User user, LocalDate date, String climbType, String grade, int attempts, boolean success, String notes) {
         this.gym = gym;
+        this.user = user;
         this.date = date;
         this.climbType = climbType;
         this.grade = grade;
@@ -98,6 +104,24 @@ public class Climb {
      */
     public void setGym(Gym gym) {
         this.gym = gym;
+    }
+
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
     /**
@@ -216,6 +240,7 @@ public class Climb {
         return "Climb{" +
                 "id=" + id +
                 ", gym=" + gym.getName() +
+                ", user=" + (user != null ? user.getEmailOrUsername() : "Unknown User") +
                 ", date=" + date +
                 ", climbType='" + climbType + '\'' +
                 ", grade='" + grade + '\'' +
