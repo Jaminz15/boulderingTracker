@@ -41,7 +41,8 @@
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 - 02/19/2025 - 2 hour - Reading material and week 5 videos/demos
-- 
+- 02/20/2025 - 5 hour - week 5 videos/demos
+- 02/21/2025 - 3 hour - week 5 videos/demos
 - ### **Individual Project (BoulderBook)** 
 - 02/17/2025 - 2 hours - Added changes from Checkpoint 1 feedback (updated project plan, user stories, and wireframes).
 - 02/17/2025 - 2 hours - Updated database schema (added `users` table, linked `climb` to `user_id`).
