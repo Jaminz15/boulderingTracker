@@ -4,43 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import matc.entity.Order;
 import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 
-import java.util.List;
-
 /**
- * A generic DAO somewhat inspired by http://rodrigouchoa.wordpress.com
- *
+ * A generic DAO for Hibernate CRUD operations.
  */
 public class GenericDao<T> {
-
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
     /**
-     * Instantiates a new Generic dao.
+     * Instantiates a new GenericDao.
      *
-     * @param type the entity type, for example, User.
+     * @param type the entity type (e.g., User, Gym, Climb)
      */
     public GenericDao(Class<T> type) {
         this.type = type;
     }
 
     /**
-     * Gets all entities
-     *
-     * @return the all entities
+     * Gets all entities.
+     * @return the list of all entities
      */
     public List<T> getAll() {
         Session session = getSession();
@@ -50,25 +41,23 @@ public class GenericDao<T> {
         List<T> list = session.createSelectionQuery(query).getResultList();
         session.close();
         return list;
-
     }
 
     /**
-     * Gets an entity by id
-     * @param id entity id to search by
-     * @return entity
+     * Gets an entity by ID.
+     * @param id the entity ID
+     * @return the entity
      */
-    public <T> T getById(int id) {
+    public T getById(int id) {
         Session session = getSession();
-        T entity = (T)session.get(type, id);
+        T entity = session.get(type, id);
         session.close();
         return entity;
     }
 
     /**
-     * Deletes the entity.
-     *
-     * @param entity entity to be deleted
+     * Deletes an entity.
+     * @param entity the entity to be deleted
      */
     public void delete(T entity) {
         Session session = getSession();
@@ -78,29 +67,24 @@ public class GenericDao<T> {
         session.close();
     }
 
-
     /**
-     * Inserts the entity.
-     *
-     * @param entity entity to be inserted
+     * Inserts an entity.
+     * @param entity the entity to insert
+     * @return the generated ID
      */
     public int insert(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-
         session.persist(entity);
         transaction.commit();
-
         int id = (int) session.unwrap(Session.class).getIdentifier(entity);
-
         session.close();
         return id;
     }
 
     /**
-     * Inserts or updates the entity.
-     *
-     * @param entity entity to be inserted/saved
+     * Updates an entity.
+     * @param entity the entity to update
      */
     public void update(T entity) {
         Session session = getSession();
@@ -110,57 +94,49 @@ public class GenericDao<T> {
         session.close();
     }
 
-
     /**
-     * Finds entities by one of its properties.
-     * sample usage: findByPropertyEqual("lastname", "Curry")
-     * @param propertyName the property name.
-     * @param value the value by which to find.
-     * @return the list of all entities found matching the criteria
+     * Finds entities by a single property.
+     * Example: `findByPropertyEqual("name", "East Side Boulders")`
+     * @param propertyName the property name
+     * @param value the value to search for
+     * @return the list of matching entities
      */
     public List<T> findByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        query.select(root).where(builder.equal(root.get(propertyName),value));
-        List<T> items = session.createSelectionQuery( query ).getResultList();
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> items = session.createSelectionQuery(query).getResultList();
         session.close();
         return items;
     }
 
     /**
      * Finds entities by multiple properties.
-     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
-
-     * @param propertyMap property and value pairs
-     * @return entities with properties equal to those passed in the map
-     *
-     *
+     * @param propertyMap a map of property names and values
+     * @return the list of matching entities
      */
     public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
         Session session = getSession();
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        List<Predicate> predicates = new ArrayList<Predicate>();
-        for (Map.Entry entry: propertyMap.entrySet()) {
-            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
+        List<Predicate> predicates = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : propertyMap.entrySet()) {
+            predicates.add(builder.equal(root.get(entry.getKey()), entry.getValue()));
         }
-        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
-        List<T> items = session.createSelectionQuery( query ).getResultList();
+        query.select(root).where(builder.and(predicates.toArray(new Predicate[0])));
+        List<T> items = session.createSelectionQuery(query).getResultList();
         session.close();
         return items;
     }
 
-
     /**
-     * Returns an open session from the SessionFactory
-     * @return session
+     * Gets a Hibernate session.
+     * @return a new Hibernate session
      */
     private Session getSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
-
     }
-
 }
