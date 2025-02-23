@@ -38,7 +38,7 @@ class ClimbDaoTest {
     @Test
     void getAllSuccess() {
         List<Climb> climbs = climbDao.getAll();
-        assertEquals(2, climbs.size()); // Assuming cleanDB.sql inserts 2 climbs
+        assertEquals(2, climbs.size());
     }
 
     @Test
