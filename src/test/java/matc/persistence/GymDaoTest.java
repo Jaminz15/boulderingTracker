@@ -26,5 +26,21 @@ class GymDaoTest {
         assertEquals("123 Boulder St, Madison, WI", retrievedGym.getLocation());
     }
 
+    @Test
+    void getAllSuccess() {
+        List<Gym> gyms = gymDao.getAll();
+        assertEquals(2, gyms.size());
+    }
+
+    @Test
+    void insertSuccess() {
+        Gym newGym = new Gym("West Side Boulders", "789 Climber Ln, Madison, WI");
+        int insertedId = gymDao.insert(newGym);
+
+        Gym retrievedGym = gymDao.getById(insertedId);
+        assertNotNull(retrievedGym);
+        assertEquals("West Side Boulders", retrievedGym.getName());
+    }
+
 
 }
