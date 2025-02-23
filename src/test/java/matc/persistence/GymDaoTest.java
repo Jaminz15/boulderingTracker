@@ -1,5 +1,6 @@
 package matc.persistence;
 
+import matc.entity.Climb;
 import matc.entity.Gym;
 import matc.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,5 +60,19 @@ class GymDaoTest {
     void deleteSuccess() {
         gymDao.delete(gymDao.getById(2));
         assertNull(gymDao.getById(2));
+    }
+
+    @Test
+    void deleteCascadeClimbs() {
+        GenericDao<Climb> climbDao = new GenericDao<>(Climb.class);
+        Gym gym = gymDao.getById(1);
+        List<Climb> gymClimbs = climbDao.findByPropertyEqual("gym", gym);
+
+        gymDao.delete(gym);
+
+        assertNull(gymDao.getById(1));
+        for (Climb climb : gymClimbs) {
+            assertNull(climbDao.getById(climb.getId()));
+        }
     }
 }
