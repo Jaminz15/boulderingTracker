@@ -1,90 +1,63 @@
 package matc.util;
 
+import matc.persistence.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
  * Provides access to the database
- * Created on 8/31/16.
- *
- * @author pwaite
- * @author Alex M - Fall 2019 - added multi-line sql capability
  */
+public class Database implements PropertiesLoader {
 
-public class Database {
+    // Singleton instance
+    private static final Database instance = new Database();
 
-    // create an object of the class Database
-    private static Database instance = new Database();
-
-    // create the logger
+    // Logger
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     private Properties properties;
     private Connection connection;
 
-    /** private constructor prevents instantiating this class anywhere else
-     **/
     private Database() {
-        loadProperties();
-
+        properties = loadProperties("/database.properties"); // Use PropertiesLoader
     }
 
-    /** load the properties file containing the driver, connection url, userid and pwd.
-     * TODO this would be improved by using properties loader interface provided in adv java
-     */
-    private void loadProperties() {
-        properties = new Properties();
-        try {
-            properties.load (this.getClass().getResourceAsStream("/database.properties"));
-        } catch (IOException ioe) {
-            logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
-        } catch (Exception e) {
-            logger.error("Database.loadProperties()...", e);
-        }
-
-    }
-
-    /** get the only Database object available
-     @return the single database object
-     */
+    /** Get the singleton instance **/
     public static Database getInstance() {
         return instance;
     }
 
-    /** get the database connection
-     @return the database connection
-     */
+    /** Get database connection **/
     public Connection getConnection() {
         return connection;
     }
 
-    /** attempt to connect to the database
-     */
+    /** Connect to the database **/
     public void connect() throws Exception {
-        if (connection != null)
-            return;
+        if (connection != null) return;
 
         try {
             Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
-            throw new Exception("Database.connect()... Error: MySQL Driver not found");
+            throw new Exception("Database.connect()... Error: MySQL Driver not found", e);
         }
 
         String url = properties.getProperty("url");
-        connection = DriverManager.getConnection(url, properties.getProperty("username"),  properties.getProperty("password"));
+        connection = DriverManager.getConnection(
+                url,
+                properties.getProperty("username"),
+                properties.getProperty("password")
+        );
     }
 
-    /** close and clean up the database connection
-     */
+    /** Close the database connection **/
     public void disconnect() {
         if (connection != null) {
             try {
@@ -93,45 +66,35 @@ public class Database {
                 logger.error("Cannot close connection", e);
             }
         }
-
         connection = null;
     }
 
     /**
-     * Run the sql.
-     *
-     * @param sqlFile the sql file to be read and executed line by line
+     * Run an SQL script file
+     * @param sqlFile the file to execute
      */
     public void runSQL(String sqlFile) {
-
-        Statement stmt = null;
-        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(classloader.getResourceAsStream(sqlFile))))  {
-
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(getClass().getClassLoader().getResourceAsStream(sqlFile)))
+        ) {
             connect();
-            stmt = connection.createStatement();
+            Statement stmt = connection.createStatement();
+            StringBuilder sql = new StringBuilder();
 
-            String sql = "";
-            while (br.ready())
-            {
-                char inputValue = (char)br.read();
-
-                if(inputValue == ';')
-                {
-                    stmt.executeUpdate(sql);
-                    sql = "";
+            int ch;
+            while ((ch = br.read()) != -1) {
+                char inputValue = (char) ch;
+                if (inputValue == ';') {
+                    stmt.executeUpdate(sql.toString());
+                    sql.setLength(0); // Reset string buffer
+                } else {
+                    sql.append(inputValue);
                 }
-                else
-                    sql += inputValue;
             }
-
-        } catch (SQLException se) {
-            logger.error("SQL Exception", se);
         } catch (Exception e) {
-            logger.error("Exception", e);
+            logger.error("Error executing SQL script: " + sqlFile, e);
         } finally {
             disconnect();
         }
-
     }
 }
