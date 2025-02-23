@@ -22,4 +22,23 @@ class UserDaoTest {
         userDao = new GenericDao<>(User.class);
         climbDao = new GenericDao<>(Climb.class);
     }
+
+    @Test
+    void getByIdSuccess() {
+        User retrievedUser = userDao.getById(1);
+        assertNotNull(retrievedUser);
+        assertEquals("climber123@example.com", retrievedUser.getEmailOrUsername());
+    }
+
+    @Test
+    void insertSuccess() {
+        User newUser = new User("newclimber@example.com");
+        int insertedUserId = userDao.insert(newUser);
+
+        User retrievedUser = userDao.getById(insertedUserId);
+        assertNotNull(retrievedUser);
+        assertEquals("newclimber@example.com", retrievedUser.getEmailOrUsername());
+    }
+
+
 }
