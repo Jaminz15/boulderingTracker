@@ -71,4 +71,30 @@ class ClimbDaoTest {
         climbDao.delete(climbDao.getById(2));
         assertNull(climbDao.getById(2));
     }
+
+    @Test
+    void deleteCascadeUser() {
+        User user = userDao.getById(1);
+        List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
+
+        userDao.delete(user);
+
+        assertNull(userDao.getById(1));
+        for (Climb climb : userClimbs) {
+            assertNull(climbDao.getById(climb.getId()));
+        }
+    }
+
+    @Test
+    void deleteCascadeGym() {
+        Gym gym = gymDao.getById(1);
+        List<Climb> gymClimbs = climbDao.findByPropertyEqual("gym", gym);
+
+        gymDao.delete(gym);
+
+        assertNull(gymDao.getById(1));
+        for (Climb climb : gymClimbs) {
+            assertNull(climbDao.getById(climb.getId()));
+        }
+    }
 }
