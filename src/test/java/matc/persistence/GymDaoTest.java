@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Gym dao test.
+ */
 class GymDaoTest {
 
     private GenericDao<Gym> gymDao;
@@ -42,5 +45,19 @@ class GymDaoTest {
         assertEquals("West Side Boulders", retrievedGym.getName());
     }
 
+    @Test
+    void updateSuccess() {
+        Gym gymToUpdate = gymDao.getById(1);
+        gymToUpdate.setName("East Side Rock Gym");
+        gymDao.update(gymToUpdate);
 
+        Gym retrievedGym = gymDao.getById(1);
+        assertEquals("East Side Rock Gym", retrievedGym.getName());
+    }
+
+    @Test
+    void deleteSuccess() {
+        gymDao.delete(gymDao.getById(2));
+        assertNull(gymDao.getById(2));
+    }
 }
