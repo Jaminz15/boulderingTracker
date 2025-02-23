@@ -40,5 +40,15 @@ class UserDaoTest {
         assertEquals("newclimber@example.com", retrievedUser.getEmailOrUsername());
     }
 
+    @Test
+    void updateSuccess() {
+        User userToUpdate = userDao.getById(1);
+        userToUpdate.setEmailOrUsername("updatedclimber@example.com");
+        userDao.update(userToUpdate);
+
+        User retrievedUser = userDao.getById(1);
+        assertEquals("updatedclimber@example.com", retrievedUser.getEmailOrUsername());
+    }
+
 
 }
