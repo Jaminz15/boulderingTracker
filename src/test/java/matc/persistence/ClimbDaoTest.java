@@ -25,4 +25,18 @@ class ClimbDaoTest {
         gymDao = new GenericDao<>(Gym.class);
         userDao = new GenericDao<>(User.class);
     }
+
+    @Test
+    void getByIdSuccess() {
+        Climb retrievedClimb = climbDao.getById(1);
+        assertNotNull(retrievedClimb);
+        assertEquals("Overhang", retrievedClimb.getClimbType());
+        assertEquals("V5", retrievedClimb.getGrade());
+    }
+
+    @Test
+    void getAllSuccess() {
+        List<Climb> climbs = climbDao.getAll();
+        assertEquals(2, climbs.size()); // Assuming cleanDB.sql inserts 2 climbs
+    }
 }
