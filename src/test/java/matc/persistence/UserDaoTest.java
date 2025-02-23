@@ -50,5 +50,11 @@ class UserDaoTest {
         assertEquals("updatedclimber@example.com", retrievedUser.getEmailOrUsername());
     }
 
+    @Test
+    void deleteSuccess() {
+        userDao.delete(userDao.getById(2));
+        assertNull(userDao.getById(2));
+    }
+
 
 }
