@@ -69,5 +69,9 @@ class UserDaoTest {
         }
     }
 
-
+    @Test
+    void getAllSuccess() {
+        List<User> users = userDao.getAll();
+        assertEquals(2, users.size()); // Assuming cleanDB.sql starts with 2 users
+    }
 }
