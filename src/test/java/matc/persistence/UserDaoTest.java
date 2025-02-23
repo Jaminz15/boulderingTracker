@@ -74,4 +74,11 @@ class UserDaoTest {
         List<User> users = userDao.getAll();
         assertEquals(2, users.size()); // Assuming cleanDB.sql starts with 2 users
     }
+
+    @Test
+    void getByPropertyEqual() {
+        List<User> users = userDao.findByPropertyEqual("emailOrUsername", "climber123@example.com");
+        assertEquals(1, users.size());
+        assertEquals(1, users.get(0).getId());
+    }
 }
