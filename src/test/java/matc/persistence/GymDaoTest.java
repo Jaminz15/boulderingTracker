@@ -18,5 +18,13 @@ class GymDaoTest {
         gymDao = new GenericDao<>(Gym.class);
     }
 
+    @Test
+    void getByIdSuccess() {
+        Gym retrievedGym = gymDao.getById(1);
+        assertNotNull(retrievedGym);
+        assertEquals("East Side Boulders", retrievedGym.getName());
+        assertEquals("123 Boulder St, Madison, WI", retrievedGym.getLocation());
+    }
+
 
 }
