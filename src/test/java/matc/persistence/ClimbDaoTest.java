@@ -7,6 +7,7 @@ import matc.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,5 +39,36 @@ class ClimbDaoTest {
     void getAllSuccess() {
         List<Climb> climbs = climbDao.getAll();
         assertEquals(2, climbs.size()); // Assuming cleanDB.sql inserts 2 climbs
+    }
+
+    @Test
+    void insertSuccess() {
+        User user = userDao.getById(1);
+        Gym gym = gymDao.getById(1);
+
+        Climb newClimb = new Climb(gym, user, LocalDate.now(), "Slab", "V3", 2, true, "Felt great!");
+        int insertedId = climbDao.insert(newClimb);
+
+        Climb retrievedClimb = climbDao.getById(insertedId);
+        assertNotNull(retrievedClimb);
+        assertEquals("Slab", retrievedClimb.getClimbType());
+        assertEquals("V3", retrievedClimb.getGrade());
+        assertEquals(user.getId(), retrievedClimb.getUser().getId());
+    }
+
+    @Test
+    void updateSuccess() {
+        Climb climbToUpdate = climbDao.getById(1);
+        climbToUpdate.setNotes("Updated Note: Was harder than expected.");
+        climbDao.update(climbToUpdate);
+
+        Climb retrievedClimb = climbDao.getById(1);
+        assertEquals("Updated Note: Was harder than expected.", retrievedClimb.getNotes());
+    }
+
+    @Test
+    void deleteSuccess() {
+        climbDao.delete(climbDao.getById(2));
+        assertNull(climbDao.getById(2));
     }
 }
