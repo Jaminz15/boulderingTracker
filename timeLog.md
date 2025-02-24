@@ -49,3 +49,5 @@
 - 02/17/2025 - 2 hours - Updated `Climb.java`, `Gym.java`, and created `User.java` with correct relationships and `toString()` fixes.
 - 02/22/2025 - 1.5 hour - week 5 exercise for Individual Project, created `GenericDao`
 - 02/22/2025 - 3 hour - week 5 exercise for Individual Project, created test database, created `ClimbDaoTest`
+- 02/23/2025 - 2.5 hours - Wrote `GymDaoTest` and `UserDaoTest`, verified cascading deletes.
+- 02/23/2025 - 1 hours - Ran full test coverage, validated passing tests, and finalized documentation.

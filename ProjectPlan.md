@@ -36,12 +36,11 @@
 ---
 
 ## **Week 5 (2/17 - 2/23) - Hibernate Continued & DAO Implementation**
-- [ ] Create **ClimbDao** with basic CRUD operations
-- [ ] Create **GymDao** with basic CRUD operations
-- [ ] Create **UserDao** for authentication & user management
-- [ ] Configure Hibernate **(dev and test environments)**
-- [ ] Create **unit tests for DAOs**
-- [ ] Weekly time log
+- [X] Create a **GenericDao** for all entities with basic CRUD operations
+- [X] Use **GenericDao** for Climb, Gym, and User management
+- [X] Configure Hibernate **(dev and test environments)**
+- [X] Create **unit tests for DAOs**
+- [X] Weekly time log
 
 ---
 
