@@ -51,3 +51,14 @@
 - 02/22/2025 - 3 hour - week 5 exercise for Individual Project, created test database, created `ClimbDaoTest`
 - 02/23/2025 - 2.5 hours - Wrote `GymDaoTest` and `UserDaoTest`, verified cascading deletes.
 - 02/23/2025 - 1 hours - Ran full test coverage, validated passing tests, and finalized documentation.
+
+
+## **Week 6**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Individual Project (BoulderBook)**
+- 02/25/2025 - 2 hour - Reading material and week 5 videos/demos
+- 02/26/2025 - 1 hours - Added `climbResults.jsp`, connected database and project to AWS
+- 02/26/2025 - .5 hours - Added a button to `index.jsp` to navigate to climb results page and display table
+- 02/26/2025 - 6 hours - Exercise 6, setting up AWS with my project
+- 
+- ### **Individual Project (BoulderBook)** 
