@@ -55,7 +55,7 @@
 
 ## **Week 6**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
-- ### **Individual Project (BoulderBook)**
+- ### **Weekly Course Material**
 - 02/25/2025 - 2 hour - Reading material and week 5 videos/demos
 - 02/26/2025 - 1 hours - Added `climbResults.jsp`, connected database and project to AWS
 - 02/26/2025 - .5 hours - Added a button to `index.jsp` to navigate to climb results page and display table

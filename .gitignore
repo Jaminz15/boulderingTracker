@@ -9,6 +9,7 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+hibernate.cfg.xml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
