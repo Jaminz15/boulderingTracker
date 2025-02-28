@@ -3,6 +3,7 @@ package matc.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * A class to represent a Climb.
@@ -232,6 +233,27 @@ public class Climb {
         this.notes = notes;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Climb climb = (Climb) o;
+        return id == climb.id &&
+                attempts == climb.attempts &&
+                success == climb.success &&
+                Objects.equals(date, climb.date) &&
+                Objects.equals(climbType, climb.climbType) &&
+                Objects.equals(grade, climb.grade) &&
+                Objects.equals(notes, climb.notes) &&
+                gym.getId() == climb.gym.getId() &&
+                user.getId() == climb.user.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, gym, user, date, climbType, grade, attempts, success, notes);
+    }
+
     /**
      * toString method for debugging.
      */
@@ -239,7 +261,7 @@ public class Climb {
     public String toString() {
         return "Climb{" +
                 "id=" + id +
-                ", gym=" + gym.getName() +
+                ", gym=" + (gym != null ? gym.getName() : "Unknown Gym") +
                 ", user=" + (user != null ? user.getEmailOrUsername() : "Unknown User") +
                 ", date=" + date +
                 ", climbType='" + climbType + '\'' +

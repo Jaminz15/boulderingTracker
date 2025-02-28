@@ -46,14 +46,19 @@ class ClimbDaoTest {
         User user = userDao.getById(1);
         Gym gym = gymDao.getById(1);
 
-        Climb newClimb = new Climb(gym, user, LocalDate.now(), "Slab", "V3", 2, true, "Felt great!");
-        int insertedId = climbDao.insert(newClimb);
+        // Store the current date in a variable to ensure consistency
+        LocalDate fixedDate = LocalDate.now();
+
+        Climb expectedClimb = new Climb(gym, user, fixedDate, "Slab", "V3", 2, true, "Felt great!");
+        int insertedId = climbDao.insert(expectedClimb);
 
         Climb retrievedClimb = climbDao.getById(insertedId);
         assertNotNull(retrievedClimb);
-        assertEquals("Slab", retrievedClimb.getClimbType());
-        assertEquals("V3", retrievedClimb.getGrade());
-        assertEquals(user.getId(), retrievedClimb.getUser().getId());
+
+        // Ensure the retrieved climb has the same ID
+        expectedClimb.setId(insertedId);
+
+        assertEquals(expectedClimb, retrievedClimb);
     }
 
     @Test
