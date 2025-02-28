@@ -25,4 +25,12 @@ public class GymManagement extends HttpServlet {
     public void init() throws ServletException {
         gymDao = new GenericDao<>(Gym.class);
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Gym> gyms = gymDao.getAll();
+        req.setAttribute("gyms", gyms);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/gymManagement.jsp");
+        dispatcher.forward(req, resp);
+    }
 }
