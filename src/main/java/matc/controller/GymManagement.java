@@ -26,6 +26,9 @@ public class GymManagement extends HttpServlet {
         gymDao = new GenericDao<>(Gym.class);
     }
 
+    /**
+     * Handles GET request to display the list of gyms.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Gym> gyms = gymDao.getAll();
@@ -34,6 +37,9 @@ public class GymManagement extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
+    /**
+     * Handles POST request for adding and deleting gyms.
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
@@ -43,6 +49,10 @@ public class GymManagement extends HttpServlet {
             String gymLocation = req.getParameter("gymLocation");
             Gym newGym = new Gym(gymName, gymLocation);
             gymDao.insert(newGym);
+        } else if ("delete".equals(action)) {
+            int gymId = Integer.parseInt(req.getParameter("gymId"));
+            Gym gym = gymDao.getById(gymId);
+            gymDao.delete(gym);
         }
         resp.sendRedirect("gymManagement");
     }
