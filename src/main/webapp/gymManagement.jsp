@@ -15,3 +15,30 @@
         <a href="logClimb.jsp">Log a Climb</a>
     </nav>
 </header>
+
+<section>
+    <h2>Manage Your Gyms</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="gym" items="${gyms}">
+            <tr>
+                <td>${gym.name}</td>
+                <td>${gym.location}</td>
+                <td>
+                    <form action="gymManagement" method="post">
+                        <input type="hidden" name="gymId" value="${gym.id}">
+                        <button type="submit" name="action" value="delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
