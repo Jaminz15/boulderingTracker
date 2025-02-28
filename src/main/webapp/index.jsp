@@ -15,5 +15,7 @@
     View Climbing Logs
 </a>
 
+<a href="gymManagement">Manage Gyms</a>
+
 </body>
 </html>

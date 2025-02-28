@@ -146,7 +146,6 @@ public class Gym {
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
                 ", createdAt=" + createdAt +
-                ", climbs=" + climbs +
                 '}';
     }
 }

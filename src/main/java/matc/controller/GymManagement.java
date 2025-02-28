@@ -32,6 +32,8 @@ public class GymManagement extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Gym> gyms = gymDao.getAll();
+
+        System.out.println("Fetched gyms: " + gyms);
         req.setAttribute("gyms", gyms);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/gymManagement.jsp");
         dispatcher.forward(req, resp);
