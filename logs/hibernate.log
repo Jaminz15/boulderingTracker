@@ -935,3 +935,160 @@
 [DEBUG] 2025-02-28 00:15:24.497 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1eac8f74
 [DEBUG] 2025-02-28 00:15:24.501 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
 [DEBUG] 2025-02-28 00:15:24.503 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:26.284 [http-nio-8080-exec-6] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2025-02-28 00:16:26.284 [http-nio-8080-exec-6] TransactionImpl - begin
+[DEBUG] 2025-02-28 00:16:26.304 [http-nio-8080-exec-6] ActionQueue - Executing identity-insert immediately
+[DEBUG] 2025-02-28 00:16:26.319 [http-nio-8080-exec-6] SQL - insert into gym (created_at,location,name) values (?,?,?)
+[DEBUG] 2025-02-28 00:16:26.341 [http-nio-8080-exec-6] IdentifierGeneratorHelper - Natively generated identity (matc.entity.Gym) : 3
+[DEBUG] 2025-02-28 00:16:26.341 [http-nio-8080-exec-6] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2025-02-28 00:16:26.344 [http-nio-8080-exec-6] ResourceRegistryStandardImpl - Exception clearing maxRows/queryTimeout [You can't operate on a closed Statement!!!]
+[DEBUG] 2025-02-28 00:16:26.348 [http-nio-8080-exec-6] TransactionImpl - committing
+[DEBUG] 2025-02-28 00:16:26.349 [http-nio-8080-exec-6] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2025-02-28 00:16:26.351 [http-nio-8080-exec-6] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2025-02-28 00:16:26.361 [http-nio-8080-exec-6] AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+[DEBUG] 2025-02-28 00:16:26.361 [http-nio-8080-exec-6] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[DEBUG] 2025-02-28 00:16:26.363 [http-nio-8080-exec-6] EntityPrinter - Listing entities:
+[DEBUG] 2025-02-28 00:16:26.365 [http-nio-8080-exec-6] EntityPrinter - matc.entity.Gym{createdAt=2025-02-28T00:16:26.271083100, name=East Side Boulders2, location=123 Boulder St, Madison, WI, id=3, climbs=null}
+[DEBUG] 2025-02-28 00:16:26.367 [http-nio-8080-exec-6] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:26.368 [http-nio-8080-exec-6] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:26.372 [http-nio-8080-exec-7] create - Created new SQL alias : g1_0
+[DEBUG] 2025-02-28 00:16:26.372 [http-nio-8080-exec-7] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym(25903302087100))] with identifierForTableGroup [matc.entity.Gym] for NavigablePath [matc.entity.Gym] 
+[DEBUG] 2025-02-28 00:16:26.373 [http-nio-8080-exec-7] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Gym(25903302087100)]
+ |  +-DelayedCollectionFetch [matc.entity.Gym(25903302087100).climbs]
+ |  +-BasicFetch [matc.entity.Gym(25903302087100).createdAt]
+ |  +-BasicFetch [matc.entity.Gym(25903302087100).location]
+ |  \-BasicFetch [matc.entity.Gym(25903302087100).name]
+
+[DEBUG] 2025-02-28 00:16:26.373 [http-nio-8080-exec-7] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (g1 : matc.entity.Gym(25903302087100)) {
+          primaryTableReference : gym as g1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-02-28 00:16:26.373 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-02-28 00:16:26.373 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.Gym(25903302087100) -> EntityResultInitializer(matc.entity.Gym(25903302087100))@1772503236 (SingleTableEntityPersister(matc.entity.Gym))
+	  matc.entity.Gym(25903302087100).climbs -> DelayedCollectionInitializer(matc.entity.Gym(25903302087100).climbs)@748995476 (PluralAttribute(matc.entity.Gym.climbs))
+
+[DEBUG] 2025-02-28 00:16:26.373 [http-nio-8080-exec-7] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0
+[DEBUG] 2025-02-28 00:16:26.374 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-02-28 00:16:26.374 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(25903302087100)): 1
+[DEBUG] 2025-02-28 00:16:26.374 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-02-28 00:16:26.374 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(25903302087100).climbs#1
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(25903302087100)#1] : 1564284521
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(25903302087100)#1
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@4a22a765
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(25903302087100)): 2
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(25903302087100).climbs#2
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(25903302087100)#2] : 234525743
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(25903302087100)#2
+[DEBUG] 2025-02-28 00:16:26.375 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@4a22a765
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [3]
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(25903302087100)): 3
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [3]
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(25903302087100).climbs#3
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(25903302087100)#3] : 1556589650
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-28T00:16:26]
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [East Side Boulders2]
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(25903302087100)#3
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@4a22a765
+[DEBUG] 2025-02-28 00:16:26.376 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:26.377 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:42.358 [http-nio-8080-exec-8] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-02-28 00:16:42.359 [http-nio-8080-exec-8] results - Initializer list:
+	  matc.entity.Gym.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs)@709029057 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym -> EntityResultInitializer(matc.entity.Gym)@1123619486 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-02-28 00:16:42.359 [http-nio-8080-exec-8] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0 where g1_0.id=?
+[DEBUG] 2025-02-28 00:16:42.360 [http-nio-8080-exec-8] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym): 3
+[DEBUG] 2025-02-28 00:16:42.360 [http-nio-8080-exec-8] results - Extracted JDBC value [0] - [3]
+[DEBUG] 2025-02-28 00:16:42.360 [http-nio-8080-exec-8] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym.climbs#3
+[DEBUG] 2025-02-28 00:16:42.360 [http-nio-8080-exec-8] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym#3] : 402200945
+[DEBUG] 2025-02-28 00:16:42.360 [http-nio-8080-exec-8] results - Extracted JDBC value [1] - [2025-02-28T00:16:26]
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] results - Extracted JDBC value [3] - [East Side Boulders2]
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym#3
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@12f76c
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:42.361 [http-nio-8080-exec-8] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2025-02-28 00:16:42.362 [http-nio-8080-exec-8] TransactionImpl - begin
+[DEBUG] 2025-02-28 00:16:42.378 [http-nio-8080-exec-8] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-02-28 00:16:42.398 [http-nio-8080-exec-8] results - Initializer list:
+	  matc.entity.Gym.climbs -> BagInitializer(matc.entity.Gym.climbs)@1493189644 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym.climbs.{element}.user -> EntityJoinedFetchInitializer(matc.entity.Gym.climbs.{element}.user)@2011339231 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.user])@883179486)
+	  matc.entity.Gym.climbs.{element}.user.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs.{element}.user.climbs)@55795373 (PluralAttribute(matc.entity.User.climbs))
+	  matc.entity.Gym.climbs.{element}.gym -> EntitySelectFetchInitializer(matc.entity.Gym.climbs.{element}.gym)@1720350101 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.gym])@371934458)
+	  matc.entity.Gym.climbs.{element} -> EntityJoinedFetchInitializer(matc.entity.Gym.climbs.{element})@850548934 (EntityCollectionPart(matc.entity.Gym.climbs#{element})@730717707)
+
+[DEBUG] 2025-02-28 00:16:42.399 [http-nio-8080-exec-8] SQL - select c1_0.gym_id,c1_0.id,c1_0.attempts,c1_0.climb_type,c1_0.date,c1_0.grade,c1_0.notes,c1_0.success,c1_0.user_id,u1_0.id,u1_0.created_at,u1_0.email_or_username from climb c1_0 left join users u1_0 on u1_0.id=c1_0.user_id where c1_0.gym_id=?
+[DEBUG] 2025-02-28 00:16:42.417 [http-nio-8080-exec-8] ResultsHelper - Collection fully initialized: [matc.entity.Gym.climbs#3]
+[DEBUG] 2025-02-28 00:16:42.421 [http-nio-8080-exec-8] TransactionImpl - committing
+[DEBUG] 2025-02-28 00:16:42.421 [http-nio-8080-exec-8] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2025-02-28 00:16:42.421 [http-nio-8080-exec-8] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2025-02-28 00:16:42.424 [http-nio-8080-exec-8] Collections - Collection dereferenced: [matc.entity.Gym.climbs#3]
+[DEBUG] 2025-02-28 00:16:42.427 [http-nio-8080-exec-8] AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 1 deletions to 1 objects
+[DEBUG] 2025-02-28 00:16:42.427 [http-nio-8080-exec-8] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 1 removals to 1 collections
+[DEBUG] 2025-02-28 00:16:42.427 [http-nio-8080-exec-8] EntityPrinter - Listing entities:
+[DEBUG] 2025-02-28 00:16:42.427 [http-nio-8080-exec-8] EntityPrinter - matc.entity.Gym{createdAt=2025-02-28T00:16:26, name=East Side Boulders2, location=123 Boulder St, Madison, WI, id=3, climbs=[]}
+[DEBUG] 2025-02-28 00:16:42.437 [http-nio-8080-exec-8] SQL - delete from gym where id=?
+[DEBUG] 2025-02-28 00:16:42.442 [http-nio-8080-exec-8] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:42.443 [http-nio-8080-exec-8] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:42.446 [http-nio-8080-exec-9] create - Created new SQL alias : g1_0
+[DEBUG] 2025-02-28 00:16:42.446 [http-nio-8080-exec-9] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym(25919376702200))] with identifierForTableGroup [matc.entity.Gym] for NavigablePath [matc.entity.Gym] 
+[DEBUG] 2025-02-28 00:16:42.446 [http-nio-8080-exec-9] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Gym(25919376702200)]
+ |  +-DelayedCollectionFetch [matc.entity.Gym(25919376702200).climbs]
+ |  +-BasicFetch [matc.entity.Gym(25919376702200).createdAt]
+ |  +-BasicFetch [matc.entity.Gym(25919376702200).location]
+ |  \-BasicFetch [matc.entity.Gym(25919376702200).name]
+
+[DEBUG] 2025-02-28 00:16:42.447 [http-nio-8080-exec-9] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (g1 : matc.entity.Gym(25919376702200)) {
+          primaryTableReference : gym as g1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-02-28 00:16:42.447 [http-nio-8080-exec-9] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-02-28 00:16:42.447 [http-nio-8080-exec-9] results - Initializer list:
+	  matc.entity.Gym(25919376702200).climbs -> DelayedCollectionInitializer(matc.entity.Gym(25919376702200).climbs)@1163893691 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym(25919376702200) -> EntityResultInitializer(matc.entity.Gym(25919376702200))@6102388 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-02-28 00:16:42.447 [http-nio-8080-exec-9] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0
+[DEBUG] 2025-02-28 00:16:42.448 [http-nio-8080-exec-9] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-02-28 00:16:42.448 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(25919376702200)): 1
+[DEBUG] 2025-02-28 00:16:42.448 [http-nio-8080-exec-9] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-02-28 00:16:42.448 [http-nio-8080-exec-9] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(25919376702200).climbs#1
+[DEBUG] 2025-02-28 00:16:42.448 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(25919376702200)#1] : 321398172
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(25919376702200)#1
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@45e5c46c
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(25919376702200)): 2
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(25919376702200).climbs#2
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(25919376702200)#2] : 1498975375
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(25919376702200)#2
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@45e5c46c
+[DEBUG] 2025-02-28 00:16:42.449 [http-nio-8080-exec-9] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-02-28 00:16:42.450 [http-nio-8080-exec-9] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction

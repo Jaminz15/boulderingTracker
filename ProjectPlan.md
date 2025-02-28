@@ -48,13 +48,13 @@
 #### *Implementing Web UI and Controllers for MVP stories*
 - [ ] Set up **JSP pages for:**
     - **Dashboard (Home Page)**
-    - **Gym Management**
+    - [X] **Gym Management**
     - **Gym Page (climbing history)**
     - **Log a Climb**
     - **Edit/Delete Climb**
     - **User Profile Page**
     - **Track Progress Page**
-- [ ] Create **GymController** to handle gym management
+- [X] Create **GymController** to handle gym management
 - [ ] Create **ClimbController** to handle climbing logs
 - [ ] Implement basic **Servlets for page navigation**
 - [ ] Weekly time log

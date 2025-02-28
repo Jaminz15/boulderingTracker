@@ -62,3 +62,5 @@
 - 02/26/2025 - 6 hours - Exercise 6, setting up AWS with my project
 - 
 - ### **Individual Project (BoulderBook)** 
+- 02/27/2025 - 4 hours - Implemented Gym Management feature, 
+Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented functionality to list, add, and delete gyms
