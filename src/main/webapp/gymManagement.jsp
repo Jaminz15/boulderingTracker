@@ -42,3 +42,21 @@
         </c:forEach>
         </tbody>
     </table>
+
+    <h3>Add a New Gym</h3>
+    <form action="gymManagement" method="post">
+        <label for="gymName">Gym Name:</label>
+        <input type="text" id="gymName" name="gymName" required>
+
+        <label for="gymLocation">Location:</label>
+        <input type="text" id="gymLocation" name="gymLocation" required>
+
+        <button type="submit" name="action" value="add">Add Gym</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 BoulderBook</p>
+</footer>
+</body>
+</html>
