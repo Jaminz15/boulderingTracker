@@ -47,7 +47,7 @@
 ## **Week 6 (2/24 - 3/2) - JSPs & Controllers Start**
 #### *Implementing Web UI and Controllers for MVP stories*
 - [ ] Set up **JSP pages for:**
-    - **Dashboard (Home Page)**
+    - [X]**Dashboard (Home Page)**
     - [X] **Gym Management**
     - **Gym Page (climbing history)**
     - **Log a Climb**
@@ -63,8 +63,8 @@
 
 ## **Week 7 (3/3 - 3/9) - Security & Authentication**
 #### *Checkpoint 2 Due (3/5)*
-- [ ] Deploy **database to AWS RDS**
-- [ ] Update project configuration for **AWS database connection**
+- [X] Deploy **database to AWS RDS**
+- [X] Update project configuration for **AWS database connection**
 - [ ] Implement **AWS Cognito authentication**
 - [ ] Secure **Climb and Gym data to be user-specific**
 - [ ] Restrict climbing logs to logged-in users
