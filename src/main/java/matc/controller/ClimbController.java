@@ -5,13 +5,15 @@ import matc.entity.Gym;
 import matc.entity.User;
 import matc.persistence.GenericDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * ClimbController - Handles logging, editing, and deleting climbs.
@@ -27,5 +29,16 @@ public class ClimbController extends HttpServlet {
         climbDao = new GenericDao<>(Climb.class);
         gymDao = new GenericDao<>(Gym.class);
         userDao = new GenericDao<>(User.class);
+    }
+
+    /**
+     * Handles GET request to display climb logs.
+     */
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Climb> climbs = climbDao.getAll();
+        req.setAttribute("climbs", climbs);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/logClimb.jsp");
+        dispatcher.forward(req, resp);
     }
 }
