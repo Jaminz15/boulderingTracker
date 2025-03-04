@@ -50,12 +50,12 @@
     - [X]**Dashboard (Home Page)**
     - [X] **Gym Management**
     - **Gym Page (climbing history)**
-    - **Log a Climb**
+    - [X]**Log a Climb**
     - **Edit/Delete Climb**
     - **User Profile Page**
     - **Track Progress Page**
 - [X] Create **GymController** to handle gym management
-- [ ] Create **ClimbController** to handle climbing logs
+- [X] Create **ClimbController** to handle climbing logs
 - [ ] Implement basic **Servlets for page navigation**
 - [ ] Weekly time log
 

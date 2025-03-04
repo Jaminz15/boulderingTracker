@@ -64,3 +64,6 @@
 - ### **Individual Project (BoulderBook)** 
 - 02/27/2025 - 4 hours - Implemented Gym Management feature, 
 Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented functionality to list, add, and delete gyms
+- 03/03/2025 - 5 hours - Implemented Climb Logging Feature, Created `ClimbController.java` servlet, 
+built `logClimb.jsp` page for users to log climbs, integrated gym selection, grade dropdown, and form submission, 
+fixed data persistence issue.
