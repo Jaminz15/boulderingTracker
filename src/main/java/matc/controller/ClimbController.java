@@ -37,8 +37,12 @@ public class ClimbController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         List<Climb> climbs = climbDao.getAll();
+        List<Gym> gyms = gymDao.getAll();
+
         req.setAttribute("climbs", climbs);
-        logger.debug("Retrieved {} climbs from database", climbs.size());
+        req.setAttribute("gyms", gyms);
+
+        logger.debug("Retrieved {} climbs and {} gyms from database", climbs.size(), gyms.size());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/logClimb.jsp");
         try {
