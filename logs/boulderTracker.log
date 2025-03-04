@@ -99,3 +99,141 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.16.jar:8.0.16]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.16.jar:8.0.16]
 	... 64 more
+[INFO ] 2025-03-03 22:18:11.221 [http-nio-8080-exec-6] ClimbController - ClimbController initialized with DAOs
+[DEBUG] 2025-03-03 22:18:17.450 [http-nio-8080-exec-6] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[INFO ] 2025-03-03 22:24:58.540 [http-nio-8080-exec-4] ClimbController - ClimbController initialized with DAOs
+[DEBUG] 2025-03-03 22:25:04.863 [http-nio-8080-exec-4] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[DEBUG] 2025-03-03 22:25:24.827 [http-nio-8080-exec-7] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[ERROR] 2025-03-03 22:25:50.391 [http-nio-8080-exec-9] ClimbController - Error adding new climb
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:614) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at matc.controller.ClimbController.doPost(ClimbController.java:62) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:9.0.98]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.98]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [catalina.jar:9.0.98]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-util.jar:9.0.98]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[DEBUG] 2025-03-03 22:25:50.436 [http-nio-8080-exec-10] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[DEBUG] 2025-03-03 22:26:53.517 [http-nio-8080-exec-5] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[ERROR] 2025-03-03 22:28:54.628 [http-nio-8080-exec-7] ClimbController - Error adding new climb
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:614) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at matc.controller.ClimbController.doPost(ClimbController.java:62) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:9.0.98]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.98]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [catalina.jar:9.0.98]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-util.jar:9.0.98]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[DEBUG] 2025-03-03 22:28:54.649 [http-nio-8080-exec-8] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[INFO ] 2025-03-03 22:38:35.894 [http-nio-8080-exec-4] ClimbController - ClimbController initialized with DAOs
+[DEBUG] 2025-03-03 22:38:42.107 [http-nio-8080-exec-4] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[ERROR] 2025-03-03 22:39:00.131 [http-nio-8080-exec-5] ClimbController - Error adding new climb
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:614) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at matc.controller.ClimbController.doPost(ClimbController.java:62) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:9.0.98]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.98]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [catalina.jar:9.0.98]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-util.jar:9.0.98]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[DEBUG] 2025-03-03 22:39:00.186 [http-nio-8080-exec-6] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[INFO ] 2025-03-03 22:40:58.795 [main] GenericDao - Successfully inserted entity: Climb{id=3, gym=East Side Boulders, user=climber123@example.com, date=2025-03-03, climbType='Slab', grade='V3', attempts=2, success=true, notes='Felt great!'}
+[INFO ] 2025-03-03 22:40:59.898 [main] GenericDao - Successfully inserted entity: Gym{id=3, name='West Side Boulders', location='789 Climber Ln, Madison, WI', createdAt=2025-03-03T22:40:59.893685100}
+[INFO ] 2025-03-03 22:41:01.163 [main] GenericDao - Successfully inserted entity: User{id=3, emailOrUsername='newclimber@example.com', createdAt=2025-03-03T22:41:01.157615600, climbs=null}
+[INFO ] 2025-03-03 22:41:21.321 [http-nio-8080-exec-4] ClimbController - ClimbController initialized with DAOs
+[DEBUG] 2025-03-03 22:41:28.098 [http-nio-8080-exec-4] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[ERROR] 2025-03-03 22:42:06.414 [http-nio-8080-exec-6] ClimbController - Error adding new climb
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:614) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at matc.controller.ClimbController.doPost(ClimbController.java:62) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-websocket.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [catalina.jar:9.0.98]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [catalina.jar:9.0.98]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660) [catalina.jar:9.0.98]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.98]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [catalina.jar:9.0.98]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-coyote.jar:9.0.98]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-coyote.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.98]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-util.jar:9.0.98]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[DEBUG] 2025-03-03 22:42:06.461 [http-nio-8080-exec-7] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[INFO ] 2025-03-03 23:10:18.111 [http-nio-8080-exec-4] ClimbController - ClimbController initialized with DAOs
+[DEBUG] 2025-03-03 23:10:24.424 [http-nio-8080-exec-4] ClimbController - Retrieved 2 climbs and 2 gyms from database
+[DEBUG] 2025-03-03 23:10:51.615 [http-nio-8080-exec-6] ClimbController - Received action: add
+[INFO ] 2025-03-03 23:10:51.715 [http-nio-8080-exec-6] ClimbController - Successfully added new climb: Climb{id=3, gym=East Side Boulders, user=climber123@example.com, date=2025-03-03, climbType='Dyno', grade='V1', attempts=4, success=true, notes='Good climb'}
+[DEBUG] 2025-03-03 23:13:43.132 [http-nio-8080-exec-6] ClimbController - Retrieved 3 climbs and 2 gyms from database

@@ -21,6 +21,7 @@
 
     <form action="climb" method="post">
         <input type="hidden" name="action" value="add">
+        <input type="hidden" name="userId" value="1"> <!-- will replace with session user ID later -->
 
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required>
@@ -36,7 +37,16 @@
         <input type="text" id="climbType" name="climbType" required>
 
         <label for="grade">Grade:</label>
-        <input type="text" id="grade" name="grade" required>
+        <select id="grade" name="grade" required>
+            <option value="V1">V1</option>
+            <option value="V2">V2</option>
+            <option value="V3">V3</option>
+            <option value="V4">V4</option>
+            <option value="V5">V5</option>
+            <option value="V6">V6</option>
+            <option value="V7">V7</option>
+            <option value="V7+">V7+</option>
+        </select>
 
         <label for="attempts">Attempts:</label>
         <input type="number" id="attempts" name="attempts" min="1" required>

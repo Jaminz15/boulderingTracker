@@ -8,7 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +36,7 @@ public class ClimbController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Climb> climbs = climbDao.getAll();
         List<Gym> gyms = gymDao.getAll();
 
@@ -45,16 +46,20 @@ public class ClimbController extends HttpServlet {
         logger.debug("Retrieved {} climbs and {} gyms from database", climbs.size(), gyms.size());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/logClimb.jsp");
-        try {
-            dispatcher.forward(req, resp);
-        } catch (Exception e) {
-            logger.error("Error forwarding to logClimb.jsp", e);
-        }
+        dispatcher.forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String action = req.getParameter("action");
+
+        logger.debug("Received action: {}", action);
+
+        if (req.getParameter("gymId") == null || req.getParameter("userId") == null) {
+            logger.error("Missing gymId or userId in request");
+            resp.sendRedirect("logClimb.jsp?error=missingData");
+            return;
+        }
 
         if ("add".equals(action)) {
             try {
@@ -87,10 +92,6 @@ public class ClimbController extends HttpServlet {
             }
         }
 
-        try {
-            resp.sendRedirect("climb");
-        } catch (IOException e) {
-            logger.error("Error redirecting after climb operation", e);
-        }
+        resp.sendRedirect("climbResults.jsp");
     }
 }

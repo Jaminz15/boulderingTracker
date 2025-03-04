@@ -76,6 +76,7 @@ public class GenericDao<T> {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         session.persist(entity);
+        session.flush();
         transaction.commit();
         int id = (int) session.unwrap(Session.class).getIdentifier(entity);
         session.close();

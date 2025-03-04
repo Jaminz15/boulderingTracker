@@ -1,0 +1,1245 @@
+[DEBUG] 2025-03-03 22:41:21.422 [http-nio-8080-exec-4] IntegratorServiceImpl - Adding Integrator [org.hibernate.boot.beanvalidation.BeanValidationIntegrator].
+[DEBUG] 2025-03-03 22:41:21.443 [http-nio-8080-exec-4] IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[INFO ] 2025-03-03 22:41:21.564 [http-nio-8080-exec-4] Version - HHH000412: Hibernate ORM core version 6.4.3.Final
+[DEBUG] 2025-03-03 22:41:21.568 [http-nio-8080-exec-4] Environment - HHH000206: 'hibernate.properties' not found
+[DEBUG] 2025-03-03 22:41:21.680 [http-nio-8080-exec-4] LocalXmlResourceResolver - Checking public/system identifiers `-//Hibernate/Hibernate Configuration DTD//EN`/`http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd` as DTD references
+[DEBUG] 2025-03-03 22:41:21.692 [http-nio-8080-exec-4] JaxbCfgProcessor - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+[DEBUG] 2025-03-03 22:41:22.272 [http-nio-8080-exec-4] factory - Ignoring CDI for resolving IdentifierGenerator instances as extended or delayed CDI support was enabled
+[DEBUG] 2025-03-03 22:41:22.287 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+[DEBUG] 2025-03-03 22:41:22.288 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+[DEBUG] 2025-03-03 22:41:22.290 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2025-03-03 22:41:22.290 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2025-03-03 22:41:22.291 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+[DEBUG] 2025-03-03 22:41:22.296 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+[DEBUG] 2025-03-03 22:41:22.297 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+[DEBUG] 2025-03-03 22:41:22.300 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2025-03-03 22:41:22.301 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+[DEBUG] 2025-03-03 22:41:22.303 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+[DEBUG] 2025-03-03 22:41:22.303 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2025-03-03 22:41:22.304 [http-nio-8080-exec-4] factory - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+[DEBUG] 2025-03-03 22:41:22.326 [http-nio-8080-exec-4] RegionFactoryInitiator - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+[INFO ] 2025-03-03 22:41:22.329 [http-nio-8080-exec-4] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[DEBUG] 2025-03-03 22:41:22.648 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BasicTypeReference@e6b20bb
+[DEBUG] 2025-03-03 22:41:22.648 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BasicTypeReference@e6b20bb
+[DEBUG] 2025-03-03 22:41:22.648 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@e6b20bb
+[DEBUG] 2025-03-03 22:41:22.648 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@24bcf2fa
+[DEBUG] 2025-03-03 22:41:22.648 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@24bcf2fa
+[DEBUG] 2025-03-03 22:41:22.649 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.BasicTypeReference@4300b226
+[DEBUG] 2025-03-03 22:41:22.649 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@4300b226
+[DEBUG] 2025-03-03 22:41:22.649 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@721729f
+[DEBUG] 2025-03-03 22:41:22.649 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@721729f
+[DEBUG] 2025-03-03 22:41:22.649 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.BasicTypeReference@5098f438
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.BasicTypeReference@5098f438
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@5098f438
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BasicTypeReference@1370f7f3
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@1370f7f3
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BasicTypeReference@1370f7f3
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@5527f639
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@5527f639
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration image -> org.hibernate.type.BasicTypeReference@591ec388
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BasicTypeReference@4eb0d5a7
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@4eb0d5a7
+[DEBUG] 2025-03-03 22:41:22.650 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@5a6b7ced
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@3097dfa7
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.BasicTypeReference@1fba58be
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.BasicTypeReference@1fba58be
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@1fba58be
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.BasicTypeReference@576fab03
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration int -> org.hibernate.type.BasicTypeReference@576fab03
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@576fab03
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.BasicTypeReference@56e22917
+[DEBUG] 2025-03-03 22:41:22.651 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.BasicTypeReference@56e22917
+[DEBUG] 2025-03-03 22:41:22.652 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@56e22917
+[DEBUG] 2025-03-03 22:41:22.652 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.BasicTypeReference@5806be8b
+[DEBUG] 2025-03-03 22:41:22.652 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.BasicTypeReference@5806be8b
+[DEBUG] 2025-03-03 22:41:22.652 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@5806be8b
+[DEBUG] 2025-03-03 22:41:22.652 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.BasicTypeReference@15b4629d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.BasicTypeReference@15b4629d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@15b4629d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@3f29f49b
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@3f29f49b
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@7844c8f8
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@7844c8f8
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration character -> org.hibernate.type.BasicTypeReference@15dbc39d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration char -> org.hibernate.type.BasicTypeReference@15dbc39d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@15dbc39d
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@234dfb31
+[DEBUG] 2025-03-03 22:41:22.653 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration string -> org.hibernate.type.BasicTypeReference@53b04eef
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@53b04eef
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.BasicTypeReference@d6d5f69
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.BasicTypeReference@46e1b272
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.BasicTypeReference@46e1b272
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.BasicTypeReference@46e1b272
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@ab95dec
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration text -> org.hibernate.type.BasicTypeReference@5b2fbd62
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.BasicTypeReference@3cde2779
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.BasicTypeReference@77e760b2
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@77e760b2
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.BasicTypeReference@37f1159f
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@37f1159f
+[DEBUG] 2025-03-03 22:41:22.654 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@11936aae
+[DEBUG] 2025-03-03 22:41:22.655 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@5c3b620a
+[DEBUG] 2025-03-03 22:41:22.655 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@10157bcf
+[DEBUG] 2025-03-03 22:41:22.655 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@2f77d9bf
+[DEBUG] 2025-03-03 22:41:22.655 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@253b10e5
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@22970d7a
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.BasicTypeReference@1967d1e4
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@1967d1e4
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@8cc5956
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@8cc5956
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@758dcc92
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@758dcc92
+[DEBUG] 2025-03-03 22:41:22.656 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@6f6be384
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@6f6be384
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@4824f77c
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@4824f77c
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@22c801c7
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@393ab050
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@97d0330
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@97d0330
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@660d8a74
+[DEBUG] 2025-03-03 22:41:22.657 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@4a9694b
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@68fdf1be
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@9781b12
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@9781b12
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@3ac7e63
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4c80ac6c
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration date -> org.hibernate.type.BasicTypeReference@4b77c443
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@4b77c443
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration time -> org.hibernate.type.BasicTypeReference@29ee6b4
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@29ee6b4
+[DEBUG] 2025-03-03 22:41:22.658 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@62a1dfe2
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@62a1dfe2
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@62a1dfe2
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.BasicTypeReference@2b8bfc16
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@2b8bfc16
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@2b8bfc16
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@5e2b60f8
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@2b7586cf
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration instant -> org.hibernate.type.BasicTypeReference@4747028c
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@4747028c
+[DEBUG] 2025-03-03 22:41:22.659 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration uuid -> org.hibernate.type.BasicTypeReference@33d83d3e
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@33d83d3e
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@33d83d3e
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@36f1b71d
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@31b50cf2
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration class -> org.hibernate.type.BasicTypeReference@4e193b2a
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@4e193b2a
+[DEBUG] 2025-03-03 22:41:22.660 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.BasicTypeReference@3cdade1a
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration Currency -> org.hibernate.type.BasicTypeReference@3cdade1a
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@3cdade1a
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.BasicTypeReference@728cfc3
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@728cfc3
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.BasicTypeReference@1e639148
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@1e639148
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.BasicTypeReference@19a439c5
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@19a439c5
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@73641ee5
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@73641ee5
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration url -> org.hibernate.type.BasicTypeReference@32f3819d
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@32f3819d
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration vector -> org.hibernate.type.BasicTypeReference@3018bf5a
+[DEBUG] 2025-03-03 22:41:22.661 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.BasicTypeReference@84ac28d
+[DEBUG] 2025-03-03 22:41:22.679 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration object -> org.hibernate.type.JavaObjectType@236460f5
+[DEBUG] 2025-03-03 22:41:22.679 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@236460f5
+[DEBUG] 2025-03-03 22:41:22.683 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration null -> org.hibernate.type.NullType@4788bd0a
+[DEBUG] 2025-03-03 22:41:22.683 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@2e05d598
+[DEBUG] 2025-03-03 22:41:22.683 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@220ecfd4
+[DEBUG] 2025-03-03 22:41:22.683 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@246e62eb
+[DEBUG] 2025-03-03 22:41:22.683 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@268ceb81
+[DEBUG] 2025-03-03 22:41:22.684 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@262543dd
+[DEBUG] 2025-03-03 22:41:22.684 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@728148a2
+[DEBUG] 2025-03-03 22:41:22.684 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@25af0523
+[DEBUG] 2025-03-03 22:41:22.684 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@64be32f4
+[INFO ] 2025-03-03 22:41:22.782 [http-nio-8080-exec-4] c3p0 - HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/boulderBook
+[INFO ] 2025-03-03 22:41:22.782 [http-nio-8080-exec-4] c3p0 - HHH10001001: Connection properties: {password=****, user=root}
+[INFO ] 2025-03-03 22:41:22.782 [http-nio-8080-exec-4] c3p0 - HHH10001003: Autocommit mode: false
+[INFO ] 2025-03-03 22:41:22.983 [http-nio-8080-exec-4] c3p0 - HHH10001007: JDBC isolation level: <unknown>
+[DEBUG] 2025-03-03 22:41:23.623 [http-nio-8080-exec-4] JdbcEnvironmentInitiator - Database ->
+       name : MySQL
+    version : 8.0.41
+      major : 8
+      minor : 0
+[DEBUG] 2025-03-03 22:41:23.623 [http-nio-8080-exec-4] JdbcEnvironmentInitiator - Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.16 (Revision: 34cbc6bc61f72836e26327537a432d6db7c77de6)
+      major : 8
+      minor : 0
+[DEBUG] 2025-03-03 22:41:23.623 [http-nio-8080-exec-4] JdbcEnvironmentInitiator - JDBC version : 4.2
+[WARN ] 2025-03-03 22:41:23.742 [http-nio-8080-exec-4] deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[DEBUG] 2025-03-03 22:41:23.747 [http-nio-8080-exec-4] dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.41
+[DEBUG] 2025-03-03 22:41:23.772 [http-nio-8080-exec-4] IdentifierHelperBuilder - JDBC driver metadata reported database stores quoted identifiers in more than one case
+[DEBUG] 2025-03-03 22:41:23.772 [http-nio-8080-exec-4] IdentifierHelperBuilder - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [LOWER]; that will likely lead to problems in schema update and validation if using quoted identifiers
+[DEBUG] 2025-03-03 22:41:23.823 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@78fd188a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1d837068)
+[DEBUG] 2025-03-03 22:41:23.823 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6a04363d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@573672f)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@15da1643) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@135c34a0)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@58a25d28) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4676030c)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@35b7d8f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7150a070)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3b51f86f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4d49f26a)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@15a64949) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@610138ad)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@55273662) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@57ff440e)
+[DEBUG] 2025-03-03 22:41:23.824 [http-nio-8080-exec-4] DdlTypeRegistry - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7034a3b9) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@18183942)
+[DEBUG] 2025-03-03 22:41:23.832 [http-nio-8080-exec-4] JdbcTypeRegistry - addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
+[DEBUG] 2025-03-03 22:41:23.832 [http-nio-8080-exec-4] JdbcTypeRegistry - addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
+[DEBUG] 2025-03-03 22:41:23.834 [http-nio-8080-exec-4] JdbcTypeRegistry - addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
+[DEBUG] 2025-03-03 22:41:23.842 [http-nio-8080-exec-4] JdbcTypeRegistry - addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+[DEBUG] 2025-03-03 22:41:23.843 [http-nio-8080-exec-4] JdbcTypeRegistry - addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+[DEBUG] 2025-03-03 22:41:23.852 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration null -> org.hibernate.type.NullType@4455254f
+[DEBUG] 2025-03-03 22:41:23.852 [http-nio-8080-exec-4] BasicTypeRegistry - Type registration key [null] overrode previous entry : `org.hibernate.type.NullType@4788bd0a`
+[DEBUG] 2025-03-03 22:41:23.868 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.DurationType -> basicType@1(java.time.Duration,2)
+[DEBUG] 2025-03-03 22:41:23.868 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration Duration -> basicType@1(java.time.Duration,2)
+[DEBUG] 2025-03-03 22:41:23.868 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.Duration -> basicType@1(java.time.Duration,2)
+[DEBUG] 2025-03-03 22:41:23.879 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.OffsetDateTimeType -> basicType@2(java.time.OffsetDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.879 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.880 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.880 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.ZonedDateTimeType -> basicType@3(java.time.ZonedDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.880 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.880 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+[DEBUG] 2025-03-03 22:41:23.882 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration org.hibernate.type.OffsetTimeType -> basicType@4(java.time.OffsetTime,3007)
+[DEBUG] 2025-03-03 22:41:23.882 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+[DEBUG] 2025-03-03 22:41:23.882 [http-nio-8080-exec-4] BasicTypeRegistry - Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+[DEBUG] 2025-03-03 22:41:23.886 [http-nio-8080-exec-4] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@19e926e5] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@7d7a6be7]
+[DEBUG] 2025-03-03 22:41:24.024 [http-nio-8080-exec-4] Namespace - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+[DEBUG] 2025-03-03 22:41:24.109 [http-nio-8080-exec-4] EntityBinder - Binding entity from annotated class: matc.entity.User
+[DEBUG] 2025-03-03 22:41:24.148 [http-nio-8080-exec-4] EntityBinder - Import with entity name User
+[DEBUG] 2025-03-03 22:41:24.168 [http-nio-8080-exec-4] EntityBinder - Bind entity matc.entity.User on table users
+[DEBUG] 2025-03-03 22:41:24.201 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedDiscriminatorColumn(column='DTYPE')
+[DEBUG] 2025-03-03 22:41:24.266 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.269 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.User] is safe
+[DEBUG] 2025-03-03 22:41:24.269 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.User
+[DEBUG] 2025-03-03 22:41:24.276 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2025-03-03 22:41:24.287 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.User:id]
+[DEBUG] 2025-03-03 22:41:24.300 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for id
+[DEBUG] 2025-03-03 22:41:24.307 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: users.id
+[DEBUG] 2025-03-03 22:41:24.309 [http-nio-8080-exec-4] PropertyBinder - Building property id
+[DEBUG] 2025-03-03 22:41:24.323 [http-nio-8080-exec-4] BinderHelper - #makeIdGenerator(BasicValue([Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2025-03-03 22:41:24.339 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.339 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.378 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: IndexColumn(column='climbs_ORDER')
+[DEBUG] 2025-03-03 22:41:24.385 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.387 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='climbs_KEY')
+[DEBUG] 2025-03-03 22:41:24.390 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn(column='climbs_KEY')
+[DEBUG] 2025-03-03 22:41:24.398 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.398 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.408 [http-nio-8080-exec-4] CollectionBinder - Collection role: matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:24.417 [http-nio-8080-exec-4] PropertyBinder - Building property climbs
+[DEBUG] 2025-03-03 22:41:24.418 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='created_at')
+[DEBUG] 2025-03-03 22:41:24.418 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property createdAt with lazy=false
+[DEBUG] 2025-03-03 22:41:24.418 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.User:createdAt]
+[DEBUG] 2025-03-03 22:41:24.418 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for createdAt
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: users.created_at
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] PropertyBinder - Building property createdAt
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='email_or_username')
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property emailOrUsername with lazy=false
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.User:emailOrUsername]
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for emailOrUsername
+[DEBUG] 2025-03-03 22:41:24.419 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: users.email_or_username
+[DEBUG] 2025-03-03 22:41:24.420 [http-nio-8080-exec-4] PropertyBinder - Building property emailOrUsername
+[DEBUG] 2025-03-03 22:41:24.421 [http-nio-8080-exec-4] ClassLoaderServiceImpl - HHH000194: Package not found or wo package-info.java: matc.entity
+[DEBUG] 2025-03-03 22:41:24.440 [http-nio-8080-exec-4] EntityBinder - Binding entity from annotated class: matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:24.441 [http-nio-8080-exec-4] EntityBinder - Import with entity name Gym
+[DEBUG] 2025-03-03 22:41:24.441 [http-nio-8080-exec-4] EntityBinder - Bind entity matc.entity.Gym on table gym
+[DEBUG] 2025-03-03 22:41:24.441 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedDiscriminatorColumn(column='DTYPE')
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.Gym] is safe
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Gym:id]
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for id
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: gym.id
+[DEBUG] 2025-03-03 22:41:24.442 [http-nio-8080-exec-4] PropertyBinder - Building property id
+[DEBUG] 2025-03-03 22:41:24.443 [http-nio-8080-exec-4] BinderHelper - #makeIdGenerator(BasicValue([Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2025-03-03 22:41:24.443 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.443 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.443 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: IndexColumn(column='climbs_ORDER')
+[DEBUG] 2025-03-03 22:41:24.443 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='climbs_KEY')
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn(column='climbs_KEY')
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn()
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] CollectionBinder - Collection role: matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] PropertyBinder - Building property climbs
+[DEBUG] 2025-03-03 22:41:24.444 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='created_at')
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property createdAt with lazy=false
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Gym:createdAt]
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for createdAt
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: gym.created_at
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] PropertyBinder - Building property createdAt
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='location')
+[DEBUG] 2025-03-03 22:41:24.445 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property location with lazy=false
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Gym:location]
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for location
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: gym.location
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] PropertyBinder - Building property location
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='name')
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property name with lazy=false
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Gym:name]
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for name
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: gym.name
+[DEBUG] 2025-03-03 22:41:24.446 [http-nio-8080-exec-4] PropertyBinder - Building property name
+[DEBUG] 2025-03-03 22:41:24.447 [http-nio-8080-exec-4] ClassLoaderServiceImpl - HHH000194: Package not found or wo package-info.java: matc.entity
+[DEBUG] 2025-03-03 22:41:24.448 [http-nio-8080-exec-4] EntityBinder - Binding entity from annotated class: matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:24.449 [http-nio-8080-exec-4] EntityBinder - Import with entity name Climb
+[DEBUG] 2025-03-03 22:41:24.449 [http-nio-8080-exec-4] EntityBinder - Bind entity matc.entity.Climb on table climb
+[DEBUG] 2025-03-03 22:41:24.449 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedDiscriminatorColumn(column='DTYPE')
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.Climb] is safe
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:id]
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for id
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.id
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] PropertyBinder - Building property id
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] BinderHelper - #makeIdGenerator(BasicValue([Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2025-03-03 22:41:24.454 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='attempts')
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property attempts with lazy=false
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:attempts]
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for attempts
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.attempts
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] PropertyBinder - Building property attempts
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='climb_type')
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property climbType with lazy=false
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:climbType]
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for climbType
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.climb_type
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] PropertyBinder - Building property climbType
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='date')
+[DEBUG] 2025-03-03 22:41:24.455 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property date with lazy=false
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:date]
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for date
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.date
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] PropertyBinder - Building property date
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='grade')
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property grade with lazy=false
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:grade]
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for grade
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.grade
+[DEBUG] 2025-03-03 22:41:24.456 [http-nio-8080-exec-4] PropertyBinder - Building property grade
+[DEBUG] 2025-03-03 22:41:24.457 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn(column='gym_id')
+[DEBUG] 2025-03-03 22:41:24.457 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] PropertyBinder - Building property gym
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='notes')
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property notes with lazy=false
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:notes]
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for notes
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.notes
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] PropertyBinder - Building property notes
+[DEBUG] 2025-03-03 22:41:24.464 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn(column='success')
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] PropertyBinder - MetadataSourceProcessor property success with lazy=false
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [matc.entity.Climb:success]
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] BasicValueBinder - building BasicValue for success
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] BasicValue - Skipping column re-registration: climb.success
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] PropertyBinder - Building property success
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedJoinColumn(column='user_id')
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] AnnotatedColumn - Binding column: AnnotatedColumn()
+[DEBUG] 2025-03-03 22:41:24.465 [http-nio-8080-exec-4] PropertyBinder - Building property user
+[DEBUG] 2025-03-03 22:41:24.466 [http-nio-8080-exec-4] ClassLoaderServiceImpl - HHH000194: Package not found or wo package-info.java: matc.entity
+[DEBUG] 2025-03-03 22:41:24.469 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for id
+[DEBUG] 2025-03-03 22:41:24.469 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for createdAt
+[DEBUG] 2025-03-03 22:41:24.473 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for emailOrUsername
+[DEBUG] 2025-03-03 22:41:24.473 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for id
+[DEBUG] 2025-03-03 22:41:24.473 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for createdAt
+[DEBUG] 2025-03-03 22:41:24.473 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for location
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for name
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for id
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for attempts
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for climbType
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for date
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for grade
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for notes
+[DEBUG] 2025-03-03 22:41:24.474 [http-nio-8080-exec-4] BasicValueBinder - Starting `BasicValueBinder#fillSimpleValue` for success
+[DEBUG] 2025-03-03 22:41:24.489 [http-nio-8080-exec-4] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [users]
+[DEBUG] 2025-03-03 22:41:24.489 [http-nio-8080-exec-4] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [gym]
+[DEBUG] 2025-03-03 22:41:24.489 [http-nio-8080-exec-4] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [climb]
+[DEBUG] 2025-03-03 22:41:24.490 [http-nio-8080-exec-4] CollectionSecondPass - Second pass for collection: matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:24.493 [http-nio-8080-exec-4] CollectionBinder - Binding a OneToMany: matc.entity.User.climbs through a foreign key
+[DEBUG] 2025-03-03 22:41:24.497 [http-nio-8080-exec-4] CollectionBinder - Mapping collection: matc.entity.User.climbs -> climb
+[DEBUG] 2025-03-03 22:41:24.502 [http-nio-8080-exec-4] TableBinder - Retrieving property matc.entity.Climb.user
+[DEBUG] 2025-03-03 22:41:24.502 [http-nio-8080-exec-4] CollectionSecondPass - Mapped collection key: user_id, one-to-many: matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] CollectionSecondPass - Second pass for collection: matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] CollectionBinder - Binding a OneToMany: matc.entity.Gym.climbs through a foreign key
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] CollectionBinder - Mapping collection: matc.entity.Gym.climbs -> climb
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] TableBinder - Retrieving property matc.entity.Climb.gym
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] CollectionSecondPass - Mapped collection key: gym_id, one-to-many: matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:24.503 [http-nio-8080-exec-4] InFlightMetadataCollectorImpl - Resolving reference to class: matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:24.507 [http-nio-8080-exec-4] InFlightMetadataCollectorImpl - Resolving reference to class: matc.entity.User
+[DEBUG] 2025-03-03 22:41:24.547 [http-nio-8080-exec-4] InFlightMetadataCollectorImpl - Resolving reference to class: matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:24.547 [http-nio-8080-exec-4] InFlightMetadataCollectorImpl - Resolving reference to class: matc.entity.User
+[DEBUG] 2025-03-03 22:41:25.165 [http-nio-8080-exec-4] SessionFactoryImpl - Building session factory
+[DEBUG] 2025-03-03 22:41:25.308 [http-nio-8080-exec-4] SessionFactoryServiceRegistryImpl - EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+[DEBUG] 2025-03-03 22:41:25.309 [http-nio-8080-exec-4] SessionFactoryImpl - Instantiating SessionFactory with settings: {awt.toolkit=sun.awt.windows.WToolkit, java.specification.version=11, sun.cpu.isalist=amd64, hibernate.c3p0.idle_test_period=3000, sun.jnu.encoding=Cp1252, hibernate.c3p0.min_size=5, sun.arch.data.model=64, java.vendor.url=https://adoptium.net/, catalina.useNaming=true, org.apache.el.GET_CLASSLOADER_USE_PRIVILEGED=false, sun.boot.library.path=C:\Program Files\Eclipse Adoptium\jdk-11.0.26.4-hotspot\bin, com.sun.management.jmxremote.ssl=false, sun.java.command=org.apache.catalina.startup.Bootstrap start, jdk.debug=release, java.specification.vendor=Oracle Corporation, java.naming.factory.url.pkgs=org.apache.naming, java.version.date=2025-01-21, java.home=C:\Program Files\Eclipse Adoptium\jdk-11.0.26.4-hotspot, ignore.endorsed.dirs=, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, hibernate.c3p0.timeout=300, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, com.sun.management.jmxremote.password.file=C:\Users\Jamin\AppData\Local\JetBrains\IntelliJIdea2024.3\tomcat\251c5ea4-eed3-469e-b7c2-e78dddc0d9c4\jmxremote.password, package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat., jdk.tls.ephemeralDHKeySize=2048, user.script=, java.util.logging.config.file=C:\Users\Jamin\AppData\Local\JetBrains\IntelliJIdea2024.3\tomcat\251c5ea4-eed3-469e-b7c2-e78dddc0d9c4\conf\logging.properties, java.protocol.handler.pkgs=org.apache.catalina.webresources, connection.password=CokeZero#9980, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=11.0.26+4, user.name=Jamin, file.encoding=Cp1252, java.vendor.version=Temurin-11.0.26+4, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.io.tmpdir=C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98\temp, tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-taglib*.jar,log4j-web*.jar,log4javascript*.jar,slf4j-taglib*.jar, com.sun.management.jmxremote.port=1099, java.version=11.0.26, tomcat.util.scan.StandardJarScanFilter.jarsToSkip=annotations-api.jar,ant-junit*.jar,ant-launcher*.jar,ant*.jar,asm-*.jar,aspectj*.jar,bcel*.jar,biz.aQute.bnd*.jar,bootstrap.jar,catalina-ant.jar,catalina-ha.jar,catalina-ssi.jar,catalina-storeconfig.jar,catalina-tribes.jar,catalina.jar,cglib-*.jar,cobertura-*.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-compress*.jar,commons-daemon.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,derby-*.jar,dom4j-*.jar,easymock-*.jar,ecj-*.jar,el-api.jar,geronimo-spec-jaxrpc*.jar,h2*.jar,ha-api-*.jar,hamcrest-*.jar,hibernate*.jar,httpclient*.jar,icu4j-*.jar,jasper-el.jar,jasper.jar,jaspic-api.jar,jaxb-*.jar,jaxen-*.jar,jaxws-rt-*.jar,jdom-*.jar,jetty-*.jar,jmx-tools.jar,jmx.jar,jsp-api.jar,jstl.jar,jta*.jar,junit-*.jar,junit.jar,log4j*.jar,mail*.jar,objenesis-*.jar,oraclepki.jar,org.hamcrest.core_*.jar,org.junit_*.jar,oro-*.jar,servlet-api-*.jar,servlet-api.jar,slf4j*.jar,taglibs-standard-spec-*.jar,tagsoup-*.jar,tomcat-api.jar,tomcat-coyote.jar,tomcat-coyote-ffm.jar,tomcat-dbcp.jar,tomcat-i18n-*.jar,tomcat-jdbc.jar,tomcat-jni.jar,tomcat-juli-adapters.jar,tomcat-juli.jar,tomcat-util-scan.jar,tomcat-util.jar,tomcat-websocket.jar,tools.jar,unboundid-ldapsdk-*.jar,websocket-api.jar,wsdl4j*.jar,xercesImpl.jar,xml-apis.jar,xmlParserAPIs-*.jar,xmlParserAPIs.jar,xom-*.jar, connection.username=root, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.awt.windows.WPrinterJob, sun.os.patch.level=, connection.driver_class=com.mysql.cj.jdbc.Driver, java.library.path=C:\Program Files\Eclipse Adoptium\jdk-11.0.26.4-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-11.0.26.4-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\Users\Jamin\AppData\Local\Microsoft\WindowsApps;C:\Users\Jamin\AppData\Roaming\npm;., java.vendor=Eclipse Adoptium, java.specification.maintenance.version=3, java.rmi.server.randomIDs=true, sun.io.unicode.encoding=UnicodeLittle, tomcat.util.buf.StringCache.byte.enabled=true, sun.desktop=windows, dialect=org.hibernate.dialect.MySQLDialect, hibernate.dialect=org.hibernate.dialect.MySQLDialect, java.class.path=C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98\bin\bootstrap.jar;C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98\bin\tomcat-juli.jar, java.vm.vendor=Eclipse Adoptium, user.variant=, user.timezone=America/Chicago, os.name=Windows 10, java.vm.specification.version=11, sun.java.launcher=SUN_STANDARD, user.country=US, com.sun.management.jmxremote=, sun.cpu.endian=little, user.home=C:\Users\Jamin, hibernate.c3p0.max_statements=50, user.language=en, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.tomcat., server.loader=, com.sun.management.jmxremote.access.file=C:\Users\Jamin\AppData\Local\JetBrains\IntelliJIdea2024.3\tomcat\251c5ea4-eed3-469e-b7c2-e78dddc0d9c4\jmxremote.access, hibernate.c3p0.max_size=20, java.naming.factory.initial=org.apache.naming.java.javaURLContextFactory, path.separator=;, common.loader="C:/Users/Jamin/Desktop/Enterprise Java/tomcat/apache-tomcat-9.0.98/lib","C:/Users/Jamin/Desktop/Enterprise Java/tomcat/apache-tomcat-9.0.98/lib/*.jar","C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98/lib","C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98/lib/*.jar", hibernate.connection.username=****, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/boulderBook, java.vm.name=OpenJDK 64-Bit Server VM, java.vendor.url.bug=https://github.com/adoptium/adoptium-support/issues, catalina.home=C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98, user.dir=C:\Users\Jamin\Desktop\Enterprise Java\tomcat\apache-tomcat-9.0.98\bin, os.arch=amd64, hibernate.connection.password=****, catalina.base=C:\Users\Jamin\AppData\Local\JetBrains\IntelliJIdea2024.3\tomcat\251c5ea4-eed3-469e-b7c2-e78dddc0d9c4, shared.loader=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@56c1dc1d, java.util.logging.manager=org.apache.juli.ClassLoaderLogManager, java.vm.info=mixed mode, java.vm.version=11.0.26+4, java.rmi.server.hostname=127.0.0.1, connection.url=jdbc:mysql://localhost:3306/boulderBook, java.class.version=55.0}
+[DEBUG] 2025-03-03 22:41:25.326 [http-nio-8080-exec-4] SessionFactoryImpl - Session factory constructed with filter configurations : {}
+[DEBUG] 2025-03-03 22:41:25.348 [http-nio-8080-exec-4] SchemaManagementToolCoordinator - No schema actions specified for contributor `orm`; doing nothing
+[DEBUG] 2025-03-03 22:41:25.479 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(max)] under max; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.479 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(min)] under min; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.480 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sum)] under sum; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.483 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(avg)] under avg; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.487 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CountFunction@4d5dd93c] under count; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.490 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.EveryAnyEmulation@36fded57] under every; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.491 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.EveryAnyEmulation@4980d4a6] under any; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(floor)] under floor; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(ceiling)] under ceiling; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(mod)] under mod; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(abs)] under abs; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sign)] under sign; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sqrt)] under sqrt; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(ln)] under ln; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(exp)] under exp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.492 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(power)] under power; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.493 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(round)] under round; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.493 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sin)] under sin; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(cos)] under cos; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(tan)] under tan; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(asin)] under asin; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(acos)] under acos; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(atan)] under atan; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.494 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(atan2)] under atan2; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.498 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@6d5b612c] under sinh; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.498 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@5107f0c1] under cosh; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.498 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@75fb1c7d] under tanh; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.498 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@2f8bbb91] under pi; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.498 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@19efed4d] under log; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(coalesce)] under coalesce; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(nullif)] under nullif; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(left)] under left; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(right)] under right; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(replace)] under replace; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(concat)] under concat; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(lower)] under lower; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.500 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(upper)] under upper; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.501 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(substring)] under substring; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.501 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(locate)] under locate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.501 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(character_length)] under character_length; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.501 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : length -> character_length
+[DEBUG] 2025-03-03 22:41:25.502 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.LocatePositionEmulation@28606d63] under position; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.509 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.InsertSubstringOverlayEmulation@68ac205f] under overlay; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.511 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.TrimFunction@6e69c96f] under trim; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.514 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CastFunction@9bcf721] under cast; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.514 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@17588820] under collate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.515 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.ExtractFunction@2722993e] under extract; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.515 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(least)] under least; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.515 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(greatest)] under greatest; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.517 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CoalesceIfnullEmulation@1ac3761e] under ifnull; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.517 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(lpad)] under lpad; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.517 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(rpad)] under rpad; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.518 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.LpadRpadPadEmulation@3d27b1b1] under pad; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.519 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CastStrEmulation@203e44af] under str; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.522 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.FormatFunction@6e240404] under format; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.523 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.TimestampaddFunction@d9eaf32] under timestampadd; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.525 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.TimestampdiffFunction@1d1bae44] under timestampdiff; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.525 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : dateadd -> timestampadd
+[DEBUG] 2025-03-03 22:41:25.525 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : datediff -> timestampdiff
+[DEBUG] 2025-03-03 22:41:25.526 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@1d4f8235] under current_date; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.526 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@3b90f7e6] under current_time; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.526 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@5f645d8d] under current_timestamp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.526 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : current date -> current_date
+[DEBUG] 2025-03-03 22:41:25.526 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : current time -> current_time
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : current timestamp -> current_timestamp
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@311e34d4] under local_date; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@50a146e8] under local_time; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@6c32b4dd] under local_datetime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@114704e3] under offset_datetime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : local date -> local_date
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : local time -> local_time
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : local datetime -> local_datetime
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : offset datetime -> offset_datetime
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.CurrentFunction@513f3a8b] under instant; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.527 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : current_instant -> instant
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.SqlFunction@73949982] under sql; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(soundex)] under soundex; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(radians)] under radians; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(degrees)] under degrees; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(cot)] under cot; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.528 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(log)] under log; prior registration was org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@19efed4d
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(log2)] under log2; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(log10)] under log10; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(ltrim)] under ltrim; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(rtrim)] under rtrim; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(octet_length)] under octet_length; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(reverse)] under reverse; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(space)] under space; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.529 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(repeat)] under repeat; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.530 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.MultipatternSqmFunctionDescriptor@50c249e4] under lpad; prior registration was NamedSqmFunctionTemplate(lpad)
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.MultipatternSqmFunctionDescriptor@2f7e46b8] under rpad; prior registration was NamedSqmFunctionTemplate(rpad)
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(md5)] under md5; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(day)] under day; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(month)] under month; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(year)] under year; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(hour)] under hour; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(minute)] under minute; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(second)] under second; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(microsecond)] under microsecond; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(dayofweek)] under dayofweek; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(dayofmonth)] under dayofmonth; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : day -> dayofmonth
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(dayofyear)] under dayofyear; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(week)] under week; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(quarter)] under quarter; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(monthname)] under monthname; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(dayname)] under dayname; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(last_day)] under last_day; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(date)] under date; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.531 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(timestamp)] under timestamp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(time)] under time; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(utc_date)] under utc_date; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(utc_time)] under utc_time; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(utc_timestamp)] under utc_timestamp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(rand)] under rand; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(crc32)] under crc32; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sha1)] under sha1; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sha2)] under sha2; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(sha)] under sha; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(bit_length)] under bit_length; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(octet_length)] under octet_length; prior registration was NamedSqmFunctionTemplate(octet_length)
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(ascii)] under ascii; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(instr)] under instr; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(substr)] under substr; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@47f7aacf] under position; prior registration was org.hibernate.dialect.function.LocatePositionEmulation@28606d63
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(curtime)] under curtime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(curdate)] under curdate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.532 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(now)] under now; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.541 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.TruncFunction@71e8ae1] under trunc; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.541 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : truncate -> trunc
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(insert)] under insert; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@17e5b9ef] under bitand; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@283ad0f9] under bitor; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@65684fed] under bitxor; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@16528823] under bitnot; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(bit_and)] under bit_and; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(bit_or)] under bit_or; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(stddev)] under stddev; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(stddev_pop)] under stddev_pop; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(stddev_samp)] under stddev_samp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(variance)] under variance; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(var_pop)] under var_pop; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(var_samp)] under var_samp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(datediff)] under datediff; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.542 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(adddate)] under adddate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(subdate)] under subdate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(addtime)] under addtime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(subtime)] under subtime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.FormatFunction@2c4261c7] under format; prior registration was org.hibernate.dialect.function.FormatFunction@6e240404
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(makedate)] under makedate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(maketime)] under maketime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(localtime)] under localtime; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(localtimestamp)] under localtimestamp; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(localtime)] under local_time; prior registration was org.hibernate.dialect.function.CurrentFunction@50a146e8
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(localtimestamp)] under local_datetime; prior registration was org.hibernate.dialect.function.CurrentFunction@6c32b4dd
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(localtime)] under localtime; prior registration was NamedSqmFunctionTemplate(localtime)
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@5201c1ae] under pi; prior registration was org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@2f8bbb91
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@7531eb24] under chr; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.543 [http-nio-8080-exec-4] SqmFunctionRegistry - Registering alternate key : char -> chr
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.query.sqm.function.PatternBasedSqmFunctionDescriptor@77a07631] under sysdate; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(row_number)] under row_number; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(lag)] under lag; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(lead)] under lead; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(first_value)] under first_value; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(last_value)] under last_value; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.544 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [NamedSqmFunctionTemplate(nth_value)] under nth_value; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.548 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.HypotheticalSetWindowEmulation@d6f5855] under rank; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.548 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.HypotheticalSetWindowEmulation@6dc446de] under dense_rank; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.548 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.HypotheticalSetWindowEmulation@6d481058] under percent_rank; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.548 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.HypotheticalSetWindowEmulation@2aab9254] under cume_dist; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.550 [http-nio-8080-exec-4] SqmFunctionRegistry - Registered SqmFunctionTemplate [org.hibernate.dialect.function.ListaggGroupConcatEmulation@49648120] under listagg; prior registration was null
+[DEBUG] 2025-03-03 22:41:25.553 [http-nio-8080-exec-4] HQL_FUNCTIONS - abs(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double acos(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - adddate(DATE datetime, INTEGER days)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - addtime(TIME datetime, TIME time)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Boolean any(BOOLEAN arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer ascii(STRING arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double asin(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double atan(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double atan2(NUMERIC arg0, NUMERIC arg1)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - avg(arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bit_and(arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer bit_length(STRING_OR_CLOB arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bit_or(arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bitand(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bitnot(arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bitor(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - bitxor(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - cast(arg as Type)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - ceiling(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Character char(INTEGER arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer character_length(STRING_OR_CLOB arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - Character chr(INTEGER arg)
+[DEBUG] 2025-03-03 22:41:25.554 [http-nio-8080-exec-4] HQL_FUNCTIONS - coalesce(arg0[, arg1[, ...]])
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - String collate(STRING string as COLLATION collation)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - String concat(STRING string0[, STRING string1[, ...]])
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double cos(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double cosh(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double cot(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Long count([distinct ]{arg|*})
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer crc32(arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double cume_dist([arg0[, ...]])
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date curdate()
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date current date
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Time current time
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp current timestamp
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date current_date
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Instant current_instant
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Time current_time
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp current_timestamp
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Time curtime()
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date date(arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - dateadd(TEMPORAL_UNIT field, INTEGER magnitude, TEMPORAL datetime)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer datediff(DATE end, DATE start)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer day(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - String dayname(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer dayofmonth(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer dayofweek(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer dayofyear(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double degrees(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Long dense_rank([arg0[, ...]])
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Boolean every(BOOLEAN arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double exp(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - extract(TEMPORAL_UNIT field from TEMPORAL arg)
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - first_valueANY value
+[DEBUG] 2025-03-03 22:41:25.555 [http-nio-8080-exec-4] HQL_FUNCTIONS - floor(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String format(TEMPORAL datetime as STRING pattern)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - greatest(COMPARABLE arg0, COMPARABLE arg1[, arg2[, ...]])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer hour(TIME arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - ifnull(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String insert(STRING string, INTEGER start, INTEGER length, STRING replacement)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Instant instant
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer instr(STRING string, STRING pattern[, INTEGER start[, INTEGER occurrence]])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - lagANY value[, INTEGER offset[, ANY default]]
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date last_day(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - last_valueANY value
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - leadANY value[, INTEGER offset[, ANY default]]
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - least(COMPARABLE arg0, COMPARABLE arg1[, arg2[, ...]])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String left(STRING string, INTEGER length)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer length(STRING_OR_CLOB arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String listagg(STRING arg0, STRING arg1)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double ln(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalDate local date
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalDateTime local datetime
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalTime local time
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalDate local_date
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalDateTime local_datetime
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - LocalTime local_time
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp localtime
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp localtimestamp
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer locate(STRING pattern, STRING string[, INTEGER start])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double log(NUMERIC arg0[, NUMERIC arg1])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double log10(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double log2(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String lower(STRING string)
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String lpad(string, length[, padding])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - String ltrim(STRING string[, STRING characters])
+[DEBUG] 2025-03-03 22:41:25.556 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date makedate(INTEGER year, INTEGER dayofyear)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Time maketime(INTEGER hour, INTEGER min, INTEGER sec)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - max(COMPARABLE arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String md5(arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer microsecond(TIME arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - min(COMPARABLE arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer minute(TIME arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer mod(INTEGER arg0, INTEGER arg1)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer month(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String monthname(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp now()
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - nth_valueANY value, INTEGER nth
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - nullif(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer octet_length(STRING_OR_CLOB arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - OffsetDateTime offset datetime
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - OffsetDateTime offset_datetime
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String overlay(STRING string placing STRING replacement from INTEGER start[ for INTEGER length])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String pad(STRING string with INTEGER length {leading|trailing}[ STRING character])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double percent_rank([arg0[, ...]])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double pi
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer position(STRING pattern in STRING string)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double power(NUMERIC arg0, NUMERIC arg1)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer quarter(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double radians(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double rand([INTEGER seed])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Long rank([arg0[, ...]])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String repeat(STRING string, INTEGER times)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String replace(STRING string, STRING pattern, STRING replacement)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String reverse(STRING arg)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - String right(STRING string, INTEGER length)
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - round(NUMERIC number[, INTEGER places])
+[DEBUG] 2025-03-03 22:41:25.557 [http-nio-8080-exec-4] HQL_FUNCTIONS - Long row_number()
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String rpad(string, length[, padding])
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String rtrim(STRING string[, STRING characters])
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer second(TIME arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String sha(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String sha1(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String sha2(arg0, arg1)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer sign(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double sin(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double sinh(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String soundex(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String space(INTEGER arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Object sql
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double sqrt(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double stddev(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double stddev_pop(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double stddev_samp(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String str(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - subdate(DATE datetime, INTEGER days)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String substr(STRING string, INTEGER start[, INTEGER length])
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String substring(STRING string{ from|,} INTEGER start[{ for|,} INTEGER length])
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - subtime(TIME datetime, TIME time)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - sum(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp sysdate()
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double tan(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double tanh(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - String time(arg)
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp timestamp(arg0[, arg1])
+[DEBUG] 2025-03-03 22:41:25.558 [http-nio-8080-exec-4] HQL_FUNCTIONS - timestampadd(TEMPORAL_UNIT field, INTEGER magnitude, TEMPORAL datetime)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - basicType@15(java.lang.Long,-5)|basicType@17(java.lang.Double,8) timestampdiff(TEMPORAL_UNIT field, TEMPORAL start, TEMPORAL end)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - String trim([[{leading|trailing|both} ][STRING arg0 ]from] STRING arg1)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - trunc( ... )
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - truncate( ... )
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - String upper(STRING string)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Date utc_date
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Time utc_time
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Timestamp utc_timestamp
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double var_pop(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double var_samp(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Double variance(NUMERIC arg)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer week(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.559 [http-nio-8080-exec-4] HQL_FUNCTIONS - Integer year(DATE arg)
+[DEBUG] 2025-03-03 22:41:25.576 [http-nio-8080-exec-4] cache - Starting QueryInterpretationCache(2048)
+[DEBUG] 2025-03-03 22:41:25.813 [http-nio-8080-exec-4] SessionFactoryServiceRegistryImpl - EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+[DEBUG] 2025-03-03 22:41:25.818 [http-nio-8080-exec-4] EntityCopyObserverFactoryInitiator - Configured EntityCopyObserver strategy: disallow
+[DEBUG] 2025-03-03 22:41:26.089 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#gym` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.090 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#gym` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.090 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#user` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.090 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#user` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.090 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.Climb] is safe
+[DEBUG] 2025-03-03 22:41:26.090 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:26.681 [http-nio-8080-exec-4] BytecodeProviderImpl - HHH000513: Unable to create the ReflectionOptimizer for [matc.entity.Climb]: private accessor [attempts]
+[DEBUG] 2025-03-03 22:41:26.692 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#gym` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.692 [http-nio-8080-exec-4] interceptor - To-one property `matc.entity.Climb#user` was mapped with LAZY + NO_PROXY but the class was not enhanced
+[DEBUG] 2025-03-03 22:41:26.753 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.User] is safe
+[DEBUG] 2025-03-03 22:41:26.753 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.User
+[DEBUG] 2025-03-03 22:41:26.781 [http-nio-8080-exec-4] BytecodeProviderImpl - HHH000513: Unable to create the ReflectionOptimizer for [matc.entity.User]: private accessor [climbs]
+[DEBUG] 2025-03-03 22:41:26.782 [http-nio-8080-exec-4] ClassLoaderAccessImpl - Not known whether passed class name [matc.entity.Gym] is safe
+[DEBUG] 2025-03-03 22:41:26.782 [http-nio-8080-exec-4] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:26.800 [http-nio-8080-exec-4] BytecodeProviderImpl - HHH000513: Unable to create the ReflectionOptimizer for [matc.entity.Gym]: private accessor [climbs]
+[DEBUG] 2025-03-03 22:41:26.852 [http-nio-8080-exec-4] mutation - Skipping collection (re)creation - matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:26.855 [http-nio-8080-exec-4] mutation - Skipping collection row deletions - matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:26.857 [http-nio-8080-exec-4] mutation - Skipping collection removals - matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:26.858 [http-nio-8080-exec-4] mutation - Skipping collection (re)creation - matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:26.858 [http-nio-8080-exec-4] mutation - Skipping collection row deletions - matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:26.858 [http-nio-8080-exec-4] mutation - Skipping collection removals - matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:26.933 [http-nio-8080-exec-4] creation - Starting post-init callbacks
+[DEBUG] 2025-03-03 22:41:26.934 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : To-one key - NavigableRole[matc.entity.Climb.gym]
+[DEBUG] 2025-03-03 22:41:26.945 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : To-one key - NavigableRole[matc.entity.Climb.user]
+[DEBUG] 2025-03-03 22:41:26.945 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : Entity(matc.entity.Climb) `staticFetchableList` generator
+[DEBUG] 2025-03-03 22:41:26.945 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping( NavigableRole[matc.entity.User.climbs#{element}]) - element descriptor
+[DEBUG] 2025-03-03 22:41:26.945 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping(matc.entity.User.climbs)#finishInitialization
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping(matc.entity.User.climbs) - key descriptor
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : Entity(matc.entity.User) `staticFetchableList` generator
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping( NavigableRole[matc.entity.Gym.climbs#{element}]) - element descriptor
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping(matc.entity.Gym.climbs)#finishInitialization
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping(matc.entity.Gym.climbs) - key descriptor
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : Entity(matc.entity.Gym) `staticFetchableList` generator
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping( NavigableRole[matc.entity.User.climbs#{element}]) - element descriptor
+[DEBUG] 2025-03-03 22:41:26.946 [http-nio-8080-exec-4] creation - Starting PostInitCallbackEntry : PluralAttributeMapping( NavigableRole[matc.entity.Gym.climbs#{element}]) - element descriptor
+[DEBUG] 2025-03-03 22:41:27.154 [http-nio-8080-exec-4] create - Created new SQL alias : c1_0
+[DEBUG] 2025-03-03 22:41:27.160 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.Climb)] with identifierForTableGroup [matc.entity.Climb] for NavigablePath [matc.entity.Climb] 
+[DEBUG] 2025-03-03 22:41:27.186 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@17130441] with identifierForTableGroup [matc.entity.Climb.gym] for NavigablePath [matc.entity.Climb.gym] 
+[DEBUG] 2025-03-03 22:41:27.190 [http-nio-8080-exec-4] create - Created new SQL alias : g1_0
+[DEBUG] 2025-03-03 22:41:27.208 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@2c36ef80] with identifierForTableGroup [matc.entity.Climb.user] for NavigablePath [matc.entity.Climb.user] 
+[DEBUG] 2025-03-03 22:41:27.208 [http-nio-8080-exec-4] create - Created new SQL alias : u1_0
+[DEBUG] 2025-03-03 22:41:27.223 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Climb]
+ |  +-BasicFetch [matc.entity.Climb.attempts]
+ |  +-BasicFetch [matc.entity.Climb.climbType]
+ |  +-BasicFetch [matc.entity.Climb.date]
+ |  +-BasicFetch [matc.entity.Climb.grade]
+ |  +-EntityFetchJoinedImpl [matc.entity.Climb.gym]
+ |  +-BasicFetch [matc.entity.Climb.notes]
+ |  +-BasicFetch [matc.entity.Climb.success]
+ |  \-EntityFetchJoinedImpl [matc.entity.Climb.user]
+
+[DEBUG] 2025-03-03 22:41:27.237 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (c1 : matc.entity.Climb) {
+          primaryTableReference : climb as c1_0
+          TableGroupJoins {
+             join LazyTableGroup (g1 : matc.entity.Climb.gym) {
+              primaryTableReference : gym as g1_0
+            }
+             join LazyTableGroup (u1 : matc.entity.Climb.user) {
+              primaryTableReference : users as u1_0
+            }
+          }
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AbstractEntityPersister - Static SQL for entity: matc.entity.Climb
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AbstractEntityPersister -  Version select: select id from climb where id=?
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AbstractEntityPersister -  Insert (0): insert into climb (attempts,climb_type,date,grade,gym_id,notes,success,user_id) values (?,?,?,?,?,?,?,?)
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AbstractEntityPersister -  Update (0): update climb set attempts=?,climb_type=?,date=?,grade=?,gym_id=?,notes=?,success=?,user_id=? where id=?
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AbstractEntityPersister -  Delete (0): delete from climb where id=?
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] create - Created new SQL alias : u1_0
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.User)] with identifierForTableGroup [matc.entity.User] for NavigablePath [matc.entity.User] 
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.User]
+ |  +-DelayedCollectionFetch [matc.entity.User.climbs]
+ |  +-BasicFetch [matc.entity.User.createdAt]
+ |  \-BasicFetch [matc.entity.User.emailOrUsername]
+
+[DEBUG] 2025-03-03 22:41:27.264 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (u1 : matc.entity.User) {
+          primaryTableReference : users as u1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister - Static SQL for entity: matc.entity.User
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Version select: select id from users where id=?
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Insert (0): insert into users (created_at,email_or_username) values (?,?)
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Update (0): update users set created_at=?,email_or_username=? where id=?
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Delete (0): delete from users where id=?
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] create - Created new SQL alias : g1_0
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym)] with identifierForTableGroup [matc.entity.Gym] for NavigablePath [matc.entity.Gym] 
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Gym]
+ |  +-DelayedCollectionFetch [matc.entity.Gym.climbs]
+ |  +-BasicFetch [matc.entity.Gym.createdAt]
+ |  +-BasicFetch [matc.entity.Gym.location]
+ |  \-BasicFetch [matc.entity.Gym.name]
+
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (g1 : matc.entity.Gym) {
+          primaryTableReference : gym as g1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister - Static SQL for entity: matc.entity.Gym
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Version select: select id from gym where id=?
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Insert (0): insert into gym (created_at,location,name) values (?,?,?)
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Update (0): update gym set created_at=?,location=?,name=? where id=?
+[DEBUG] 2025-03-03 22:41:27.265 [http-nio-8080-exec-4] AbstractEntityPersister -  Delete (0): delete from gym where id=?
+[DEBUG] 2025-03-03 22:41:27.268 [http-nio-8080-exec-4] create - Created new SQL alias : c1_0
+[DEBUG] 2025-03-03 22:41:27.270 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.OneToManyTableGroup@49483bdb] with identifierForTableGroup [matc.entity.Gym.climbs] for NavigablePath [matc.entity.Gym.climbs] 
+[DEBUG] 2025-03-03 22:41:27.270 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym.climbs.{element})] with identifierForTableGroup [matc.entity.Gym.climbs.{element}] for NavigablePath [matc.entity.Gym.climbs.{element}] 
+[DEBUG] 2025-03-03 22:41:27.286 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@7c055bf7] with identifierForTableGroup [matc.entity.Gym.climbs.{element}.gym] for NavigablePath [matc.entity.Gym.climbs.{element}.gym] 
+[DEBUG] 2025-03-03 22:41:27.289 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@4957b1f0] with identifierForTableGroup [matc.entity.Gym.climbs.{element}.user] for NavigablePath [matc.entity.Gym.climbs.{element}.user] 
+[DEBUG] 2025-03-03 22:41:27.289 [http-nio-8080-exec-4] create - Created new SQL alias : u1_0
+[DEBUG] 2025-03-03 22:41:27.295 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-CollectionDomainResult [matc.entity.Gym.climbs]
+
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        OneToManyTableGroup (c1 : matc.entity.Gym.climbs) {
+          primaryTableReference : climb as c1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (g1 : matc.entity.Gym.climbs.{element}.gym) {
+            }
+            left  join LazyTableGroup (u1 : matc.entity.Gym.climbs.{element}.user) {
+              primaryTableReference : users as u1_0
+            }
+          }
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] mutation - Static SQL for collection: matc.entity.Gym.climbs
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] create - Created new SQL alias : c1_0
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.OneToManyTableGroup@d83be6a] with identifierForTableGroup [matc.entity.User.climbs] for NavigablePath [matc.entity.User.climbs] 
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.User.climbs.{element})] with identifierForTableGroup [matc.entity.User.climbs.{element}] for NavigablePath [matc.entity.User.climbs.{element}] 
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@54a397e5] with identifierForTableGroup [matc.entity.User.climbs.{element}.gym] for NavigablePath [matc.entity.User.climbs.{element}.gym] 
+[DEBUG] 2025-03-03 22:41:27.296 [http-nio-8080-exec-4] create - Created new SQL alias : g1_0
+[DEBUG] 2025-03-03 22:41:27.297 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@48ef1dcd] with identifierForTableGroup [matc.entity.User.climbs.{element}.user] for NavigablePath [matc.entity.User.climbs.{element}.user] 
+[DEBUG] 2025-03-03 22:41:27.297 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-CollectionDomainResult [matc.entity.User.climbs]
+
+[DEBUG] 2025-03-03 22:41:27.297 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        OneToManyTableGroup (c1 : matc.entity.User.climbs) {
+          primaryTableReference : climb as c1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (g1 : matc.entity.User.climbs.{element}.gym) {
+              primaryTableReference : gym as g1_0
+            }
+            left  join LazyTableGroup (u1 : matc.entity.User.climbs.{element}.user) {
+            }
+          }
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.297 [http-nio-8080-exec-4] mutation - Static SQL for collection: matc.entity.User.climbs
+[DEBUG] 2025-03-03 22:41:27.408 [http-nio-8080-exec-4] JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+[DEBUG] 2025-03-03 22:41:27.409 [http-nio-8080-exec-4] JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+[DEBUG] 2025-03-03 22:41:27.426 [http-nio-8080-exec-4] StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2025-03-03 22:41:27.426 [http-nio-8080-exec-4] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[DEBUG] 2025-03-03 22:41:27.430 [http-nio-8080-exec-4] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@19e926e5] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@4cb5f300]
+[DEBUG] 2025-03-03 22:41:27.432 [http-nio-8080-exec-4] NamedObjectRepository - Checking 0 named HQL queries
+[DEBUG] 2025-03-03 22:41:27.432 [http-nio-8080-exec-4] NamedObjectRepository - Checking 0 named SQL queries
+[DEBUG] 2025-03-03 22:41:27.434 [http-nio-8080-exec-4] SchemaManagementToolCoordinator - No schema actions specified for contributor `orm`; doing nothing
+[DEBUG] 2025-03-03 22:41:27.434 [http-nio-8080-exec-4] SchemaManagementToolCoordinator - No actions found; doing nothing
+[DEBUG] 2025-03-03 22:41:27.439 [http-nio-8080-exec-4] SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@673758b4
+[DEBUG] 2025-03-03 22:41:27.439 [http-nio-8080-exec-4] SessionFactoryRegistry - Registering SessionFactory: 20ee7794-d133-4c08-8cfb-e9ffbd97bc4f (<unnamed>)
+[DEBUG] 2025-03-03 22:41:27.439 [http-nio-8080-exec-4] SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+[DEBUG] 2025-03-03 22:41:27.439 [http-nio-8080-exec-4] SessionFactoryImpl - Instantiated SessionFactory
+[DEBUG] 2025-03-03 22:41:27.547 [http-nio-8080-exec-4] StatisticsInitiator - Statistics initialized [enabled=false]
+[DEBUG] 2025-03-03 22:41:27.719 [http-nio-8080-exec-4] create - Created new SQL alias : c1_0
+[DEBUG] 2025-03-03 22:41:27.719 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.Climb(1972464724400))] with identifierForTableGroup [matc.entity.Climb] for NavigablePath [matc.entity.Climb] 
+[DEBUG] 2025-03-03 22:41:27.737 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@22461700] with identifierForTableGroup [matc.entity.Climb.gym] for NavigablePath [matc.entity.Climb.gym] 
+[DEBUG] 2025-03-03 22:41:27.738 [http-nio-8080-exec-4] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@43f1a002] with identifierForTableGroup [matc.entity.Climb.user] for NavigablePath [matc.entity.Climb.user] 
+[DEBUG] 2025-03-03 22:41:27.743 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Climb(1972464724400)]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).attempts]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).climbType]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).date]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).grade]
+ |  +-CircularFetchImpl [matc.entity.Climb(1972464724400).gym]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).notes]
+ |  +-BasicFetch [matc.entity.Climb(1972464724400).success]
+ |  \-CircularFetchImpl [matc.entity.Climb(1972464724400).user]
+
+[DEBUG] 2025-03-03 22:41:27.743 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (c1 : matc.entity.Climb(1972464724400)) {
+          primaryTableReference : climb as c1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (g1 : matc.entity.Climb(1972464724400).gym) {
+            }
+            left  join LazyTableGroup (u1 : matc.entity.Climb(1972464724400).user) {
+            }
+          }
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:27.786 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-03-03 22:41:27.852 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.Climb(1972464724400) -> EntityResultInitializer(matc.entity.Climb(1972464724400))@1251651537 (SingleTableEntityPersister(matc.entity.Climb))
+	  matc.entity.Climb(1972464724400).gym -> EntitySelectFetchInitializer(matc.entity.Climb(1972464724400).gym)@379541050 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.gym])@2146869344)
+	  matc.entity.Climb(1972464724400).user -> EntitySelectFetchInitializer(matc.entity.Climb(1972464724400).user)@476486807 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.user])@435085580)
+
+[DEBUG] 2025-03-03 22:41:27.877 [http-nio-8080-exec-4] SQL - select c1_0.id,c1_0.attempts,c1_0.climb_type,c1_0.date,c1_0.grade,c1_0.gym_id,c1_0.notes,c1_0.success,c1_0.user_id from climb c1_0
+[DEBUG] 2025-03-03 22:41:27.927 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:41:27.929 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Climb(1972464724400)): 1
+[DEBUG] 2025-03-03 22:41:27.935 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Climb(1972464724400)#1] : 1391048206
+[DEBUG] 2025-03-03 22:41:27.937 [http-nio-8080-exec-4] results - Extracted JDBC value [5] - [1]
+[DEBUG] 2025-03-03 22:41:27.937 [http-nio-8080-exec-4] results - Extracted JDBC value [8] - [1]
+[DEBUG] 2025-03-03 22:41:27.938 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(1972464724400).gym#1) : 1
+[DEBUG] 2025-03-03 22:41:27.986 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:41:28.001 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.Gym.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs)@1447049682 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym -> EntityResultInitializer(matc.entity.Gym)@1358058253 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-03-03 22:41:28.002 [http-nio-8080-exec-4] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0 where g1_0.id=?
+[DEBUG] 2025-03-03 22:41:28.006 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym): 1
+[DEBUG] 2025-03-03 22:41:28.006 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:41:28.010 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym.climbs#1
+[DEBUG] 2025-03-03 22:41:28.010 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym#1] : 1534193966
+[DEBUG] 2025-03-03 22:41:28.036 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.036 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-03-03 22:41:28.036 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-03-03 22:41:28.059 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym#1
+[DEBUG] 2025-03-03 22:41:28.059 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@45135d93
+[DEBUG] 2025-03-03 22:41:28.064 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(1972464724400).gym#1] : 1 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:41:28.064 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(1972464724400).user#1) : 1
+[DEBUG] 2025-03-03 22:41:28.065 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:41:28.065 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.User -> EntityResultInitializer(matc.entity.User)@590406529 (SingleTableEntityPersister(matc.entity.User))
+	  matc.entity.User.climbs -> DelayedCollectionInitializer(matc.entity.User.climbs)@146026608 (PluralAttribute(matc.entity.User.climbs))
+
+[DEBUG] 2025-03-03 22:41:28.065 [http-nio-8080-exec-4] SQL - select u1_0.id,u1_0.created_at,u1_0.email_or_username from users u1_0 where u1_0.id=?
+[DEBUG] 2025-03-03 22:41:28.067 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.User): 1
+[DEBUG] 2025-03-03 22:41:28.067 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.User.climbs#1
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.User#1] : 1901707096
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [climber123@example.com]
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.User#1
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@65e9e149
+[DEBUG] 2025-03-03 22:41:28.068 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(1972464724400).user#1] : 1 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [3]
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [Overhang]
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [2025-02-10]
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [4] - [V5]
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [6] - [Felt strong!]
+[DEBUG] 2025-03-03 22:41:28.069 [http-nio-8080-exec-4] results - Extracted JDBC value [7] - [true]
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Climb(1972464724400)#1
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@370f92e8
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Climb(1972464724400)): 2
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Climb(1972464724400)#2] : 194009134
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] results - Extracted JDBC value [5] - [2]
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] results - Extracted JDBC value [8] - [2]
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(1972464724400).gym#2) : 2
+[DEBUG] 2025-03-03 22:41:28.070 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:41:28.071 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.Gym.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs)@416393232 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym -> EntityResultInitializer(matc.entity.Gym)@840495594 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-03-03 22:41:28.071 [http-nio-8080-exec-4] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0 where g1_0.id=?
+[DEBUG] 2025-03-03 22:41:28.072 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym): 2
+[DEBUG] 2025-03-03 22:41:28.073 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:41:28.073 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym.climbs#2
+[DEBUG] 2025-03-03 22:41:28.073 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym#2] : 1515632094
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym#2
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@3e076910
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(1972464724400).gym#2] : 2 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:41:28.074 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(1972464724400).user#2) : 2
+[DEBUG] 2025-03-03 22:41:28.075 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:41:28.075 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.User -> EntityResultInitializer(matc.entity.User)@952221945 (SingleTableEntityPersister(matc.entity.User))
+	  matc.entity.User.climbs -> DelayedCollectionInitializer(matc.entity.User.climbs)@1465285242 (PluralAttribute(matc.entity.User.climbs))
+
+[DEBUG] 2025-03-03 22:41:28.075 [http-nio-8080-exec-4] SQL - select u1_0.id,u1_0.created_at,u1_0.email_or_username from users u1_0 where u1_0.id=?
+[DEBUG] 2025-03-03 22:41:28.077 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.User): 2
+[DEBUG] 2025-03-03 22:41:28.077 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:41:28.077 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.User.climbs#2
+[DEBUG] 2025-03-03 22:41:28.077 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.User#2] : 201776082
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [boulderking]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.User#2
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@61cc9264
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(1972464724400).user#2] : 2 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [Slab]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [2025-02-11]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [4] - [V4]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [6] - [Slipped on the last move.]
+[DEBUG] 2025-03-03 22:41:28.078 [http-nio-8080-exec-4] results - Extracted JDBC value [7] - [false]
+[DEBUG] 2025-03-03 22:41:28.079 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Climb(1972464724400)#2
+[DEBUG] 2025-03-03 22:41:28.079 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@370f92e8
+[DEBUG] 2025-03-03 22:41:28.080 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:41:28.083 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:41:28.084 [http-nio-8080-exec-4] create - Created new SQL alias : g1_0
+[DEBUG] 2025-03-03 22:41:28.084 [http-nio-8080-exec-4] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym(1972954249600))] with identifierForTableGroup [matc.entity.Gym] for NavigablePath [matc.entity.Gym] 
+[DEBUG] 2025-03-03 22:41:28.085 [http-nio-8080-exec-4] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Gym(1972954249600)]
+ |  +-DelayedCollectionFetch [matc.entity.Gym(1972954249600).climbs]
+ |  +-BasicFetch [matc.entity.Gym(1972954249600).createdAt]
+ |  +-BasicFetch [matc.entity.Gym(1972954249600).location]
+ |  \-BasicFetch [matc.entity.Gym(1972954249600).name]
+
+[DEBUG] 2025-03-03 22:41:28.085 [http-nio-8080-exec-4] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (g1 : matc.entity.Gym(1972954249600)) {
+          primaryTableReference : gym as g1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:41:28.085 [http-nio-8080-exec-4] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-03-03 22:41:28.085 [http-nio-8080-exec-4] results - Initializer list:
+	  matc.entity.Gym(1972954249600) -> EntityResultInitializer(matc.entity.Gym(1972954249600))@412420570 (SingleTableEntityPersister(matc.entity.Gym))
+	  matc.entity.Gym(1972954249600).climbs -> DelayedCollectionInitializer(matc.entity.Gym(1972954249600).climbs)@212561654 (PluralAttribute(matc.entity.Gym.climbs))
+
+[DEBUG] 2025-03-03 22:41:28.085 [http-nio-8080-exec-4] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0
+[DEBUG] 2025-03-03 22:41:28.088 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:41:28.088 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(1972954249600)): 1
+[DEBUG] 2025-03-03 22:41:28.088 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:41:28.088 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(1972954249600).climbs#1
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(1972954249600)#1] : 328835984
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(1972954249600)#1
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@393a00c6
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(1972954249600)): 2
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(1972954249600).climbs#2
+[DEBUG] 2025-03-03 22:41:28.089 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(1972954249600)#2] : 1563392874
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(1972954249600)#2
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@393a00c6
+[DEBUG] 2025-03-03 22:41:28.090 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:41:28.091 [http-nio-8080-exec-4] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:42:06.445 [http-nio-8080-exec-7] create - Created new SQL alias : c1_0
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] create - Registration of TableGroup [StandardTableGroup(matc.entity.Climb(2011316094300))] with identifierForTableGroup [matc.entity.Climb] for NavigablePath [matc.entity.Climb] 
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@15ca44ce] with identifierForTableGroup [matc.entity.Climb.gym] for NavigablePath [matc.entity.Climb.gym] 
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@50c8d813] with identifierForTableGroup [matc.entity.Climb.user] for NavigablePath [matc.entity.Climb.user] 
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Climb(2011316094300)]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).attempts]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).climbType]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).date]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).grade]
+ |  +-CircularFetchImpl [matc.entity.Climb(2011316094300).gym]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).notes]
+ |  +-BasicFetch [matc.entity.Climb(2011316094300).success]
+ |  \-CircularFetchImpl [matc.entity.Climb(2011316094300).user]
+
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (c1 : matc.entity.Climb(2011316094300)) {
+          primaryTableReference : climb as c1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (g1 : matc.entity.Climb(2011316094300).gym) {
+            }
+            left  join LazyTableGroup (u1 : matc.entity.Climb(2011316094300).user) {
+            }
+          }
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:42:06.446 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-03-03 22:42:06.447 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.Climb(2011316094300).gym -> EntitySelectFetchInitializer(matc.entity.Climb(2011316094300).gym)@1577669227 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.gym])@2146869344)
+	  matc.entity.Climb(2011316094300).user -> EntitySelectFetchInitializer(matc.entity.Climb(2011316094300).user)@1632808720 (ToOneAttributeMapping(NavigableRole[matc.entity.Climb.user])@435085580)
+	  matc.entity.Climb(2011316094300) -> EntityResultInitializer(matc.entity.Climb(2011316094300))@645495744 (SingleTableEntityPersister(matc.entity.Climb))
+
+[DEBUG] 2025-03-03 22:42:06.447 [http-nio-8080-exec-7] SQL - select c1_0.id,c1_0.attempts,c1_0.climb_type,c1_0.date,c1_0.grade,c1_0.gym_id,c1_0.notes,c1_0.success,c1_0.user_id from climb c1_0
+[DEBUG] 2025-03-03 22:42:06.448 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:42:06.448 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Climb(2011316094300)): 1
+[DEBUG] 2025-03-03 22:42:06.448 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Climb(2011316094300)#1] : 813577240
+[DEBUG] 2025-03-03 22:42:06.448 [http-nio-8080-exec-7] results - Extracted JDBC value [5] - [1]
+[DEBUG] 2025-03-03 22:42:06.448 [http-nio-8080-exec-7] results - Extracted JDBC value [8] - [1]
+[DEBUG] 2025-03-03 22:42:06.449 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(2011316094300).gym#1) : 1
+[DEBUG] 2025-03-03 22:42:06.449 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:42:06.449 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.Gym.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs)@1726245039 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym -> EntityResultInitializer(matc.entity.Gym)@426389074 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-03-03 22:42:06.449 [http-nio-8080-exec-7] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0 where g1_0.id=?
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym): 1
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym.climbs#1
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym#1] : 824770016
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym#1
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@7cc3d83d
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(2011316094300).gym#1] : 1 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(2011316094300).user#1) : 1
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.User -> EntityResultInitializer(matc.entity.User)@14914235 (SingleTableEntityPersister(matc.entity.User))
+	  matc.entity.User.climbs -> DelayedCollectionInitializer(matc.entity.User.climbs)@1993521338 (PluralAttribute(matc.entity.User.climbs))
+
+[DEBUG] 2025-03-03 22:42:06.451 [http-nio-8080-exec-7] SQL - select u1_0.id,u1_0.created_at,u1_0.email_or_username from users u1_0 where u1_0.id=?
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.User): 1
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.User.climbs#1
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.User#1] : 2016869904
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [climber123@example.com]
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.User#1
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@3884a49d
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(2011316094300).user#1] : 1 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [3]
+[DEBUG] 2025-03-03 22:42:06.452 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [Overhang]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [2025-02-10]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [4] - [V5]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [6] - [Felt strong!]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [7] - [true]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Climb(2011316094300)#1
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@35d698f8
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Climb(2011316094300)): 2
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Climb(2011316094300)#2] : 2061444652
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [5] - [2]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Extracted JDBC value [8] - [2]
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(2011316094300).gym#2) : 2
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.Gym.climbs -> DelayedCollectionInitializer(matc.entity.Gym.climbs)@419833701 (PluralAttribute(matc.entity.Gym.climbs))
+	  matc.entity.Gym -> EntityResultInitializer(matc.entity.Gym)@79415444 (SingleTableEntityPersister(matc.entity.Gym))
+
+[DEBUG] 2025-03-03 22:42:06.453 [http-nio-8080-exec-7] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0 where g1_0.id=?
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym): 2
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym.climbs#2
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym#2] : 447965640
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym#2
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@6c71e99b
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(2011316094300).gym#2] : 2 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Invoking session#internalLoad for entity (matc.entity.Climb(2011316094300).user#2) : 2
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[DEBUG] 2025-03-03 22:42:06.454 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.User -> EntityResultInitializer(matc.entity.User)@148797313 (SingleTableEntityPersister(matc.entity.User))
+	  matc.entity.User.climbs -> DelayedCollectionInitializer(matc.entity.User.climbs)@161653371 (PluralAttribute(matc.entity.User.climbs))
+
+[DEBUG] 2025-03-03 22:42:06.456 [http-nio-8080-exec-7] SQL - select u1_0.id,u1_0.created_at,u1_0.email_or_username from users u1_0 where u1_0.id=?
+[DEBUG] 2025-03-03 22:42:06.456 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.User): 2
+[DEBUG] 2025-03-03 22:42:06.456 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:42:06.456 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.User.climbs#2
+[DEBUG] 2025-03-03 22:42:06.456 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.User#2] : 1988424297
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [boulderking]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.User#2
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@47adddc
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] entity - (EntitySelectFetchInitializer) Entity [matc.entity.Climb(2011316094300).user#2] : 2 has being loaded by session.internalLoad.
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [Slab]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [2025-02-11]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [4] - [V4]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [6] - [Slipped on the last move.]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] results - Extracted JDBC value [7] - [false]
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Climb(2011316094300)#2
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@35d698f8
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:42:06.457 [http-nio-8080-exec-7] create - Created new SQL alias : g1_0
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] create - Registration of TableGroup [StandardTableGroup(matc.entity.Gym(2011328219000))] with identifierForTableGroup [matc.entity.Gym] for NavigablePath [matc.entity.Gym] 
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] AST - DomainResult Graph:
+ \-EntityResultImpl [matc.entity.Gym(2011328219000)]
+ |  +-DelayedCollectionFetch [matc.entity.Gym(2011328219000).climbs]
+ |  +-BasicFetch [matc.entity.Gym(2011328219000).createdAt]
+ |  +-BasicFetch [matc.entity.Gym(2011328219000).location]
+ |  \-BasicFetch [matc.entity.Gym(2011328219000).name]
+
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (g1 : matc.entity.Gym(2011328219000)) {
+          primaryTableReference : gym as g1_0
+        }
+      }
+    }
+
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] results - Initializer list:
+	  matc.entity.Gym(2011328219000) -> EntityResultInitializer(matc.entity.Gym(2011328219000))@1563710072 (SingleTableEntityPersister(matc.entity.Gym))
+	  matc.entity.Gym(2011328219000).climbs -> DelayedCollectionInitializer(matc.entity.Gym(2011328219000).climbs)@267575359 (PluralAttribute(matc.entity.Gym.climbs))
+
+[DEBUG] 2025-03-03 22:42:06.458 [http-nio-8080-exec-7] SQL - select g1_0.id,g1_0.created_at,g1_0.location,g1_0.name from gym g1_0
+[DEBUG] 2025-03-03 22:42:06.459 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:42:06.459 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(2011328219000)): 1
+[DEBUG] 2025-03-03 22:42:06.459 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [1]
+[DEBUG] 2025-03-03 22:42:06.459 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(2011328219000).climbs#1
+[DEBUG] 2025-03-03 22:42:06.459 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(2011328219000)#1] : 1052851037
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [123 Boulder St, Madison, WI]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [East Side Boulders]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(2011328219000)#1
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@2cb716d6
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Hydrated EntityKey (matc.entity.Gym(2011328219000)): 2
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [0] - [2]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] collection - (DelayedCollectionInitializer) Current row collection key : matc.entity.Gym(2011328219000).climbs#2
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Created new entity instance [matc.entity.Gym(2011328219000)#2] : 1221974293
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [1] - [2025-02-17T22:55:49]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [2] - [456 Climber Ave, Madison, WI]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] results - Extracted JDBC value [3] - [Downtown Boulders]
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] entity - (EntityResultInitializer) Done materializing entityInstance : matc.entity.Gym(2011328219000)#2
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@2cb716d6
+[DEBUG] 2025-03-03 22:42:06.460 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2025-03-03 22:42:06.461 [http-nio-8080-exec-7] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
