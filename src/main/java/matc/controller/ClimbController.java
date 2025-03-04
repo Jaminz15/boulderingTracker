@@ -40,10 +40,10 @@ public class ClimbController extends HttpServlet {
         List<Climb> climbs = climbDao.getAll();
         List<Gym> gyms = gymDao.getAll();
 
+        logger.debug("Retrieved {} climbs from database before forwarding: {}", climbs.size(), climbs);
+
         req.setAttribute("climbs", climbs);
         req.setAttribute("gyms", gyms);
-
-        logger.debug("Retrieved {} climbs and {} gyms from database", climbs.size(), gyms.size());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/logClimb.jsp");
         dispatcher.forward(req, resp);
@@ -92,6 +92,6 @@ public class ClimbController extends HttpServlet {
             }
         }
 
-        resp.sendRedirect("climbResults.jsp");
+        resp.sendRedirect("climb");
     }
 }
