@@ -74,3 +74,4 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 - 03/03/2025 - 4 hours - Implemented Climb Logging Feature, Created `ClimbController.java` servlet,
   built `logClimb.jsp` page for users to log climbs, integrated gym selection, grade dropdown, and form submission,
   fixed data persistence issue.
+- 03/04/2025 - 2 hours - Created ERD for database, added screenshots, and checked over everything for checkpoint 2.
