@@ -68,10 +68,18 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 ## **Week 6**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
-- 
+- 03/02/2025 - 2.5 hour - Reading material and week 6 videos/demos
 -
 - ### **Individual Project (BoulderBook)**
 - 03/03/2025 - 4 hours - Implemented Climb Logging Feature, Created `ClimbController.java` servlet,
   built `logClimb.jsp` page for users to log climbs, integrated gym selection, grade dropdown, and form submission,
   fixed data persistence issue.
 - 03/04/2025 - 2 hours - Created ERD for database, added screenshots, and checked over everything for checkpoint 2.
+
+## **Week 7**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- 03/06/2025 - 2.5 hour - Reading material and week 7 videos/demos/exercise
+-
+- ### **Individual Project (BoulderBook)**
+- 
