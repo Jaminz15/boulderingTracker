@@ -9,7 +9,6 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
-hibernate.cfg.xml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -50,3 +49,7 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# props files that I do not want shared
+cognito.properties
+hibernate.cfg.xml

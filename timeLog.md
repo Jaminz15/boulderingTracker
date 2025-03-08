@@ -80,6 +80,6 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 - 03/06/2025 - 2.5 hour - Reading material and week 7 videos/demos/exercise
--
+- 03/08/2025 - 4 hour - Week 7 exercise
 - ### **Individual Project (BoulderBook)**
 - 
