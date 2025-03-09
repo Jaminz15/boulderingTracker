@@ -70,8 +70,7 @@
 - [ ] Restrict climbing logs to logged-in users
 - [ ] Implement **role-based access (Admin/User)**
 - [ ] Create a simple **User Profile Page (JSP)**
-- [ ] Deploy project update to **AWS**
-- [ ] Ensure **Checkpoint 2 requirements** are met
+- [X] Ensure **Checkpoint 2 requirements** are met
 - [ ] Weekly time log
 
 ---
