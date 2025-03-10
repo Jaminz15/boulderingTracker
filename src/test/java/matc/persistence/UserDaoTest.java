@@ -35,6 +35,8 @@ class UserDaoTest {
         User retrievedUser = userDao.getById(1);
         assertNotNull(retrievedUser);
         assertEquals("climber123@example.com", retrievedUser.getEmail());
+        assertEquals("climber123", retrievedUser.getUsername());
+        assertEquals("test-cognito-sub", retrievedUser.getCognitoSub());
     }
 
     @Test
@@ -48,7 +50,6 @@ class UserDaoTest {
         assertEquals("newclimber", retrievedUser.getUsername());
         assertEquals("unique-cognito-sub-123", retrievedUser.getCognitoSub());
     }
-
 
     @Test
     void updateSuccess() {
@@ -91,7 +92,7 @@ class UserDaoTest {
 
     @Test
     void getByPropertyEqual() {
-        List<User> users = userDao.findByPropertyEqual("emailOrUsername", "climber123@example.com");
+        List<User> users = userDao.findByPropertyEqual("email", "climber123@example.com");
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
     }
