@@ -87,6 +87,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
                          `id` int NOT NULL AUTO_INCREMENT,
                          `email_or_username` varchar(100) NOT NULL,
+                         `cognito_sub` varchar(50) UNIQUE,
                          `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
                          PRIMARY KEY (`id`),
                          UNIQUE KEY `email_or_username` (`email_or_username`)
