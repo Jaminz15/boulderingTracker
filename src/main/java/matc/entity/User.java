@@ -16,8 +16,11 @@ public class User {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @Column(name = "email_or_username", nullable = false, unique = true)
-    private String emailOrUsername;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "username", unique = true)
+    private String username;
 
     @Column(name = "cognito_sub", unique = true)
     private String cognitoSub;
@@ -38,10 +41,13 @@ public class User {
     /**
      * Instantiates a new User.
      *
-     * @param emailOrUsername the email or username
+     * @param email      the email
+     * @param username   the username
+     * @param cognitoSub the cognito sub
      */
-    public User(String emailOrUsername, String cognitoSub) {
-        this.emailOrUsername = emailOrUsername;
+    public User(String email, String username, String cognitoSub) {
+        this.email = email;
+        this.username = username;
         this.cognitoSub = cognitoSub;
         this.createdAt = LocalDateTime.now();
     }
@@ -67,21 +73,39 @@ public class User {
     }
 
     /**
-     * Gets email or username.
+     * Gets email.
      *
-     * @return the email or username
+     * @return the email
      */
-    public String getEmailOrUsername() {
-        return emailOrUsername;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Sets email or username.
+     * Sets email.
      *
-     * @param emailOrUsername the email or username
+     * @param email the email
      */
-    public void setEmailOrUsername(String emailOrUsername) {
-        this.emailOrUsername = emailOrUsername;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -89,14 +113,18 @@ public class User {
      *
      * @return the cognito sub
      */
-    public String getCognitoSub() { return cognitoSub; }
+    public String getCognitoSub() {
+        return cognitoSub;
+    }
 
     /**
      * Sets cognito sub.
      *
      * @param cognitoSub the cognito sub
      */
-    public void setCognitoSub(String cognitoSub) { this.cognitoSub = cognitoSub; }
+    public void setCognitoSub(String cognitoSub) {
+        this.cognitoSub = cognitoSub;
+    }
 
     /**
      * Gets created at.
@@ -138,7 +166,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", emailOrUsername='" + emailOrUsername + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 ", cognitoSub='" + cognitoSub + '\'' +
                 ", createdAt=" + createdAt +
                 ", climbs=" + climbs +
