@@ -13,9 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.List;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * ClimbController - Handles logging, editing, and deleting climbs.
@@ -37,10 +39,25 @@ public class ClimbController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Climb> climbs = climbDao.getAll();
+        HttpSession session = req.getSession();
+        Map<String, Object> userClaims = (Map<String, Object>) session.getAttribute("userClaims");
+        String cognitoSub = userClaims != null ? (String) userClaims.get("sub") : null;
+        String userRole = (String) session.getAttribute("userRole");
+        if (userRole == null) {
+            userRole = "User"; // Default to 'User' if role is not set
+        }
+
+        List<Climb> climbs;
+
+        if ("Admin".equals(userRole)) {
+            climbs = climbDao.getAll();
+        } else {
+            climbs = climbDao.findByUserCognitoSub("user.cognitoSub", cognitoSub);
+        }
+
         List<Gym> gyms = gymDao.getAll();
 
-        logger.debug("Retrieved {} climbs from database before forwarding: {}", climbs.size(), climbs);
+        logger.debug("User role: {} - Retrieved {} climbs from database", userRole, climbs.size());
 
         req.setAttribute("climbs", climbs);
         req.setAttribute("gyms", gyms);
