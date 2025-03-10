@@ -53,3 +53,21 @@ fabric.properties
 # props files that I do not want shared
 cognito.properties
 hibernate.cfg.xml
+
+# Ignore all log files in the logs directory
+logs/
+logs/*
+*.log
+
+# Ignore Log4j Hibernate rolling log files
+logs/hibernate_*.log
+
+# Ignore specific log files from Log4j
+boulderTracker.log
+hibernate.log
+
+# Ignore temporary and debug files
+*.tmp
+*.bak
+*.swp
+*.swo

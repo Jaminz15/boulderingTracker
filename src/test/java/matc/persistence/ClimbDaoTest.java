@@ -38,7 +38,7 @@ class ClimbDaoTest {
     @Test
     void getAllSuccess() {
         List<Climb> climbs = climbDao.getAll();
-        assertEquals(2, climbs.size());
+        assertEquals(3, climbs.size()); // Ensure this matches your cleanDB.sql
     }
 
     @Test
@@ -73,8 +73,8 @@ class ClimbDaoTest {
 
     @Test
     void deleteSuccess() {
-        climbDao.delete(climbDao.getById(2));
-        assertNull(climbDao.getById(2));
+        climbDao.delete(climbDao.getById(3)); // Adjust to last Climb record from cleanDB.sql
+        assertNull(climbDao.getById(3));
     }
 
     @Test
