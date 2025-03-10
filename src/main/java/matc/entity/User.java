@@ -19,6 +19,9 @@ public class User {
     @Column(name = "email_or_username", nullable = false, unique = true)
     private String emailOrUsername;
 
+    @Column(name = "cognito_sub", unique = true)
+    private String cognitoSub;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -37,8 +40,9 @@ public class User {
      *
      * @param emailOrUsername the email or username
      */
-    public User(String emailOrUsername) {
+    public User(String emailOrUsername, String cognitoSub) {
         this.emailOrUsername = emailOrUsername;
+        this.cognitoSub = cognitoSub;
         this.createdAt = LocalDateTime.now();
     }
 
@@ -81,6 +85,20 @@ public class User {
     }
 
     /**
+     * Gets cognito sub.
+     *
+     * @return the cognito sub
+     */
+    public String getCognitoSub() { return cognitoSub; }
+
+    /**
+     * Sets cognito sub.
+     *
+     * @param cognitoSub the cognito sub
+     */
+    public void setCognitoSub(String cognitoSub) { this.cognitoSub = cognitoSub; }
+
+    /**
      * Gets created at.
      *
      * @return the created at
@@ -121,6 +139,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", emailOrUsername='" + emailOrUsername + '\'' +
+                ", cognitoSub='" + cognitoSub + '\'' +
                 ", createdAt=" + createdAt +
                 ", climbs=" + climbs +
                 '}';

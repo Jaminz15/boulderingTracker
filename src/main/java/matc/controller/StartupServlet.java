@@ -1,6 +1,6 @@
 package matc.controller;
 
-import edu.matc.util.PropertiesLoader;
+import matc.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,9 +36,7 @@ public class StartupServlet implements ServletContextListener, PropertiesLoader 
             context.setAttribute("POOL_ID", properties.getProperty("poolId"));
 
             logger.info("Cognito properties loaded successfully.");
-        } catch (IOException ioException) {
-            logger.error("Cannot load properties: " + ioException.getMessage(), ioException);
-        } catch (Exception e) {
+        } catch (IOException e) {
             logger.error("Error loading properties: " + e.getMessage(), e);
         }
     }
@@ -48,4 +46,3 @@ public class StartupServlet implements ServletContextListener, PropertiesLoader 
         // No cleanup needed
     }
 }
-

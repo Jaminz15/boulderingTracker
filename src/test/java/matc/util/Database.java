@@ -1,8 +1,9 @@
 package matc.util;
 
-import matc.persistence.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -26,7 +27,11 @@ public class Database implements PropertiesLoader {
     private Connection connection;
 
     private Database() {
-        properties = loadProperties("/database.properties"); // Use PropertiesLoader
+        try {
+            properties = loadProperties("/database.properties"); // Use PropertiesLoader
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load database properties", e);
+        }
     }
 
     /** Get the singleton instance **/
