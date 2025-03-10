@@ -134,6 +134,27 @@ public class GenericDao<T> {
     }
 
     /**
+     * Finds entities by a user’s Cognito Sub.
+     * Example: `findByUserCognitoSub("user.cognitoSub", "11cb25b0-9011-7034-8885-4f7ffb871fe0")`
+     *
+     * @param userProperty the user identifier field (e.g., "user.cognitoSub")
+     * @param cognitoSub the Cognito user sub
+     * @return the list of entities belonging to the user
+     */
+    public List<T> findByUserCognitoSub(String userProperty, String cognitoSub) {
+        Session session = getSession();
+        HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+
+        query.select(root).where(builder.equal(root.get(userProperty), cognitoSub));
+
+        List<T> userEntities = session.createSelectionQuery(query).getResultList();
+        session.close();
+        return userEntities;
+    }
+
+    /**
      * Gets a Hibernate session.
      * @return a new Hibernate session
      */
