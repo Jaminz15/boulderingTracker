@@ -86,6 +86,5 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
   - Integrated **AWS Cognito authentication**
   - Fixed **preferred_username** issue in Cognito
   - Updated **database schema** to store Cognito user attributes
-  - Debugged **JWT token validation** for authentication
   - Ensured **logs are removed from GitHub** and updated **.gitignore**
   - Verified **sign-up and login process** with Cognito  
