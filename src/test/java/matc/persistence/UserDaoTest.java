@@ -39,14 +39,15 @@ class UserDaoTest {
 
     @Test
     void insertSuccess() {
-        User newUser = new User("newclimber@example.com", "test-cognito-sub");
+        User newUser = new User("newclimber@example.com", "unique-cognito-sub-123"); // Changed cognito_sub
         int insertedUserId = userDao.insert(newUser);
 
         User retrievedUser = userDao.getById(insertedUserId);
         assertNotNull(retrievedUser);
         assertEquals("newclimber@example.com", retrievedUser.getEmailOrUsername());
-        assertEquals("test-cognito-sub", retrievedUser.getCognitoSub());
+        assertEquals("unique-cognito-sub-123", retrievedUser.getCognitoSub()); // Use the updated value
     }
+
 
     @Test
     void updateSuccess() {

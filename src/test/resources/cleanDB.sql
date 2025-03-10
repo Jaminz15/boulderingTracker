@@ -96,11 +96,11 @@ CREATE TABLE `users` (
 
 --
 -- Dumping data for table `users`
---
-
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'climber123@example.com','2025-02-18 04:55:49'),(2,'boulderking','2025-02-18 04:55:49');
+INSERT INTO `users` (id, email_or_username, cognito_sub, created_at) VALUES
+(1, 'climber123@example.com', 'test-cognito-sub', '2025-02-18 04:55:49'),
+(2, 'boulderking', 'another-cognito-sub', '2025-02-18 04:55:49');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
