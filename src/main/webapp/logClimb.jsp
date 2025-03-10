@@ -12,7 +12,7 @@
     <nav>
         <a href="index.jsp">Dashboard</a>
         <a href="trackProgress.jsp">Track Progress</a>
-        <a href="gymManagement.jsp">Manage Gyms</a>
+        <a href="gymManagement">Manage Gyms</a>
     </nav>
 </header>
 
