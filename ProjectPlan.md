@@ -65,13 +65,9 @@
 #### *Checkpoint 2 Due (3/5)*
 - [X] Deploy **database to AWS RDS**
 - [X] Update project configuration for **AWS database connection**
-- [ ] Implement **AWS Cognito authentication**
-- [ ] Secure **Climb and Gym data to be user-specific**
-- [ ] Restrict climbing logs to logged-in users
-- [ ] Implement **role-based access (Admin/User)**
-- [ ] Create a simple **User Profile Page (JSP)**
+- [X] Implement **AWS Cognito authentication**
 - [X] Ensure **Checkpoint 2 requirements** are met
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 
@@ -79,6 +75,10 @@
 - [ ] Select and implement **Google Places API** for gym search
 - [ ] Implement API call and display **gym data** in the app
 - [ ] Write **unit tests for API integration**
+- [ ] Secure **Climb and Gym data to be user-specific**
+- [ ] Restrict climbing logs to logged-in users
+- [ ] Implement **role-based access (Admin/User)**
+- [ ] Create a simple **User Profile Page (JSP)**
 - [ ] Weekly time log
 
 ---
