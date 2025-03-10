@@ -23,21 +23,21 @@ DROP TABLE IF EXISTS `climb`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `climb` (
-                         `id` int NOT NULL AUTO_INCREMENT,
-                         `user_id` int NOT NULL,
-                         `gym_id` int NOT NULL,
-                         `date` date NOT NULL,
-                         `climb_type` enum('Slab','Overhang','Dyno','Vertical','Roof') NOT NULL,
-                         `grade` varchar(10) NOT NULL,
-                         `attempts` int NOT NULL,
-                         `success` tinyint(1) NOT NULL,
-                         `notes` text,
-                         PRIMARY KEY (`id`),
-                         KEY `user_id` (`user_id`),
-                         KEY `gym_id` (`gym_id`),
-                         CONSTRAINT `climb_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-                         CONSTRAINT `climb_ibfk_2` FOREIGN KEY (`gym_id`) REFERENCES `gym` (`id`) ON DELETE CASCADE,
-                         CONSTRAINT `climb_chk_1` CHECK ((`attempts` >= 0))
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `gym_id` int NOT NULL,
+  `date` date NOT NULL,
+  `climb_type` enum('Slab','Overhang','Dyno','Vertical','Roof') NOT NULL,
+  `grade` varchar(10) NOT NULL,
+  `attempts` int NOT NULL,
+  `success` tinyint(1) NOT NULL,
+  `notes` text,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `gym_id` (`gym_id`),
+  CONSTRAINT `climb_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `climb_ibfk_2` FOREIGN KEY (`gym_id`) REFERENCES `gym` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `climb_chk_1` CHECK ((`attempts` >= 0))
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -62,11 +62,11 @@ DROP TABLE IF EXISTS `gym`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `gym` (
-                       `id` int NOT NULL AUTO_INCREMENT,
-                       `name` varchar(100) NOT NULL,
-                       `location` varchar(255) NOT NULL,
-                       `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-                       PRIMARY KEY (`id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,15 +88,15 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-                         `id` int NOT NULL AUTO_INCREMENT,
-                         `email` varchar(100) NOT NULL,
-                         `username` varchar(100) DEFAULT NULL,
-                         `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-                         `cognito_sub` varchar(50) DEFAULT NULL,
-                         PRIMARY KEY (`id`),
-                         UNIQUE KEY `email_or_username` (`email`),
-                         UNIQUE KEY `cognito_sub` (`cognito_sub`),
-                         UNIQUE KEY `username` (`username`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `cognito_sub` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_or_username` (`email`),
+  UNIQUE KEY `cognito_sub` (`cognito_sub`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

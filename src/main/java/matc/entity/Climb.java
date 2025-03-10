@@ -262,7 +262,9 @@ public class Climb {
         return "Climb{" +
                 "id=" + id +
                 ", gym=" + (gym != null ? gym.getName() : "Unknown Gym") +
-                ", user=" + (user != null ? user.getEmailOrUsername() : "Unknown User") +
+                ", user=" + (user != null
+                                ? (user.getUsername() != null ? user.getUsername() : user.getEmail())
+                                : "Unknown User") +
                 ", date=" + date +
                 ", climbType='" + climbType + '\'' +
                 ", grade='" + grade + '\'' +

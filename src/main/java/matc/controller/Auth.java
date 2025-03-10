@@ -83,8 +83,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         HttpRequest authRequest = buildAuthRequest(authCode);
         try {
             TokenResponse tokenResponse = getToken(authRequest);
-            String userName = validateAndSaveUser(tokenResponse, req);
-            req.setAttribute("userName", userName);
+            String displayName = validateAndSaveUser(tokenResponse, req);
+            req.setAttribute("userName", displayName);
         } catch (IOException | InterruptedException e) {
             logger.error("Error getting or validating the token: " + e.getMessage(), e);
             req.setAttribute("errorMessage", "Authentication failed.");
@@ -142,27 +142,28 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         String cognitoSub = jwt.getClaim("sub").asString();
         String email = jwt.getClaim("email").asString();
-        String preferredUsername = jwt.getClaim("preferred_username").asString();
-        logger.info("User logged in - Cognito Sub: " + cognitoSub + ", Email: " + email + ", Username: " + preferredUsername);
+        String username = jwt.getClaim("preferred_username").asString();
+
+        logger.info("User logged in - Cognito Sub: " + cognitoSub + ", Email: " + email + ", Username: " + username);
 
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
 
         User user;
         if (users.isEmpty()) {
-            user = new User(email != null ? email : preferredUsername, cognitoSub);
+            user = new User(email, username, cognitoSub);
             int userId = userDao.insert(user);
             logger.info("New user inserted with ID: " + userId);
         } else {
             user = users.get(0);
-            logger.info("User already exists in database: " + user.getEmailOrUsername());
+            logger.info("User already exists in database: " + user.getEmail());
         }
 
         HttpSession session = req.getSession();
-        session.setAttribute("userName", user.getEmailOrUsername());
+        session.setAttribute("userName", user.getUsername() != null ? user.getUsername() : user.getEmail());
         session.setAttribute("userClaims", jwt.getClaims());
 
-        return user.getEmailOrUsername();
+        return user.getUsername() != null ? user.getUsername() : user.getEmail();
     }
 
     private HttpRequest buildAuthRequest(String authCode) {

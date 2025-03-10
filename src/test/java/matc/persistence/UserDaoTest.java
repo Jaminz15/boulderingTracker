@@ -34,30 +34,33 @@ class UserDaoTest {
     void getByIdSuccess() {
         User retrievedUser = userDao.getById(1);
         assertNotNull(retrievedUser);
-        assertEquals("climber123@example.com", retrievedUser.getEmailOrUsername());
+        assertEquals("climber123@example.com", retrievedUser.getEmail());
     }
 
     @Test
     void insertSuccess() {
-        User newUser = new User("newclimber@example.com", "unique-cognito-sub-123"); // Changed cognito_sub
+        User newUser = new User("newclimber@example.com", "newclimber", "unique-cognito-sub-123"); // Added username
         int insertedUserId = userDao.insert(newUser);
 
         User retrievedUser = userDao.getById(insertedUserId);
         assertNotNull(retrievedUser);
-        assertEquals("newclimber@example.com", retrievedUser.getEmailOrUsername());
-        assertEquals("unique-cognito-sub-123", retrievedUser.getCognitoSub()); // Use the updated value
+        assertEquals("newclimber@example.com", retrievedUser.getEmail());
+        assertEquals("newclimber", retrievedUser.getUsername());
+        assertEquals("unique-cognito-sub-123", retrievedUser.getCognitoSub());
     }
 
 
     @Test
     void updateSuccess() {
         User userToUpdate = userDao.getById(1);
-        userToUpdate.setEmailOrUsername("updatedclimber@example.com");
+        userToUpdate.setEmail("updatedclimber@example.com"); // Updated field
+        userToUpdate.setUsername("updatedClimber"); // Added field
         userToUpdate.setCognitoSub("updated-cognito-sub");
         userDao.update(userToUpdate);
 
         User retrievedUser = userDao.getById(1);
-        assertEquals("updatedclimber@example.com", retrievedUser.getEmailOrUsername());
+        assertEquals("updatedclimber@example.com", retrievedUser.getEmail());
+        assertEquals("updatedClimber", retrievedUser.getUsername());
         assertEquals("updated-cognito-sub", retrievedUser.getCognitoSub());
     }
 
