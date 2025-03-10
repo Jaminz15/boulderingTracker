@@ -144,8 +144,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String email = jwt.getClaim("email").asString();
         String username = jwt.getClaim("preferred_username").asString();
 
-        logger.info("User logged in - Cognito Sub: " + cognitoSub + ", Email: " + email + ", Username: " + username);
+        // **Extract user groups from JWT**
+        List<String> groups = jwt.getClaim("cognito:groups").asList(String.class);
+        String userGroup = (groups != null && !groups.isEmpty()) ? groups.get(0) : "User"; // Default to "User" if no group
 
+        logger.info("User logged in - Cognito Sub: " + cognitoSub + ", Email: " + email + ", Username: " + username + ", Group: " + userGroup);
+
+        // Check if the user exists in the database
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
 
@@ -159,8 +164,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             logger.info("User already exists in database: " + user.getEmail());
         }
 
+        // **Store user role and details in session**
         HttpSession session = req.getSession();
         session.setAttribute("userName", user.getUsername() != null ? user.getUsername() : user.getEmail());
+        session.setAttribute("userRole", userGroup); // Store user role for authorization
         session.setAttribute("userClaims", jwt.getClaims());
 
         return user.getUsername() != null ? user.getUsername() : user.getEmail();
