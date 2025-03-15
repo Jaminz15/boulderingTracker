@@ -82,10 +82,17 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 - 03/06/2025 - 2.5 hour - Reading material and week 7 videos/demos/exercise
 - 03/08/2025 - 4 hour - Week 7 exercise
 - ### **Individual Project (BoulderBook)**
-- **03/19/2025** - **11 hours**
+- **03/09/2025** - **11 hours**
   - Integrated **AWS Cognito authentication**
   - Fixed **preferred_username** issue in Cognito
   - Updated **database schema** to store Cognito user attributes
   - Ensured **logs are removed from GitHub** and updated **.gitignore**
   - Verified **sign-up and login process** with Cognito 
   - Implemented **role-based authorization** (Admin/User) to restrict climb log visibility
+
+## **Week 8**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- 03/13/2025 - 1.5 hours - Reading material
+- 03/14/2025 - 2 hours -week 7 videos/demos/exercise
+- ### **Individual Project (BoulderBook)**
