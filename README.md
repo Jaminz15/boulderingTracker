@@ -32,7 +32,7 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
 - **Dependency Management**
   - Maven
 - **Web Services Consumed Using Java**
-  - Google Maps API (Pending Final Decision)
+  - OpenStreetMap Nominatim API
 - **CSS**
   - Bootstrap or Materialize (TBD)
 - **Data Validation**
@@ -44,7 +44,7 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
   - AWS
 - **Tech I'd like to explore as part of this work:**
   - CI tools in AWS (AWS CodePipeline or GitHub Actions)
-  - Google Charts API for progress visualization
+  - OpenStreetMap API integration
   - Hibernate Search (if full-text search is needed)
 - **Project Lombok**
 - **Unit Testing**
