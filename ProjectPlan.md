@@ -77,7 +77,7 @@
 - [ ] Write **unit tests for API integration**
 - [ ] Secure **Climb and Gym data to be user-specific**
 - [ ] Restrict climbing logs to logged-in users
-- [ ] Implement **role-based access (Admin/User)**
+- [X] Implement **role-based access (Admin/User)**
 - [ ] Create a simple **User Profile Page (JSP)**
 - [ ] Weekly time log
 
