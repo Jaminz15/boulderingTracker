@@ -1,11 +1,13 @@
 package matc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
  * The type Geocode response.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)  // This ignores extra fields from API response
 public class GeocodeResponse {
 
     @JsonProperty("place_id")
