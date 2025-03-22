@@ -15,17 +15,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
-public class OpenStreetMapDao implements PropertiesLoader {
+public class OpenStreetMapDao {
 
     private static final Logger logger = LogManager.getLogger(OpenStreetMapDao.class);
     private String baseUrl;
 
     public OpenStreetMapDao() {
-        try {
-            Properties properties = loadProperties("/boulderTracker.properties");
-            baseUrl = properties.getProperty("openstreetmap.api.url");
-        } catch (IOException e) {
-            logger.error("Could not load API URL from properties file", e);
+        baseUrl = matc.util.AppConfig.getProperty("openstreetmap.api.url");
+
+        if (baseUrl == null || baseUrl.isEmpty()) {
+            logger.error("API base URL is not set. Check boulderTracker.properties.");
+        } else {
+            logger.info("OpenStreetMapDao initialized with base URL: {}", baseUrl);
         }
     }
 

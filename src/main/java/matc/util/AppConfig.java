@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class AppConfig {
-    private static final Logger logger = LogManager.getLogger(AppConfig.class); // 👈 Add logger
+    private static final Logger logger = LogManager.getLogger(AppConfig.class); //
     private static final Properties properties = new Properties();
 
     static {
@@ -20,7 +20,7 @@ public class AppConfig {
                 throw new IOException("Properties file not found.");
             }
         } catch (IOException e) {
-            logger.error("Error loading properties file in AppConfig", e); // 👈 Use logger
+            logger.error("Error loading properties file in AppConfig", e);
         }
     }
 
