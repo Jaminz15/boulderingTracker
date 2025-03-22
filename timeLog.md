@@ -99,5 +99,5 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 - 03/21/2025 - 2 hours - Got OpenStreetMapDao to use a static AppConfig.getProperty() call instead of reading the file every time the DAO is created.
    - removed duplicate test and added check to make sure user isn't deleted when climb is deleted
    - Replace println with Log4J logger in GymManagement servlet
-   - 
+   - Replace scriptlets with JSTL and EL in climbResults.jsp
 - ### **Individual Project (BoulderBook)**
