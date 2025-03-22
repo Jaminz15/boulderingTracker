@@ -1,4 +1,6 @@
 package matc.controller;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import matc.entity.Gym;
 import matc.persistence.GenericDao;
@@ -16,6 +18,7 @@ import java.util.List;
  */
 @WebServlet("/gymManagement")
 public class GymManagement extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(GymManagement.class);
     private GenericDao<Gym> gymDao;
 
     /**
@@ -33,7 +36,7 @@ public class GymManagement extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Gym> gyms = gymDao.getAll();
 
-        System.out.println("Fetched gyms: " + gyms);
+        logger.debug("Fetched gyms: {}", gyms);
         req.setAttribute("gyms", gyms);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/gymManagement.jsp");
         dispatcher.forward(req, resp);
