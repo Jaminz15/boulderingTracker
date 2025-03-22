@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="matc.entity.Climb" %>
-<%@ page import="matc.entity.Gym" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,31 +20,38 @@
     <th>Notes</th>
   </tr>
 
-  <%
-    List<Climb> climbs = (List<Climb>) request.getAttribute("climbs");
-
-    if (climbs == null || climbs.isEmpty()) {
-  %>
-  <tr>
-    <td colspan="7">No climb data available.</td>
-  </tr>
-  <%
-  } else {
-    for (Climb climb : climbs) {
-  %>
-  <tr>
-    <td><%= climb.getDate() %></td>
-    <td><%= climb.getGym().getName() %></td>
-    <td><%= climb.getClimbType() %></td>
-    <td><%= climb.getGrade() %></td>
-    <td><%= climb.getAttempts() %></td>
-    <td><%= climb.isSuccess() ? "Yes" : "No" %></td>
-    <td><%= climb.getNotes() != null ? climb.getNotes() : "No notes" %></td>
-  </tr>
-  <%
-      }
-    }
-  %>
+  <c:choose>
+    <c:when test="${empty climbs}">
+      <tr>
+        <td colspan="7">No climb data available.</td>
+      </tr>
+    </c:when>
+    <c:otherwise>
+      <c:forEach var="climb" items="${climbs}">
+        <tr>
+          <td>${climb.date}</td>
+          <td>${climb.gym.name}</td>
+          <td>${climb.climbType}</td>
+          <td>${climb.grade}</td>
+          <td>${climb.attempts}</td>
+          <td>
+            <c:choose>
+              <c:when test="${climb.success}">Yes</c:when>
+              <c:otherwise>No</c:otherwise>
+            </c:choose>
+          </td>
+          <td>
+            <c:choose>
+              <c:when test="${not empty climb.notes}">
+                ${climb.notes}
+              </c:when>
+              <c:otherwise>No notes</c:otherwise>
+            </c:choose>
+          </td>
+        </tr>
+      </c:forEach>
+    </c:otherwise>
+  </c:choose>
 </table>
 
 <!-- Back to Home -->
