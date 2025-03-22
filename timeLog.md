@@ -96,4 +96,5 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 - 03/13/2025 - 1.5 hours - Reading material
 - 03/14/2025 - 2 hours -week 7 videos/demos/exercise
 - 03/15/2025 - 4.5 hours - Week 8 exercise, OpenStreetMap Nominatim API into BoulderBook project
+- 03/21/2025 - 1 hours - Got OpenStreetMapDao to use a static AppConfig.getProperty() call instead of reading the file every time the DAO is created.
 - ### **Individual Project (BoulderBook)**

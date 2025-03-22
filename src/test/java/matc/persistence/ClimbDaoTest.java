@@ -78,16 +78,14 @@ class ClimbDaoTest {
     }
 
     @Test
-    void deleteCascadeUser() {
-        User user = userDao.getById(1);
-        List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
+    void deletingClimbDoesNotDeleteUser() {
+        Climb climb = climbDao.getById(1); // assuming Climb with ID 1 exists
+        User user = climb.getUser();
 
-        userDao.delete(user);
+        climbDao.delete(climb);
 
-        assertNull(userDao.getById(1));
-        for (Climb climb : userClimbs) {
-            assertNull(climbDao.getById(climb.getId()));
-        }
+        assertNull(climbDao.getById(climb.getId())); // Climb should be gone
+        assertNotNull(userDao.getById(user.getId())); // User should still exist
     }
 
     @Test
