@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="taglib.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="matc.persistence.GenericDao" %>
+<%@ page import="matc.entity.Gym" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,18 +24,23 @@
     <c:otherwise>
         <h3>Welcome, ${userName}!</h3>
 
-        <a href="searchClimbs" style="font-size: 18px; text-decoration: none; padding: 10px; background-color: #007bff; color: white; border-radius: 5px;">
-            View Climbing Logs
-        </a>
+        <!-- Link to manage gyms -->
+        <a href="gymManagement" style="...">Manage Gyms</a>
 
-        <a href="gymManagement" style="font-size: 18px; text-decoration: none; padding: 10px; background-color: #ffc107; color: black; border-radius: 5px;">
-            Manage Gyms
-        </a>
+        <!-- Link to log climb -->
+        <a href="logClimb.jsp" style="...">Log a Climb</a>
 
-        <!-- Add Log a Climb Button -->
-        <a href="logClimb.jsp" style="font-size: 18px; text-decoration: none; padding: 10px; background-color: #28a745; color: white; border-radius: 5px;">
-            Log a Climb
-        </a>
+        <!-- Dynamically list gyms for viewing logs -->
+        <h3>View Logs by Gym:</h3>
+        <ul>
+            <c:forEach var="gym" items="${applicationScope.gyms}">
+                <li>
+                    <a href="gymPage?gymId=${gym.id}">
+                            ${gym.name}
+                    </a>
+                </li>
+            </c:forEach>
+        </ul>
     </c:otherwise>
 </c:choose>
 
