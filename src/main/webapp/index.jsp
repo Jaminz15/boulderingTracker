@@ -28,7 +28,7 @@
         <a href="gymManagement" style="...">Manage Gyms</a>
 
         <!-- Link to log climb -->
-        <a href="logClimb.jsp" style="...">Log a Climb</a>
+        <a href="climb" style="...">Log a Climb</a>
 
         <!-- Dynamically list gyms for viewing logs -->
         <h3>View Logs by Gym:</h3>

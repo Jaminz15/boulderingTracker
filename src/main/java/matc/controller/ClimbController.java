@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.io.IOException;
 import java.util.Map;
+import com.auth0.jwt.interfaces.Claim;
 
 /**
  * ClimbController - Handles logging, editing, and deleting climbs.
@@ -40,8 +41,10 @@ public class ClimbController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Map<String, Object> userClaims = (Map<String, Object>) session.getAttribute("userClaims");
-        String cognitoSub = userClaims != null ? (String) userClaims.get("sub") : null;
+        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        String cognitoSub = userClaims != null && userClaims.get("sub") != null
+                ? userClaims.get("sub").asString()
+                : null;
         String userRole = (String) session.getAttribute("userRole");
         if (userRole == null) {
             userRole = "User"; // Default to 'User' if role is not set
