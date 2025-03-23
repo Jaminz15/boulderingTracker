@@ -10,7 +10,7 @@
 <header>
     <h1>BoulderBook - Log a Climb</h1>
     <nav>
-        <a href="index.jsp">Dashboard</a>
+        <a href="dashboard">Dashboard</a>
         <a href="trackProgress.jsp">Track Progress</a>
         <a href="gymManagement">Manage Gyms</a>
     </nav>

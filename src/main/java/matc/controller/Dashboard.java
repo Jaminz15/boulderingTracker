@@ -48,7 +48,7 @@ public class Dashboard extends HttpServlet {
         User user = users.get(0);
 
         // Get all climbs by this user
-        List<Climb> userClimbs = climbDao.findByUserCognitoSub("user.cognitoSub", cognitoSub);
+        List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
 
         // Get distinct gyms from climbs
         Set<Gym> userGyms = userClimbs.stream()
