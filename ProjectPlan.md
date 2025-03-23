@@ -47,10 +47,10 @@
 ## **Week 6 (2/24 - 3/2) - JSPs & Controllers Start**
 #### *Implementing Web UI and Controllers for MVP stories*
 - [ ] Set up **JSP pages for:**
-    - [X]**Dashboard (Home Page)**
+    - [X] **Dashboard (Home Page)**
     - [X] **Gym Management**
-    - **Gym Page (climbing history)**
-    - [X]**Log a Climb**
+    - [X] **Gym Page (climbing history)**
+    - [X] **Log a Climb**
     - **Edit/Delete Climb**
     - **User Profile Page**
     - **Track Progress Page**

@@ -43,6 +43,7 @@ public class GymPage extends HttpServlet {
 
         // Get logged-in user from session
         HttpSession session = req.getSession();
+        @SuppressWarnings("unchecked")
         Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
         String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
 

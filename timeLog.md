@@ -107,4 +107,6 @@ the database. Reviewed wireframes, identified missing JSPs and controllers (Edit
 Progress), and planned next steps for dashboard integration.
 - 03/23/2025 - 2 hours - Created Dashboard servlet to load user-specific climb and gym data. Updated Auth servlet 
 to redirect to /dashboard after login. Verified personalized gym list and last log date rendering in index.jsp.
-- 
+- 03/23/2025 – 2.5 hours – Created GymPage servlet and built gymPage.jsp to display user-specific climbs by selected 
+gym. Implemented filtering logic using session-based Cognito sub and joined climb and gym data for authenticated users. 
+Connected dashboard links to pass gymId and confirmed correct data shows per user.
