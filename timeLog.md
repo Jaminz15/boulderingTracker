@@ -105,4 +105,6 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
 ClimbController to associate climbs with the logged-in user via Cognito sub. Verified correct user_id is stored in 
 the database. Reviewed wireframes, identified missing JSPs and controllers (Edit Climb, User Profile, Track 
 Progress), and planned next steps for dashboard integration.
+- 03/23/2025 - 2 hours - Created Dashboard servlet to load user-specific climb and gym data. Updated Auth servlet 
+to redirect to /dashboard after login. Verified personalized gym list and last log date rendering in index.jsp.
 - 
