@@ -90,7 +90,7 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
   - Verified **sign-up and login process** with Cognito 
   - Implemented **role-based authorization** (Admin/User) to restrict climb log visibility
 
-## **Week 8**
+## **Week 8 & (Spring break)**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 - 03/13/2025 - 1.5 hours - Reading material
@@ -101,3 +101,8 @@ Created `GymManagement.java` servlet, Built `gymManagement.jsp` page Implemented
    - Replace println with Log4J logger in GymManagement servlet
    - Replace scriptlets with JSTL and EL in climbResults.jsp
 - ### **Individual Project (BoulderBook)**
+- 03/23/2025 – 3 hours – Completed secure climb logging by removing hardcoded user ID from logClimb.jsp and updating 
+ClimbController to associate climbs with the logged-in user via Cognito sub. Verified correct user_id is stored in 
+the database. Reviewed wireframes, identified missing JSPs and controllers (Edit Climb, User Profile, Track 
+Progress), and planned next steps for dashboard integration.
+- 
