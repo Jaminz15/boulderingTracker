@@ -75,16 +75,9 @@ public class ClimbController extends HttpServlet {
 
         logger.debug("Received action: {}", action);
 
-        if (req.getParameter("gymId") == null || req.getParameter("userId") == null) {
-            logger.error("Missing gymId or userId in request");
-            resp.sendRedirect("logClimb.jsp?error=missingData");
-            return;
-        }
-
         if ("add".equals(action)) {
             try {
                 int gymId = Integer.parseInt(req.getParameter("gymId"));
-                int userId = Integer.parseInt(req.getParameter("userId"));
                 LocalDate date = LocalDate.parse(req.getParameter("date"));
                 String climbType = req.getParameter("climbType");
                 String grade = req.getParameter("grade");
@@ -92,8 +85,21 @@ public class ClimbController extends HttpServlet {
                 boolean success = Boolean.parseBoolean(req.getParameter("success"));
                 String notes = req.getParameter("notes");
 
+                // Get logged-in user's Cognito sub
+                HttpSession session = req.getSession();
+                Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+                String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
+
+                // Check if user exists in DB
+                List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
+                if (users.isEmpty()) {
+                    logger.error("No user found for cognitoSub: {}", cognitoSub);
+                    resp.sendRedirect("logClimb.jsp?error=userNotFound");
+                    return;
+                }
+
+                User user = users.get(0);
                 Gym gym = gymDao.getById(gymId);
-                User user = userDao.getById(userId);
                 Climb newClimb = new Climb(gym, user, date, climbType, grade, attempts, success, notes);
                 climbDao.insert(newClimb);
 
