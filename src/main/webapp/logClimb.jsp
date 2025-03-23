@@ -21,7 +21,6 @@
 
     <form action="climb" method="post">
         <input type="hidden" name="action" value="add">
-        <input type="hidden" name="userId" value="1"> <!-- will replace with session user ID later -->
 
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required>
