@@ -69,7 +69,7 @@
                 <input type="hidden" name="climbId" value="${climb.id}">
                 <button type="submit" name="action" value="delete">Delete</button>
               </form>
-              <a href="editClimb.jsp?climbId=${climb.id}">Edit</a>
+              <a href="editClimb?climbId=${climb.id}">Edit</a>
             </td>
           </tr>
         </c:forEach>
