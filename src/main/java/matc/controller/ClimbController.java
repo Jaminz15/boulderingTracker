@@ -116,8 +116,33 @@ public class ClimbController extends HttpServlet {
             } catch (Exception e) {
                 logger.error("Error deleting climb", e);
             }
-        }
+        } else if ("update".equals(action)) {
+            try {
+                int climbId = Integer.parseInt(req.getParameter("climbId"));
+                Climb climbToUpdate = climbDao.getById(climbId);
 
+                if (climbToUpdate != null) {
+                    int gymId = Integer.parseInt(req.getParameter("gymId"));
+                    Gym gym = gymDao.getById(gymId);
+
+                    climbToUpdate.setDate(LocalDate.parse(req.getParameter("date")));
+                    climbToUpdate.setGym(gym);
+                    climbToUpdate.setClimbType(req.getParameter("climbType"));
+                    climbToUpdate.setGrade(req.getParameter("grade"));
+                    climbToUpdate.setAttempts(Integer.parseInt(req.getParameter("attempts")));
+                    climbToUpdate.setSuccess(Boolean.parseBoolean(req.getParameter("success")));
+                    climbToUpdate.setNotes(req.getParameter("notes"));
+
+                    climbDao.update(climbToUpdate);
+
+                    logger.info("Successfully updated climb ID: {}", climbId);
+                } else {
+                    logger.warn("Climb with ID {} not found for update", climbId);
+                }
+            } catch (Exception e) {
+                logger.error("Error updating climb", e);
+            }
+        }
         resp.sendRedirect("climb");
     }
 }
