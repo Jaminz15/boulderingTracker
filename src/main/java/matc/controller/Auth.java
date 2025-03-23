@@ -93,8 +93,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             return;
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("dashboard");
     }
 
     private TokenResponse getToken(HttpRequest authRequest) throws IOException, InterruptedException {
