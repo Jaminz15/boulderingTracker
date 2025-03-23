@@ -27,6 +27,12 @@ public class GymManagement extends HttpServlet {
     @Override
     public void init() throws ServletException {
         gymDao = new GenericDao<>(Gym.class);
+
+        // Load all gyms once and store them in application scope
+        List<Gym> gyms = gymDao.getAll();
+        getServletContext().setAttribute("gyms", gyms);
+
+        logger.info("Loaded {} gyms into application scope", gyms.size());
     }
 
     /**
@@ -59,6 +65,7 @@ public class GymManagement extends HttpServlet {
             Gym gym = gymDao.getById(gymId);
             gymDao.delete(gym);
         }
+        getServletContext().setAttribute("gyms", gymDao.getAll());
         resp.sendRedirect("gymManagement");
     }
 }
