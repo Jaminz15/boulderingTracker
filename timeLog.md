@@ -110,3 +110,7 @@ to redirect to /dashboard after login. Verified personalized gym list and last l
 - 03/23/2025 – 2.5 hours – Created GymPage servlet and built gymPage.jsp to display user-specific climbs by selected 
 gym. Implemented filtering logic using session-based Cognito sub and joined climb and gym data for authenticated users. 
 Connected dashboard links to pass gymId and confirmed correct data shows per user.
+- 03/24/2025 – 2.5 hours – Created `editClimb.jsp` to pre-fill climb info for editing.
+  Built `EditClimb` servlet to load the selected climb and gym list.
+  Connected the update functionality in ClimbController to save changes.
+- 

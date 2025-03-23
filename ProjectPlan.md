@@ -51,7 +51,7 @@
     - [X] **Gym Management**
     - [X] **Gym Page (climbing history)**
     - [X] **Log a Climb**
-    - **Edit/Delete Climb**
+    - [X] **Edit/Delete Climb**
     - **User Profile Page**
     - **Track Progress Page**
 - [X] Create **GymController** to handle gym management
