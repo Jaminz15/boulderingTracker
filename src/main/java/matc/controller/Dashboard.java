@@ -30,4 +30,42 @@ public class Dashboard extends HttpServlet {
         gymDao = new GenericDao<>(Gym.class);
         userDao = new GenericDao<>(User.class);
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
+
+        List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
+        if (users.isEmpty()) {
+            resp.sendRedirect("logIn.jsp");
+            return;
+        }
+
+        User user = users.get(0);
+
+        // Get all climbs by this user
+        List<Climb> userClimbs = climbDao.findByUserCognitoSub("user.cognitoSub", cognitoSub);
+
+        // Get distinct gyms from climbs
+        Set<Gym> userGyms = userClimbs.stream()
+                .map(Climb::getGym)
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+
+        // Optional: find last log date
+        LocalDate lastLogDate = userClimbs.stream()
+                .map(Climb::getDate)
+                .max(LocalDate::compareTo)
+                .orElse(null);
+
+        req.setAttribute("userName", user.getUsername());
+        req.setAttribute("gyms", userGyms);
+        req.setAttribute("lastLogDate", lastLogDate);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        dispatcher.forward(req, resp);
+    }
 }
