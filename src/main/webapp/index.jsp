@@ -33,6 +33,9 @@
         <!-- Link to log climb -->
         <a href="climb">Log a Climb</a>
 
+        <!-- Temporary link to User Profile -->
+        <a href="profile" style="margin-right: 10px;">View Profile</a>
+
         <!-- Dynamically list gyms with climbs -->
         <h3>View Logs by Gym:</h3>
         <ul>
