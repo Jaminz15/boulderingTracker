@@ -58,6 +58,7 @@ public class UserProfile extends HttpServlet {
         req.setAttribute("user", user);
         req.setAttribute("totalClimbs", userClimbs.size());
         req.setAttribute("favoriteGym", favoriteGym);
+        req.setAttribute("formattedDate", formattedDate);
 
         req.getRequestDispatcher("/userProfile.jsp").forward(req, resp);
     }

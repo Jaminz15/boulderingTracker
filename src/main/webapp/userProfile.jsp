@@ -24,9 +24,7 @@
     <h2>User Profile</h2>
     <p><strong>Username:</strong> ${user.username}</p>
     <p><strong>Email:</strong> ${user.email}</p>
-    <p><strong>Account Created:</strong>
-        ${formattedDate}
-    </p>
+    <p><strong>Account Created:</strong> ${formattedDate}</p>
     <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
 
     <c:if test="${not empty favoriteGym}">
