@@ -50,6 +50,9 @@
 
         <label for="gymLocation">Location:</label>
         <input type="text" id="gymLocation" name="gymLocation" required>
+        <small style="display:block; color: #555; margin-bottom:10px;">
+            Try using full street addresses or well-known areas for best results.
+        </small>
 
         <button type="submit" name="action" value="add">Add Gym</button>
     </form>

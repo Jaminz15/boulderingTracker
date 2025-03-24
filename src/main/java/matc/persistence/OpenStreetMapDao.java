@@ -37,9 +37,12 @@ public class OpenStreetMapDao {
         }
 
         Client client = ClientBuilder.newClient();
+
         WebTarget target = client.target(baseUrl)
-                .queryParam("q", address.replace(" ", "+"))
+                .queryParam("q", address)
                 .queryParam("format", "json");
+
+        logger.info("Final request URI: {}", target.getUri());
 
         logger.info("Requesting geocode data for: {}", address);
 
