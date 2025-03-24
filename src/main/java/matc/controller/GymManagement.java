@@ -4,6 +4,8 @@ import org.apache.logging.log4j.Logger;
 
 import matc.entity.Gym;
 import matc.persistence.GenericDao;
+import matc.persistence.OpenStreetMapDao;
+import matc.entity.GeocodeResponse;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -58,14 +60,30 @@ public class GymManagement extends HttpServlet {
         if ("add".equals(action)) {
             String gymName = req.getParameter("gymName");
             String gymLocation = req.getParameter("gymLocation");
+
+            // Call OpenStreetMap API to get lat/lon
+            OpenStreetMapDao geoDao = new OpenStreetMapDao();
+            GeocodeResponse geocode = geoDao.getGeocode(gymLocation);
+
             Gym newGym = new Gym(gymName, gymLocation);
+
+            if (geocode != null) {
+                newGym.setLatitude(geocode.getLatitude());
+                newGym.setLongitude(geocode.getLongitude());
+            } else {
+                logger.warn("No geocode data found for location: {}", gymLocation);
+                // Optional: you could set an error message or handle fallback logic
+            }
+
             gymDao.insert(newGym);
         } else if ("delete".equals(action)) {
             int gymId = Integer.parseInt(req.getParameter("gymId"));
             Gym gym = gymDao.getById(gymId);
             gymDao.delete(gym);
         }
+        // Refresh gym list in application scope
         getServletContext().setAttribute("gyms", gymDao.getAll());
+        // Redirect to avoid form resubmission
         resp.sendRedirect("gymManagement");
     }
 }
