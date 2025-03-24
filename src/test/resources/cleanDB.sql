@@ -66,6 +66,8 @@ CREATE TABLE `gym` (
                        `name` varchar(100) NOT NULL,
                        `location` varchar(255) NOT NULL,
                        `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+                       `latitude` varchar(50),
+                       `longitude` varchar(50),
                        PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -76,7 +78,9 @@ CREATE TABLE `gym` (
 
 LOCK TABLES `gym` WRITE;
 /*!40000 ALTER TABLE `gym` DISABLE KEYS */;
-INSERT INTO `gym` VALUES (1,'East Side Boulders','123 Boulder St, Madison, WI','2025-02-18 04:55:49'),(2,'Downtown Boulders','456 Climber Ave, Madison, WI','2025-02-18 04:55:49');
+INSERT INTO `gym` (id, name, location, created_at, latitude, longitude) VALUES
+                                                                            (1, 'East Side Boulders', '123 Boulder St, Madison, WI', '2025-02-18 04:55:49', '43.0747', '-89.3837'),
+                                                                            (2, 'Downtown Boulders', '456 Climber Ave, Madison, WI', '2025-02-18 04:55:49', '43.0749', '-89.3839');
 /*!40000 ALTER TABLE `gym` ENABLE KEYS */;
 UNLOCK TABLES;
 

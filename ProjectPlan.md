@@ -72,14 +72,13 @@
 ---
 
 ## **Week 8 (3/10 - 3/16) - Web Services Integration**
-- [ ] Select and implement **Google Places API** for gym search
+- [X] Select and implement **OpenStreetMap API** for gym search
 - [ ] Implement API call and display **gym data** in the app
-- [ ] Write **unit tests for API integration**
-- [ ] Secure **Climb and Gym data to be user-specific**
-- [ ] Restrict climbing logs to logged-in users
+- [X] Write **unit tests for API integration**
+- [X] Secure **Climb and Gym data to be user-specific**
+- [X] Restrict climbing logs to logged-in users
 - [X] Implement **role-based access (Admin/User)**
-- [ ] Create a simple **User Profile Page (JSP)**
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 
