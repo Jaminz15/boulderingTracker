@@ -114,3 +114,4 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
   Built `EditClimb` servlet to load the selected climb and gym list.
   Connected the update functionality in ClimbController to save changes.
 - 03/24/2025 – 1.5 hours – Created `UserProfile` controller and `userProfile.jsp`
+- 03/24/2025 – 2 hours – Created `TrackProgress` controller and `trackProgress.jsp`
