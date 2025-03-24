@@ -30,6 +30,9 @@
         <!-- Link to manage gyms -->
         <a href="gymManagement" style="margin-right: 10px;">Manage Gyms</a>
 
+        <!-- Link to track progress -->
+        <a href="trackProgress">Track Progress</a>
+
         <!-- Link to log climb -->
         <a href="climb">Log a Climb</a>
 

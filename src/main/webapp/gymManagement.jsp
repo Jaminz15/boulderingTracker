@@ -11,7 +11,7 @@
     <h1>BoulderBook - Gym Management</h1>
     <nav>
         <a href="dashboard">Dashboard</a>
-        <a href="trackProgress.jsp">Track Progress</a>
+        <a href="trackProgress">Track Progress</a>
         <a href="climb">Log a Climb</a>
     </nav>
 </header>

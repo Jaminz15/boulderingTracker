@@ -12,7 +12,7 @@
   <h1>BoulderBook - Gym Page</h1>
   <nav>
     <a href="index.jsp">Dashboard</a>
-    <a href="trackProgress.jsp">Track Progress</a>
+    <a href="trackProgress">Track Progress</a>
     <a href="logClimb.jsp">Log a Climb</a>
   </nav>
 </header>
