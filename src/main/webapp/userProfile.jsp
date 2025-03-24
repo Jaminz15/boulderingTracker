@@ -25,7 +25,7 @@
     <p><strong>Username:</strong> ${user.username}</p>
     <p><strong>Email:</strong> ${user.email}</p>
     <p><strong>Account Created:</strong>
-        <fmt:formatDate value="${user.createdAt}" pattern="MMMM d, yyyy" />
+        ${formattedDate}
     </p>
     <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
 

@@ -12,6 +12,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.time.format.DateTimeFormatter;
 
 @WebServlet("/profile")
 public class UserProfile extends HttpServlet {
@@ -37,6 +38,10 @@ public class UserProfile extends HttpServlet {
         }
 
         User user = users.get(0);
+
+        // Format the createdAt timestamp
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+        String formattedDate = user.getCreatedAt().format(formatter);
 
         // Get all climbs
         List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
