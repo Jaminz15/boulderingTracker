@@ -78,7 +78,7 @@
   </table>
 
   <br>
-  <a href="index.jsp">Back to Dashboard</a>
+  <a href="dashboard">Back to Dashboard</a>
 </section>
 
 <footer>

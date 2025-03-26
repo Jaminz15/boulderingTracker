@@ -86,7 +86,7 @@
 #### *Checkpoint 3 Due (3/26)*
 - [ ] Ensure **login/logout functionality works**
 - [ ] Implement **REST endpoints for climbs, gyms, and users**
-- [ ] Deploy latest version to **AWS**
+- [X] Deploy latest version to **AWS**
 - [ ] Verify authentication and **session management** work correctly
 - [ ] Weekly time log
 
