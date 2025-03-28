@@ -5,6 +5,12 @@
 <html>
 <head>
     <title>Gym Management</title>
+    <!-- Leaflet CSS -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            crossorigin=""
+    />
 </head>
 <body>
 <header>
@@ -58,8 +64,39 @@
     </form>
 </section>
 
+<!--Add Leaflet Map Preview -->
+<section>
+    <h3>Map of Your Gyms</h3>
+    <div id="gymMap" style="height: 400px; margin-bottom: 2rem;"></div>
+</section>
+
 <footer>
     <p>&copy; 2025 BoulderBook</p>
 </footer>
+
+<!--Leaflet JS (at end of body) -->
+<script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        crossorigin=""
+></script>
+
+<!--JavaScript to load the map and markers -->
+<script>
+    const map = L.map('gymMap').setView([43.0731, -89.4012], 12); // Default: Madison
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add gym markers
+    <c:forEach var="gym" items="${gyms}">
+    <c:if test="${not empty gym.latitude && not empty gym.longitude}">
+    L.marker([${gym.latitude}, ${gym.longitude}])
+        .addTo(map)
+        .bindPopup('<strong>${gym.name}</strong><br>${gym.location}');
+    </c:if>
+    </c:forEach>
+</script>
 </body>
 </html>
