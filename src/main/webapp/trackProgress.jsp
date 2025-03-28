@@ -12,6 +12,7 @@
 <header>
     <h1>BoulderBook - Track Progress</h1>
     <nav>
+        <a href="logout">Log Out</a>
         <a href="dashboard">Dashboard</a>
         <a href="climb">Log a Climb</a>
         <a href="gymManagement">Manage Gyms</a>

@@ -10,6 +10,7 @@
 <header>
   <h1>BoulderBook - Edit Climb</h1>
   <nav>
+    <a href="logout">Log Out</a>
     <a href="dashboard">Dashboard</a>
     <a href="trackProgress">Track Progress</a>
     <a href="gymManagement">Manage Gyms</a>
