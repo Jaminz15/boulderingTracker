@@ -73,7 +73,7 @@
 
 ## **Week 8 (3/10 - 3/16) - Web Services Integration**
 - [X] Select and implement **OpenStreetMap API** for gym search
-- [ ] Implement API call and display **gym data** in the app
+- [X] Implement API call and display **gym data** in the app
 - [X] Write **unit tests for API integration**
 - [X] Secure **Climb and Gym data to be user-specific**
 - [X] Restrict climbing logs to logged-in users
@@ -84,7 +84,7 @@
 
 ## **Week 9 (3/24 - 3/30) - RESTful Web Services**
 #### *Checkpoint 3 Due (3/26)*
-- [ ] Ensure **login/logout functionality works**
+- [X] Ensure **login/logout functionality works**
 - [ ] Implement **REST endpoints for climbs, gyms, and users**
 - [X] Deploy latest version to **AWS**
 - [ ] Verify authentication and **session management** work correctly
