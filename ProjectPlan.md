@@ -87,7 +87,7 @@
 - [X] Ensure **login/logout functionality works**
 - [ ] Implement **REST endpoints for climbs, gyms, and users**
 - [X] Deploy latest version to **AWS**
-- [ ] Verify authentication and **session management** work correctly
+- [X] Verify authentication and **session management** work correctly
 - [ ] Weekly time log
 
 ---

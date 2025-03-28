@@ -133,4 +133,4 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 -
 - ### **Individual Project (BoulderBook)**
 - 03/27/2025 - 2 hours - Added Leaflet JS and CSS to gymManagement.jsp
-- 03/27/2025 - 1 hour - Implemented logout functionality with Cognito
+- 03/27/2025 - 1.5 hour - Implemented logout functionality with Cognito

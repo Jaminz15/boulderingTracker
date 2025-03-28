@@ -30,6 +30,8 @@
         <!-- Link to manage gyms -->
         <a href="gymManagement" style="margin-right: 10px;">Manage Gyms</a>
 
+        <a href="logout">Log Out</a>
+
         <!-- Link to track progress -->
         <a href="trackProgress">Track Progress</a>
 
