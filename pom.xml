@@ -21,7 +21,6 @@
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <log4j-version>2.17.1</log4j-version>
     <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
-    <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
     <junit-vintage-version>4.12.0</junit-vintage-version>
     <jupiter-version>5.0.0</jupiter-version>
@@ -33,51 +32,24 @@
   </properties>
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <!-- Hibernate Core and C3P0 -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
-    <!-- c3p0 - used to handle connection pooling with hibernate -->
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-c3p0</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
+
+    <!-- JUnit Dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-web-api</artifactId>
-      <version>${javax.version}</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>${mysql-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
-    <!-- next 2 dependencies are for log4j -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-      <version>${log4j-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j-version}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
@@ -97,43 +69,79 @@
       <version>${jupiter-version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- for parsing access token -->
+
+    <!-- MySQL Connector -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-version}</version>
+    </dependency>
+
+    <!-- Java EE Web API -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>${javax.version}</version>
+    </dependency>
+
+    <!-- JSTL for JSP -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <!-- Log4j Dependencies -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+
+    <!-- Java JWT for Token Parsing -->
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
       <version>${java-jwt-version}</version>
     </dependency>
+
+    <!-- JSON Handling -->
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>${json-version}</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+
+    <!-- Commons IO -->
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.11.0</version>
     </dependency>
-    <!-- Jackson Core -->
+
+    <!-- Jackson Dependencies -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.9.7</version>
+      <version>${jackson-version}</version>
     </dependency>
-
-    <!-- Jackson Databind -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.7</version>
+      <version>${jackson-version}</version>
     </dependency>
-
-    <!-- Jackson Annotations (for @JsonProperty) -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-      <version>2.9.0</version>
+      <version>${jackson-version}</version>
     </dependency>
+
+    <!-- Jersey Dependencies -->
     <dependency>
       <groupId>org.glassfish.jersey.inject</groupId>
       <artifactId>jersey-hk2</artifactId>
@@ -143,26 +151,6 @@
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
       <version>${jersey-version}</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>${jackson-version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>${jackson-version}</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson-version}</version>
     </dependency>
 
   </dependencies>

@@ -130,6 +130,7 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 - ### **Weekly Course Material**
 - 03/25/2025 - 2.5 hour - Reading material, week 9 videos/activity
 - 03/25/2025 - 4 hour - week 9 exercise
+- 03/29/2025 - 7 hour - week 9 exercise
 -
 - ### **Individual Project (BoulderBook)**
 - 03/27/2025 - 2 hours - Added Leaflet JS and CSS to gymManagement.jsp
