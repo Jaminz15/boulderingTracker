@@ -85,7 +85,11 @@
 ## **Week 9 (3/24 - 3/30) - RESTful Web Services**
 #### *Checkpoint 3 Due (3/26)*
 - [X] Ensure **login/logout functionality works**
-- [ ] Implement **REST endpoints for climbs, gyms, and users**
+- [] Implement **REST endpoints for climbs, gyms, and users** 
+    [X] gyms
+    [] climbs
+    [] users
+
 - [X] Deploy latest version to **AWS**
 - [X] Verify authentication and **session management** work correctly
 - [ ] Weekly time log

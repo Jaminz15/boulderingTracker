@@ -119,19 +119,11 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 ## **Week 9**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
-- 02/25/2025 - 2 hour - Reading material and week 5 videos/demos
-- 02/26/2025 - 1 hours - Added `climbResults.jsp`, connected database and project to AWS
-- 02/26/2025 - .5 hours - Added a button to `index.jsp` to navigate to climb results page and display table
-- 02/26/2025 - 6 hours - Exercise 6, setting up AWS with my project
-
-- ### **Individual Project (BoulderBook)**
-- 02/27/2025 - 4 hours - ## **Week 6**
-- **[Date]** - **[Time Spent]** - **[Task Completed]**
-- ### **Weekly Course Material**
-- 03/25/2025 - 2.5 hour - Reading material, week 9 videos/activity
+-- 03/25/2025 - 2.5 hour - Reading material, week 9 videos/activity
 - 03/25/2025 - 4 hour - week 9 exercise
 - 03/29/2025 - 7 hour - week 9 exercise
 -
 - ### **Individual Project (BoulderBook)**
 - 03/27/2025 - 2 hours - Added Leaflet JS and CSS to gymManagement.jsp
 - 03/27/2025 - 1.5 hour - Implemented logout functionality with Cognito
+- 03/29/2025 – 3 hours – Created `GymWebService`, `ObjectMapperContextResolver`, and `RestApplication` for RESTful web services
