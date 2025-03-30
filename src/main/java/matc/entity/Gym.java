@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDateTime;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * A class to represent a Gym.
@@ -26,6 +27,7 @@ public class Gym {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Climb> climbs;
 
     @Column(name = "latitude")
