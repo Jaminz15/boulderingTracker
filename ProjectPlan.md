@@ -92,7 +92,7 @@
 
 - [X] Deploy latest version to **AWS**
 - [X] Verify authentication and **session management** work correctly
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 

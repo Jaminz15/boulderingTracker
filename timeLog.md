@@ -127,3 +127,18 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 - 03/27/2025 - 2 hours - Added Leaflet JS and CSS to gymManagement.jsp
 - 03/27/2025 - 1.5 hour - Implemented logout functionality with Cognito
 - 03/29/2025 – 3 hours – Created `GymWebService`, `ObjectMapperContextResolver`, and `RestApplication` for RESTful web services
+
+- ### **Group Project (BoulderBook)**
+- 3/26/2025 - 3 hours - Met as a group, worked through everything for the week and finished the README
+
+## **Week 10**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- 04/02/2025 to 04/03.2025 - 3 hour - week 10 stuff and activity 1, activity 2
+- ### **Individual Project (BoulderBook)**
+- 
+
+- ### **Group Project (BoulderBook)**
+- 04/02/2025 - 1 hour - Met up with group and added things to the README that was missing and worked together 
+as a group to figure out what we will all work on for the week.
+- 
