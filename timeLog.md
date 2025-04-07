@@ -138,7 +138,7 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 - ### **Individual Project (BoulderBook)**
 - 
 
-- ### **Group Project (BoulderBook)**
+- ### **Group Project ()**
 - 04/02/2025 - 1 hour - Met up with group and added things to the README that was missing and worked together 
 as a group to figure out what we will all work on for the week.
-- 
+- 04/03/2025 - 4 hour - Worked on the `LocationService`, `Location`, and `RestApplication`.
