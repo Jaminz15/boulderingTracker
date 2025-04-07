@@ -45,6 +45,11 @@ public class GymPage extends HttpServlet {
         HttpSession session = req.getSession();
         @SuppressWarnings("unchecked")
         Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        Claim groupsClaim = userClaims.get("cognito:groups");
+        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
+        for (Map.Entry<String, Claim> entry : userClaims.entrySet()) {
+            logger.debug("Claim key: {}, value: {}", entry.getKey(), entry.getValue().asString());
+        }
         String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
 
         List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
@@ -55,12 +60,20 @@ public class GymPage extends HttpServlet {
 
         User user = users.get(0);
 
-        // Build query filter: user + gym
-        Map<String, Object> filters = new HashMap<>();
-        filters.put("user", user);
-        filters.put("gym", selectedGym);
+        List<Climb> climbs;
 
-        List<Climb> climbs = climbDao.findByPropertyEqual(filters);
+        if (isAdmin) {
+            // Admin sees all climbs for the selected gym
+            Map<String, Object> gymOnly = new HashMap<>();
+            gymOnly.put("gym", selectedGym);
+            climbs = climbDao.findByPropertyEqual(gymOnly);
+        } else {
+            // Regular user sees only their climbs
+            Map<String, Object> filters = new HashMap<>();
+            filters.put("user", user);
+            filters.put("gym", selectedGym);
+            climbs = climbDao.findByPropertyEqual(filters);
+        }
 
         logger.debug("GymPage: Retrieved {} climbs for user {} at gym ID {}", climbs.size(), user.getId(), gymId);
 
