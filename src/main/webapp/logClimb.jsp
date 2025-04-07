@@ -1,21 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="head.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="head.jsp" %>
 
 <html>
-<head>
-    <title>Log a Climb</title>
-</head>
+
 <body>
-<header>
-    <h1>BoulderBook - Log a Climb</h1>
-    <nav>
-        <a href="logout">Log Out</a>
-        <a href="dashboard">Dashboard</a>
-        <a href="trackProgress">Track Progress</a>
-        <a href="gymManagement">Manage Gyms</a>
-    </nav>
-</header>
+
+<jsp:include page="header.jsp" />
 
 <section>
     <h2>Log a New Climb</h2>
@@ -65,8 +56,7 @@
     </form>
 </section>
 
-<footer>
-    <p>&copy; 2025 BoulderBook</p>
-</footer>
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>

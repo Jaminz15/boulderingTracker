@@ -2,5 +2,4 @@
 <!-- footer.jsp -->
 <footer class="site-footer">
     <p><a href="#">Back to the top</a></p>
-    <button class="support-btn">Support</button>
 </footer>

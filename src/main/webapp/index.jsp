@@ -1,63 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="head.jsp" %>
 
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Welcome to BoulderBook</title>
-</head>
 <body>
 
-<h1>Welcome to BoulderBook</h1>
-<p>Track your bouldering progress!</p>
+<jsp:include page="header.jsp" />
 
-<!-- Check if user is logged in -->
-<c:choose>
-    <c:when test="${empty userName}">
-        <a href="logIn" style="font-size: 18px; text-decoration: none; padding: 10px; background-color: #28a745; color: white; border-radius: 5px;">
-            Log In
-        </a>
-    </c:when>
-    <c:otherwise>
-        <h3>Welcome, ${userName}!</h3>
+<section class="home-section">
+    <h1>Welcome to BoulderBook</h1>
+    <p>Track your bouldering progress!</p>
 
-        <!-- show last log date -->
-        <c:if test="${not empty lastLogDate}">
-            <p>Last Log Date: <c:out value="${lastLogDate}" /></p>
-        </c:if>
+    <c:choose>
+        <c:when test="${empty userName}">
+            <a href="logIn" class="btn btn-success" style="font-size: 18px; text-decoration: none; padding: 10px;">
+                Log In
+            </a>
+        </c:when>
+        <c:otherwise>
+            <h3>Welcome, ${userName}!</h3>
 
-        <!-- Link to manage gyms -->
-        <a href="gymManagement" style="margin-right: 10px;">Manage Gyms</a>
+            <c:if test="${not empty lastLogDate}">
+                <p>Last Log Date: <c:out value="${lastLogDate}" /></p>
+            </c:if>
 
-        <a href="logout">Log Out</a>
+            <h3>View Logs by Gym:</h3>
+            <ul>
+                <c:forEach var="gym" items="${gyms}">
+                    <li>
+                        <a href="gymPage?gymId=${gym.id}">${gym.name}</a>
+                    </li>
+                </c:forEach>
+            </ul>
 
-        <!-- Link to track progress -->
-        <a href="trackProgress">Track Progress</a>
+            <c:if test="${empty gyms}">
+                <p>You haven’t logged any climbs yet. <a href="climb">Log one now!</a></p>
+            </c:if>
+        </c:otherwise>
+    </c:choose>
+</section>
 
-        <!-- Link to log climb -->
-        <a href="climb">Log a Climb</a>
-
-        <!-- Temporary link to User Profile -->
-        <a href="profile" style="margin-right: 10px;">View Profile</a>
-
-        <!-- Dynamically list gyms with climbs -->
-        <h3>View Logs by Gym:</h3>
-        <ul>
-            <c:forEach var="gym" items="${gyms}">
-                <li>
-                    <a href="gymPage?gymId=${gym.id}">
-                            ${gym.name}
-                    </a>
-                </li>
-            </c:forEach>
-        </ul>
-        <!-- If the user has no gyms (no logged climbs) -->
-        <c:if test="${empty gyms}">
-            <p>You haven’t logged any climbs yet. <a href="climb">Log one now!</a></p>
-        </c:if>
-    </c:otherwise>
-</c:choose>
+<jsp:include page="footer.jsp" />
 
 </body>
 </html>

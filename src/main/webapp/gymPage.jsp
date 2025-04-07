@@ -1,22 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
-<head>
-  <title>Gym Page</title>
-</head>
 <body>
 
-<header>
-  <h1>BoulderBook - Gym Page</h1>
-  <nav>
-    <a href="logout">Log Out</a>
-    <a href="dashboard">Dashboard</a>
-    <a href="trackProgress">Track Progress</a>
-    <a href="climb">Log a Climb</a>
-  </nav>
-</header>
+<jsp:include page="header.jsp" />
 
 <section>
   <h2>Gym Page: <c:out value="${gym.name}"/></h2>
@@ -82,9 +70,7 @@
   <a href="dashboard">Back to Dashboard</a>
 </section>
 
-<footer>
-  <p>&copy; 2025 BoulderBook</p>
-</footer>
+<jsp:include page="footer.jsp" />
 
 </body>
 </html>

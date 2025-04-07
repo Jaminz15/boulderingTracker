@@ -22,11 +22,13 @@
 
     <nav class="main-nav">
         <ul>
-            <li><a href="index.jsp">Dashboard</a></li>
-            <li><a href="trackProgress">Track Progress</a></li>
-            <li><a href="climb">Log a Climb</a></li>
-            <li><a href="gymManagement">Manage Gyms</a></li>
-            <li><a href="profile">Profile</a></li>
+            <c:if test="${not empty userName}">
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="trackProgress">Track Progress</a></li>
+                <li><a href="climb">Log a Climb</a></li>
+                <li><a href="gymManagement">Manage Gyms</a></li>
+                <li><a href="profile">Profile</a></li>
+            </c:if>
         </ul>
     </nav>
 </header>

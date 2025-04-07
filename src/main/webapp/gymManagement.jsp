@@ -1,27 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="head.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="includeLeaflet" value="true" />
+<%@ include file="head.jsp" %>
 
 <html>
-<head>
-    <title>Gym Management</title>
-    <!-- Leaflet CSS -->
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-            crossorigin=""
-    />
-</head>
+
 <body>
-<header>
-    <h1>BoulderBook - Gym Management</h1>
-    <nav>
-        <a href="logout">Log Out</a>
-        <a href="dashboard">Dashboard</a>
-        <a href="trackProgress">Track Progress</a>
-        <a href="climb">Log a Climb</a>
-    </nav>
-</header>
+<jsp:include page="header.jsp" />
 
 <section>
     <h2>Manage Your Gyms</h2>
@@ -71,9 +56,7 @@
     <div id="gymMap" style="height: 400px; margin-bottom: 2rem;"></div>
 </section>
 
-<footer>
-    <p>&copy; 2025 BoulderBook</p>
-</footer>
+<jsp:include page="footer.jsp" />
 
 <!--Leaflet JS (at end of body) -->
 <script
