@@ -136,7 +136,11 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 - ### **Weekly Course Material**
 - 04/02/2025 to 04/03.2025 - 3 hour - week 10 stuff and activity 1, activity 2
 - ### **Individual Project (BoulderBook)**
-- 
+- 04/06/2025 - 5 hours - Created style.css for consistent styling across the app.
+Added reusable `header.jsp` and `footer.jsp` for layout structure and navigation.
+Applied styling improvements to all JSPs for better UI/UX.
+Implemented admin-only functionality for gym deletion (based on Cognito group membership).
+Updated GymPage controller to allow admins to view all user climbs at a gym, while regular users only see their own.
 
 - ### **Group Project ()**
 - 04/02/2025 - 1 hour - Met up with group and added things to the README that was missing and worked together 
