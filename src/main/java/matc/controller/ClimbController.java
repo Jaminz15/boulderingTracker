@@ -55,7 +55,7 @@ public class ClimbController extends HttpServlet {
         if ("Admin".equals(userRole)) {
             climbs = climbDao.getAll();
         } else {
-            climbs = climbDao.findByUserCognitoSub("user.cognitoSub", cognitoSub);
+            climbs = climbDao.findByUserCognitoSub(cognitoSub);
         }
 
         List<Gym> gyms = gymDao.getAll();

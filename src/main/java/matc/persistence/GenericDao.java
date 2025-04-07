@@ -134,20 +134,25 @@ public class GenericDao<T> {
     }
 
     /**
-     * Finds entities by a user’s Cognito Sub.
-     * Example: `findByUserCognitoSub("user.cognitoSub", "11cb25b0-9011-7034-8885-4f7ffb871fe0")`
+     * Finds entities (like Climb) by the user's Cognito Sub field.
      *
-     * @param userProperty the user identifier field (e.g., "user.cognitoSub")
-     * @param cognitoSub the Cognito user sub
-     * @return the list of entities belonging to the user
+     * This assumes the entity has a `User` relationship mapped as "user",
+     * and that User has a `cognitoSub` property.
+     *
+     * Example usage:
+     *     findByUserCognitoSub("11cb25b0-9011-7034-8885-4f7ffb871fe0")
+     *
+     * @param cognitoSub the Cognito user sub to match
+     * @return a list of entities associated with that user
      */
-    public List<T> findByUserCognitoSub(String userProperty, String cognitoSub) {
+    public List<T> findByUserCognitoSub(String cognitoSub) {
         Session session = getSession();
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
 
-        query.select(root).where(builder.equal(root.get(userProperty), cognitoSub));
+        query.select(root)
+                .where(builder.equal(root.get("user").get("cognitoSub"), cognitoSub));
 
         List<T> userEntities = session.createSelectionQuery(query).getResultList();
         session.close();
