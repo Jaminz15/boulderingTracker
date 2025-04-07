@@ -9,17 +9,19 @@
 
 <jsp:include page="header.jsp" />
 
-<section>
-    <h2>User Profile</h2>
-    <p><strong>Username:</strong> ${user.username}</p>
-    <p><strong>Email:</strong> ${user.email}</p>
-    <p><strong>Account Created:</strong> ${formattedDate}</p>
-    <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
+<div class="main-content">
+    <section>
+        <h2>User Profile</h2>
+        <p><strong>Username:</strong> ${user.username}</p>
+        <p><strong>Email:</strong> ${user.email}</p>
+        <p><strong>Account Created:</strong> ${formattedDate}</p>
+        <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
 
-    <c:if test="${not empty favoriteGym}">
-        <p><strong>Favorite Gym:</strong> ${favoriteGym.name}</p>
-    </c:if>
-</section>
+        <c:if test="${not empty favoriteGym}">
+            <p><strong>Favorite Gym:</strong> ${favoriteGym.name}</p>
+        </c:if>
+    </section>
+</div>
 
 <jsp:include page="footer.jsp" />
 

@@ -11,16 +11,18 @@
 
 <jsp:include page="header.jsp" />
 
-<section>
-    <h2>Your Climbing Stats</h2>
+<div class="main-content">
+    <section>
+        <h2>Your Climbing Stats</h2>
 
-    <p><strong>Total Climbs:</strong> ${totalClimbs}</p>
-    <p><strong>Total Attempts:</strong> ${totalAttempts}</p>
-    <p><strong>Average Attempts per Climb:</strong> ${averageAttempts}</p>
-    <p><strong>Success Rate:</strong> ${successRate}%</p>
-    <p><strong>Best Grade Climbed:</strong> ${bestGrade}</p>
+        <p><strong>Total Climbs:</strong> ${totalClimbs}</p>
+        <p><strong>Total Attempts:</strong> ${totalAttempts}</p>
+        <p><strong>Average Attempts per Climb:</strong> ${averageAttempts}</p>
+        <p><strong>Success Rate:</strong> ${successRate}%</p>
+        <p><strong>Best Grade Climbed:</strong> ${bestGrade}</p>
 
-</section>
+    </section>
+</div>
 
 <jsp:include page="footer.jsp" />
 
