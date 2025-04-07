@@ -1,4 +1,5 @@
 package matc.controller;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -6,14 +7,20 @@ import matc.entity.Gym;
 import matc.persistence.GenericDao;
 import matc.persistence.OpenStreetMapDao;
 import matc.entity.GeocodeResponse;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.annotation.*;
+import javax.servlet.http.HttpSession;
+
+import com.auth0.jwt.interfaces.Claim;
+
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Gym Management Controller - Handles listing, adding, and deleting gyms.
@@ -42,10 +49,16 @@ public class GymManagement extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Gym> gyms = gymDao.getAll();
+        HttpSession session = req.getSession();
+        @SuppressWarnings("unchecked")
+        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        Claim groupsClaim = userClaims != null ? userClaims.get("cognito:groups") : null;
+        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
 
-        logger.debug("Fetched gyms: {}", gyms);
+        List<Gym> gyms = gymDao.getAll();
         req.setAttribute("gyms", gyms);
+        req.setAttribute("isAdmin", isAdmin);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/gymManagement.jsp");
         dispatcher.forward(req, resp);
     }
@@ -56,6 +69,12 @@ public class GymManagement extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
+
+        HttpSession session = req.getSession();
+        @SuppressWarnings("unchecked")
+        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        Claim groupsClaim = userClaims != null ? userClaims.get("cognito:groups") : null;
+        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
 
         if ("add".equals(action)) {
             String gymName = req.getParameter("gymName");
@@ -72,17 +91,24 @@ public class GymManagement extends HttpServlet {
                 newGym.setLongitude(geocode.getLongitude());
             } else {
                 logger.warn("No geocode data found for location: {}", gymLocation);
-                // Optional: you could set an error message or handle fallback logic
             }
 
             gymDao.insert(newGym);
         } else if ("delete".equals(action)) {
+            if (!isAdmin) {
+                logger.warn("Unauthorized delete attempt by non-admin user.");
+                resp.sendRedirect("gymManagement");
+                return;
+            }
+
             int gymId = Integer.parseInt(req.getParameter("gymId"));
             Gym gym = gymDao.getById(gymId);
             gymDao.delete(gym);
         }
+
         // Refresh gym list in application scope
         getServletContext().setAttribute("gyms", gymDao.getAll());
+
         // Redirect to avoid form resubmission
         resp.sendRedirect("gymManagement");
     }
