@@ -37,6 +37,8 @@ public class Dashboard extends HttpServlet {
 
         HttpSession session = req.getSession();
         Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
+        Claim groupsClaim = userClaims.get("cognito:groups");
+        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
         String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
 
         List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
@@ -48,7 +50,15 @@ public class Dashboard extends HttpServlet {
         User user = users.get(0);
 
         // Get all climbs by this user
-        List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
+        List<Climb> userClimbs;
+
+        if (isAdmin) {
+            // Admin sees all climbs
+            userClimbs = climbDao.getAll();
+        } else {
+            // Regular user sees only their own climbs
+            userClimbs = climbDao.findByPropertyEqual("user", user);
+        }
 
         // Get distinct gyms from climbs
         Set<Gym> userGyms = userClimbs.stream()
