@@ -17,7 +17,9 @@
             <tr>
                 <th>Name</th>
                 <th>Location</th>
-                <th>Actions</th>
+                <c:if test="${isAdmin}">
+                    <th>Actions</th>
+                </c:if>
             </tr>
             </thead>
             <tbody>
@@ -25,12 +27,14 @@
                 <tr>
                     <td>${gym.name}</td>
                     <td>${gym.location}</td>
+                    <c:if test="${isAdmin}">
                     <td>
-                        <form action="gymManagement" method="post">
-                            <input type="hidden" name="gymId" value="${gym.id}">
-                            <button type="submit" name="action" value="delete">Delete</button>
-                        </form>
+                            <form action="gymManagement" method="post">
+                                <input type="hidden" name="gymId" value="${gym.id}">
+                                <button type="submit" name="action" value="delete">Delete</button>
+                            </form>
                     </td>
+                    </c:if>
                 </tr>
             </c:forEach>
             </tbody>
