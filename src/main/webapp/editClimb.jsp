@@ -3,21 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
-<head>
-  <title>Edit Climb</title>
-</head>
 <body>
-<header>
-  <h1>BoulderBook - Edit Climb</h1>
-  <nav>
-    <a href="logout">Log Out</a>
-    <a href="dashboard">Dashboard</a>
-    <a href="trackProgress">Track Progress</a>
-    <a href="gymManagement">Manage Gyms</a>
-  </nav>
-</header>
+<jsp:include page="header.jsp" />
 
-<section>
+<section class="edit-climb-section">
   <h2>Edit Climb</h2>
 
   <form action="climb" method="post">
@@ -38,6 +27,7 @@
 
     <label for="climbType">Climb Type:</label>
     <input type="text" id="climbType" name="climbType" value="${climb.climbType}" required>
+
     <label for="grade">Grade:</label>
     <select id="grade" name="grade" required>
       <c:forEach var="v" items="${['V1','V2','V3','V4','V5','V6','V7','V7+']}">
@@ -62,8 +52,7 @@
   </form>
 </section>
 
-<footer>
-  <p>&copy; 2025 BoulderBook</p>
-</footer>
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>
