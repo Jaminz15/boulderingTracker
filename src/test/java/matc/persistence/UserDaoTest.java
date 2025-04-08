@@ -96,4 +96,29 @@ class UserDaoTest {
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
     }
+
+    @Test
+    void isAdminInsertedAndRetrievedCorrectly() {
+        User newAdmin = new User("admin@example.com", "adminUser", "admin-sub-001");
+        newAdmin.setIsAdmin(true);
+
+        int userId = userDao.insert(newAdmin);
+        User retrieved = userDao.getById(userId);
+
+        assertNotNull(retrieved);
+        assertTrue(retrieved.isAdmin());
+        assertEquals("admin@example.com", retrieved.getEmail());
+    }
+
+    @Test
+    void updateIsAdminFlag() {
+        User user = userDao.getById(1);
+        assertFalse(user.isAdmin(), "Expected user to not be admin initially");
+
+        user.setIsAdmin(true);
+        userDao.update(user);  // <-- use update() here
+
+        User updatedUser = userDao.getById(1);
+        assertTrue(updatedUser.isAdmin(), "Expected user to be admin after update");
+    }
 }
