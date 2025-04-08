@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import matc.entity.Gym;
+import matc.entity.User;
 import matc.persistence.GenericDao;
 import matc.persistence.OpenStreetMapDao;
 import matc.entity.GeocodeResponse;
@@ -16,11 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.auth0.jwt.interfaces.Claim;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Gym Management Controller - Handles listing, adding, and deleting gyms.
@@ -51,9 +50,15 @@ public class GymManagement extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         @SuppressWarnings("unchecked")
-        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-        Claim groupsClaim = userClaims != null ? userClaims.get("cognito:groups") : null;
-        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            logger.error("No user in session — redirecting to login");
+            resp.sendRedirect("logIn.jsp");
+            return;
+        }
+
+        boolean isAdmin = user.isAdmin();
 
         List<Gym> gyms = gymDao.getAll();
         req.setAttribute("gyms", gyms);
@@ -72,9 +77,15 @@ public class GymManagement extends HttpServlet {
 
         HttpSession session = req.getSession();
         @SuppressWarnings("unchecked")
-        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-        Claim groupsClaim = userClaims != null ? userClaims.get("cognito:groups") : null;
-        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            logger.error("No user in session — redirecting to login");
+            resp.sendRedirect("logIn.jsp");
+            return;
+        }
+
+        boolean isAdmin = user.isAdmin();
 
         if ("add".equals(action)) {
             String gymName = req.getParameter("gymName");
