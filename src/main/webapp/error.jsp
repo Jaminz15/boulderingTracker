@@ -9,6 +9,9 @@
 
 <div class="container mt-5">
     <h2>Oops! Something Went Wrong</h2>
+    <c:if test="${not empty errorMessage}">
+        <div class="alert alert-danger">${errorMessage}</div>
+    </c:if>
     <p>We're sorry, but something unexpected happened. Please try again later.</p>
     <a href="index.jsp" class="btn btn-primary">Return to Home</a>
 </div>
