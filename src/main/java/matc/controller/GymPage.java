@@ -4,7 +4,6 @@ import matc.entity.Climb;
 import matc.entity.Gym;
 import matc.entity.User;
 import matc.persistence.GenericDao;
-import com.auth0.jwt.interfaces.Claim;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,29 +35,21 @@ public class GymPage extends HttpServlet {
         // DAOs
         GenericDao<Climb> climbDao = new GenericDao<>(Climb.class);
         GenericDao<Gym> gymDao = new GenericDao<>(Gym.class);
-        GenericDao<User> userDao = new GenericDao<>(User.class);
 
         // Get gym by ID
         Gym selectedGym = gymDao.getById(gymId);
 
         // Get logged-in user from session
         HttpSession session = req.getSession();
-        @SuppressWarnings("unchecked")
-        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-        Claim groupsClaim = userClaims.get("cognito:groups");
-        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
-        for (Map.Entry<String, Claim> entry : userClaims.entrySet()) {
-            logger.debug("Claim key: {}, value: {}", entry.getKey(), entry.getValue().asString());
-        }
-        String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
+        User user = (User) session.getAttribute("user");
 
-        List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
-        if (users.isEmpty()) {
+        if (user == null) {
+            logger.error("No user in session — redirecting to login");
             resp.sendRedirect("logIn.jsp");
             return;
         }
 
-        User user = users.get(0);
+        boolean isAdmin = user.isAdmin();
 
         List<Climb> climbs;
 
@@ -75,7 +66,7 @@ public class GymPage extends HttpServlet {
             climbs = climbDao.findByPropertyEqual(filters);
         }
 
-        logger.debug("GymPage: Retrieved {} climbs for user {} at gym ID {}", climbs.size(), user.getId(), gymId);
+        logger.debug("GymPage: Retrieved {} climbs for user {} at gym ID {}", climbs.size(), user.getUsername(), gymId);
 
         req.setAttribute("gym", selectedGym);
         req.setAttribute("climbs", climbs);
