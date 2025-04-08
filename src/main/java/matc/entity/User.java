@@ -49,10 +49,10 @@ public class User {
      * @param cognitoSub the cognito sub
      */
     public User(String email, String username, String cognitoSub) {
+        this();
         this.email = email;
         this.username = username;
         this.cognitoSub = cognitoSub;
-        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters
