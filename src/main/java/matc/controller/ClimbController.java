@@ -17,8 +17,6 @@ import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.List;
 import java.io.IOException;
-import java.util.Map;
-import com.auth0.jwt.interfaces.Claim;
 
 /**
  * ClimbController - Handles logging, editing, and deleting climbs.
@@ -28,39 +26,32 @@ public class ClimbController extends HttpServlet {
     private static final Logger logger = LogManager.getLogger(ClimbController.class);
     private GenericDao<Climb> climbDao;
     private GenericDao<Gym> gymDao;
-    private GenericDao<User> userDao;
 
     @Override
     public void init() {
         climbDao = new GenericDao<>(Climb.class);
         gymDao = new GenericDao<>(Gym.class);
-        userDao = new GenericDao<>(User.class);
         logger.info("ClimbController initialized with DAOs");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-        String cognitoSub = userClaims != null && userClaims.get("sub") != null
-                ? userClaims.get("sub").asString()
-                : null;
-        String userRole = (String) session.getAttribute("userRole");
-        if (userRole == null) {
-            userRole = "User"; // Default to 'User' if role is not set
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            logger.error("No user in session");
+            resp.sendRedirect("error.jsp");
+            return;
         }
 
-        List<Climb> climbs;
-
-        if ("Admin".equals(userRole)) {
-            climbs = climbDao.getAll();
-        } else {
-            climbs = climbDao.findByUserCognitoSub(cognitoSub);
-        }
+        List<Climb> climbs = user.isAdmin()
+                ? climbDao.getAll()
+                : climbDao.findByUserCognitoSub(user.getCognitoSub());
 
         List<Gym> gyms = gymDao.getAll();
 
-        logger.debug("User role: {} - Retrieved {} climbs from database", userRole, climbs.size());
+        logger.debug("User: {} (Admin: {}) - Retrieved {} climbs", user.getUsername(), user.isAdmin(), climbs.size());
 
         req.setAttribute("climbs", climbs);
         req.setAttribute("gyms", gyms);
@@ -87,18 +78,14 @@ public class ClimbController extends HttpServlet {
 
                 // Get logged-in user's Cognito sub
                 HttpSession session = req.getSession();
-                Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-                String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
+                User user = (User) session.getAttribute("user");
 
-                // Check if user exists in DB
-                List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
-                if (users.isEmpty()) {
-                    logger.error("No user found for cognitoSub: {}", cognitoSub);
-                    resp.sendRedirect("logClimb.jsp?error=userNotFound");
+                if (user == null) {
+                    logger.error("No user in session");
+                    resp.sendRedirect("error.jsp");
                     return;
                 }
 
-                User user = users.get(0);
                 Gym gym = gymDao.getById(gymId);
                 Climb newClimb = new Climb(gym, user, date, climbType, grade, attempts, success, notes);
                 climbDao.insert(newClimb);
