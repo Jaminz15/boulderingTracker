@@ -3,7 +3,6 @@ package matc.controller;
 import matc.entity.Climb;
 import matc.entity.User;
 import matc.persistence.GenericDao;
-import com.auth0.jwt.interfaces.Claim;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,16 +26,13 @@ public class TrackProgress extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        Map<String, Claim> claims = (Map<String, Claim>) session.getAttribute("userClaims");
-        String cognitoSub = claims != null ? claims.get("sub").asString() : null;
+        User user = (User) session.getAttribute("user");
 
-        List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
-        if (users.isEmpty()) {
+        if (user == null) {
             resp.sendRedirect("logIn.jsp");
             return;
         }
 
-        User user = users.get(0);
         List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
 
         int totalClimbs = userClimbs.size();
