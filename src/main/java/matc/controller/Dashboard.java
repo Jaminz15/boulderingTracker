@@ -4,7 +4,6 @@ import matc.entity.Climb;
 import matc.entity.Gym;
 import matc.entity.User;
 import matc.persistence.GenericDao;
-import com.auth0.jwt.interfaces.Claim;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,15 +19,14 @@ import org.apache.logging.log4j.Logger;
 
 @WebServlet("/dashboard")
 public class Dashboard extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<Climb> climbDao;
     private GenericDao<Gym> gymDao;
-    private GenericDao<User> userDao;
 
     @Override
     public void init() {
         climbDao = new GenericDao<>(Climb.class);
         gymDao = new GenericDao<>(Gym.class);
-        userDao = new GenericDao<>(User.class);
     }
 
     @Override
@@ -36,29 +34,18 @@ public class Dashboard extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        Map<String, Claim> userClaims = (Map<String, Claim>) session.getAttribute("userClaims");
-        Claim groupsClaim = userClaims.get("cognito:groups");
-        boolean isAdmin = groupsClaim != null && groupsClaim.asList(String.class).contains("Admin");
-        String cognitoSub = userClaims != null ? userClaims.get("sub").asString() : null;
+        User user = (User) session.getAttribute("user");
 
-        List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
-        if (users.isEmpty()) {
+        if (user == null) {
+            logger.error("No user in session — redirecting to login");
             resp.sendRedirect("logIn.jsp");
             return;
         }
 
-        User user = users.get(0);
-
         // Get all climbs by this user
-        List<Climb> userClimbs;
-
-        if (isAdmin) {
-            // Admin sees all climbs
-            userClimbs = climbDao.getAll();
-        } else {
-            // Regular user sees only their own climbs
-            userClimbs = climbDao.findByPropertyEqual("user", user);
-        }
+        List<Climb> userClimbs = user.isAdmin()
+                ? climbDao.getAll()
+                : climbDao.findByPropertyEqual("user", user);
 
         // Get distinct gyms from climbs
         Set<Gym> userGyms = userClimbs.stream()
@@ -74,6 +61,9 @@ public class Dashboard extends HttpServlet {
         req.setAttribute("userName", user.getUsername());
         req.setAttribute("gyms", userGyms);
         req.setAttribute("lastLogDate", lastLogDate);
+
+        logger.debug("Dashboard loaded for user {} (Admin: {}) — Gyms: {}, Last log: {}",
+                user.getUsername(), user.isAdmin(), userGyms.size(), lastLogDate);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
