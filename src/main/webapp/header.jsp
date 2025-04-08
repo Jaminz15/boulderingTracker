@@ -10,8 +10,8 @@
             </div>
             <div class="account-links">
                 <c:choose>
-                    <c:when test="${not empty userName}">
-                        <span>Welcome, ${userName}</span> |
+                    <c:when test="${not empty sessionScope.user}">
+                        <span>Welcome, ${sessionScope.user.username}</span> |
                         <a href="logout">Log Out</a>
                     </c:when>
                     <c:otherwise>
@@ -25,7 +25,7 @@
     <nav class="main-nav">
         <div class="container">
             <ul>
-                <c:if test="${not empty userName}">
+                <c:if test="${not empty sessionScope.user}">
                     <li><a href="dashboard">Dashboard</a></li>
                     <li><a href="trackProgress">Track Progress</a></li>
                     <li><a href="climb">Log a Climb</a></li>
