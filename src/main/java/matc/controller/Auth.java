@@ -143,31 +143,38 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String email = jwt.getClaim("email").asString();
         String username = jwt.getClaim("preferred_username").asString();
 
-        // **Extract user groups from JWT**
+        // Extract user groups from JWT and determine if user is an admin
         List<String> groups = jwt.getClaim("cognito:groups").asList(String.class);
-        String userGroup = (groups != null && !groups.isEmpty()) ? groups.get(0) : "User"; // Default to "User" if no group
+        boolean isAdmin = groups != null && groups.contains("Admin");
 
-        logger.info("User logged in - Cognito Sub: " + cognitoSub + ", Email: " + email + ", Username: " + username + ", Group: " + userGroup);
+        User user; // <--- Declare user here
+        HttpSession session = req.getSession(); // <--- Declare session here
+
+        logger.info("User logged in - Cognito Sub: " + cognitoSub
+                + ", Email: " + email
+                + ", Username: " + username
+                + ", isAdmin: " + isAdmin);
 
         // Check if the user exists in the database
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("cognitoSub", cognitoSub);
 
-        User user;
         if (users.isEmpty()) {
             user = new User(email, username, cognitoSub);
+            user.setIsAdmin(isAdmin);
             int userId = userDao.insert(user);
             logger.info("New user inserted with ID: " + userId);
         } else {
             user = users.get(0);
-            logger.info("User already exists in database: " + user.getEmail());
+            if (user.isAdmin() != isAdmin) {
+                user.setIsAdmin(isAdmin);
+                userDao.update(user); // or saveOrUpdate if you added it
+                logger.info("Updated isAdmin status for user: " + user.getEmail());
+            }
         }
 
         // **Store user role and details in session**
-        HttpSession session = req.getSession();
-        session.setAttribute("userName", user.getUsername() != null ? user.getUsername() : user.getEmail());
-        session.setAttribute("userRole", userGroup); // Store user role for authorization
-        session.setAttribute("userClaims", jwt.getClaims());
+        session.setAttribute("user", user);
 
         return user.getUsername() != null ? user.getUsername() : user.getEmail();
     }
