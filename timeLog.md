@@ -141,6 +141,7 @@ Added reusable `header.jsp` and `footer.jsp` for layout structure and navigation
 Applied styling improvements to all JSPs for better UI/UX.
 Implemented admin-only functionality for gym deletion (based on Cognito group membership).
 Updated GymPage controller to allow admins to view all user climbs at a gym, while regular users only see their own.
+- 04/07/2025 - 4 hours - Addressed all areas for improvement noted in my Checkpoint 3 review.
 
 - ### **Group Project ()**
 - 04/02/2025 - 1 hour - Met up with group and added things to the README that was missing and worked together 
