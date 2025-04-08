@@ -3,17 +3,11 @@ package matc.persistence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import matc.entity.GeocodeResponse;
 import matc.util.PropertiesLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
+import org.apache.logging.log4j.*;
+import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class OpenStreetMapDao {
 

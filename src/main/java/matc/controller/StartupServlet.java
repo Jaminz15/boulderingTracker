@@ -1,12 +1,8 @@
 package matc.controller;
 
 import matc.util.PropertiesLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import org.apache.logging.log4j.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.util.Properties;

@@ -1,14 +1,12 @@
 package matc.rest;
 
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @ApplicationPath("/services")
 public class RestApplication extends Application {

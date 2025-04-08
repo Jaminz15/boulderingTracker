@@ -1,22 +1,12 @@
 package matc.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.*;
+import matc.entity.*;
+import matc.persistence.*;
 
-import matc.entity.Gym;
-import matc.entity.User;
-import matc.persistence.GenericDao;
-import matc.persistence.OpenStreetMapDao;
-import matc.entity.GeocodeResponse;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.*;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.util.List;

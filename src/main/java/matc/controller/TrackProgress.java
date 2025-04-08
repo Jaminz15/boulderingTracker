@@ -1,10 +1,8 @@
 package matc.controller;
 
-import matc.entity.Climb;
-import matc.entity.User;
+import matc.entity.*;
 import matc.persistence.GenericDao;
-
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;

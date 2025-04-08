@@ -1,19 +1,11 @@
 package matc.controller;
 
-import matc.entity.Climb;
-import matc.entity.Gym;
-import matc.entity.User;
+import matc.entity.*;
 import matc.persistence.GenericDao;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import org.apache.logging.log4j.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.io.IOException;
