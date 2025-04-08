@@ -13,13 +13,13 @@
         <p>Track your bouldering progress!</p>
 
         <c:choose>
-            <c:when test="${empty userName}">
+            <c:when test="${empty sessionScope.user}">
                 <a href="logIn" class="btn btn-success" style="font-size: 18px; text-decoration: none; padding: 10px;">
                     Log In
                 </a>
             </c:when>
             <c:otherwise>
-                <h3>Welcome, ${userName}!</h3>
+                <h3>Welcome, ${sessionScope.user.username}!</h3>
 
                 <c:if test="${not empty lastLogDate}">
                     <p>Last Log Date: <c:out value="${lastLogDate}" /></p>
