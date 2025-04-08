@@ -50,9 +50,9 @@ public class Gym {
      * @param location the location of the gym
      */
     public Gym(String name, String location) {
+        this();
         this.name = name;
         this.location = location;
-        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters
