@@ -2,6 +2,7 @@ package matc.controller;
 
 import matc.entity.Climb;
 import matc.entity.Gym;
+import matc.entity.User;
 import matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +22,15 @@ public class EditClimb extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            logger.error("No user in session — redirecting to login");
+            resp.sendRedirect("logIn.jsp");
+            return;
+        }
+
         String climbIdParam = req.getParameter("climbId");
 
         if (climbIdParam == null) {
@@ -33,12 +43,19 @@ public class EditClimb extends HttpServlet {
         GenericDao<Gym> gymDao = new GenericDao<>(Gym.class);
 
         Climb climb = climbDao.getById(climbId);
-        List<Gym> gyms = gymDao.getAll();
 
         if (climb == null) {
             resp.sendRedirect("dashboard?error=climbNotFound");
             return;
         }
+
+        if (!user.isAdmin() && climb.getUser().getId() != user.getId()) {
+            logger.warn("Unauthorized access attempt by user {} for climb ID {}", user.getUsername(), climbId);
+            resp.sendRedirect("dashboard?error=unauthorized");
+            return;
+        }
+
+        List<Gym> gyms = gymDao.getAll();
 
         req.setAttribute("climb", climb);
         req.setAttribute("gyms", gyms);
