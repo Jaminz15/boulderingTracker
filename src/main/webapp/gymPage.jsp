@@ -14,7 +14,8 @@
     <!-- Filter logic will be implemented later -->
 
     <h3>Climbing Logs</h3>
-    <table border="1">
+    <table id="gymClimbsTable" class="display">
+      <thead>
       <tr>
         <th>Date</th>
         <th>Type</th>
@@ -24,7 +25,8 @@
         <th>Notes</th>
         <th>Actions</th>
       </tr>
-
+      </thead>
+      <tbody>
       <c:choose>
         <c:when test="${empty climbs}">
           <tr>
@@ -53,7 +55,6 @@
                 </c:choose>
               </td>
               <td>
-                <!-- Placeholder for Edit/Delete -->
                 <form action="climb" method="post" style="display:inline;">
                   <input type="hidden" name="climbId" value="${climb.id}">
                   <button type="submit" name="action" value="delete">Delete</button>
@@ -64,12 +65,23 @@
           </c:forEach>
         </c:otherwise>
       </c:choose>
+      </tbody>
     </table>
 
   </section>
 </div>
 
 <jsp:include page="footer.jsp" />
+
+<script>
+  $(document).ready(function() {
+    $('#gymClimbsTable').DataTable({
+      responsive: true,
+      autoWidth: false,
+      order: [[0, 'desc']]  // Orders by Date descending by default
+    });
+  });
+</script>
 
 </body>
 </html>
