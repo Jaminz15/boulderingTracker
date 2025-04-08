@@ -12,7 +12,7 @@
     <section>
         <h2>Manage Your Gyms</h2>
 
-        <table>
+        <table id="gymsTable" class="display">
             <thead>
             <tr>
                 <th>Name</th>
@@ -28,12 +28,12 @@
                     <td>${gym.name}</td>
                     <td>${gym.location}</td>
                     <c:if test="${isAdmin}">
-                    <td>
-                            <form action="gymManagement" method="post">
+                        <td>
+                            <form action="gymManagement" method="post" style="display:inline;">
                                 <input type="hidden" name="gymId" value="${gym.id}">
                                 <button type="submit" name="action" value="delete">Delete</button>
                             </form>
-                    </td>
+                        </td>
                     </c:if>
                 </tr>
             </c:forEach>
@@ -87,6 +87,14 @@
         .bindPopup('<strong>${gym.name}</strong><br>${gym.location}');
     </c:if>
     </c:forEach>
+</script>
+<script>
+    $(document).ready(function() {
+        $('#gymsTable').DataTable({
+            responsive: true,
+            autoWidth: false
+        });
+    });
 </script>
 </body>
 </html>

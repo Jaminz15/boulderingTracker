@@ -100,7 +100,7 @@
 <!-- Initialize DataTable -->
 <script>
     $(document).ready(function() {
-        $('#climbsTable').DataTable();  // Apply DataTable to the table with id 'climbsTable'
+        $('#climbsTable').DataTable();
     });
 </script>
 
