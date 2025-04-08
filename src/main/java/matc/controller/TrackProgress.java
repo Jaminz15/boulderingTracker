@@ -12,12 +12,10 @@ import java.util.*;
 
 @WebServlet("/trackProgress")
 public class TrackProgress extends HttpServlet {
-    private GenericDao<User> userDao;
     private GenericDao<Climb> climbDao;
 
     @Override
     public void init() {
-        userDao = new GenericDao<>(User.class);
         climbDao = new GenericDao<>(Climb.class);
     }
 
