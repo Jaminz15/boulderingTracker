@@ -55,10 +55,54 @@
             <button type="submit">Save Climb</button>
             <button type="button" onclick="window.location.href='index.jsp'">Cancel</button>
         </form>
+
+        <h2>Your Climbing Logs</h2>
+        <table id="climbsTable" class="display">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Climb Type</th>
+                <th>Grade</th>
+                <th>Attempts</th>
+                <th>Success</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="climb" items="${climbs}">
+                <tr>
+                    <td>${climb.date}</td>
+                    <td>${climb.climbType}</td>
+                    <td>${climb.grade}</td>
+                    <td>${climb.attempts}</td>
+                    <td><c:choose>
+                        <c:when test="${climb.success}">Yes</c:when>
+                        <c:otherwise>No</c:otherwise>
+                    </c:choose></td>
+                    <td>${climb.notes}</td>
+                    <td>
+                        <a href="editClimb?climbId=${climb.id}">Edit</a> |
+                        <form action="climb" method="post" style="display:inline;">
+                            <input type="hidden" name="climbId" value="${climb.id}">
+                            <button type="submit" name="action" value="delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </section>
 </div>
 
 <jsp:include page="footer.jsp" />
+
+<!-- Initialize DataTable -->
+<script>
+    $(document).ready(function() {
+        $('#climbsTable').DataTable();  // Apply DataTable to the table with id 'climbsTable'
+    });
+</script>
 
 </body>
 </html>
