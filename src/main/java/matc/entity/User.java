@@ -25,6 +25,9 @@ public class User {
     @Column(name = "cognito_sub", unique = true)
     private String cognitoSub;
 
+    @Column(name = "is_admin")
+    private boolean isAdmin;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -126,6 +129,14 @@ public class User {
         this.cognitoSub = cognitoSub;
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
     /**
      * Gets created at.
      *
@@ -169,6 +180,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", cognitoSub='" + cognitoSub + '\'' +
+                ", isAdmin=" + isAdmin +
                 ", createdAt=" + createdAt +
                 ", climbs=" + climbs +
                 '}';

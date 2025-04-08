@@ -97,6 +97,7 @@ CREATE TABLE `users` (
                          `username` varchar(100) DEFAULT NULL,
                          `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
                          `cognito_sub` varchar(50) DEFAULT NULL,
+                         `is_admin` TINYINT(1) DEFAULT 0,
                          PRIMARY KEY (`id`),
                          UNIQUE KEY `email_or_username` (`email`),
                          UNIQUE KEY `cognito_sub` (`cognito_sub`),
@@ -111,8 +112,8 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-                        (1, 'climber123@example.com', 'climber123', '2025-02-18 04:55:49', 'test-cognito-sub'),
-                        (2, 'boulderking@example.com', 'boulderking', '2025-02-18 04:55:49', 'another-cognito-sub');
+                        (1, 'climber123@example.com', 'climber123', '2025-02-18 04:55:49', 'test-cognito-sub', 0),
+                        (2, 'boulderking@example.com', 'boulderking', '2025-02-18 04:55:49', 'another-cognito-sub', 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
