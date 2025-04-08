@@ -61,6 +61,7 @@ public class Climb {
      * @param notes     optional notes
      */
     public Climb(Gym gym, User user, LocalDate date, String climbType, String grade, int attempts, boolean success, String notes) {
+        this();
         this.gym = gym;
         this.user = user;
         this.date = date;
