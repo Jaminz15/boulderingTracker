@@ -25,24 +25,47 @@
                     <p>Last Log Date: <c:out value="${lastLogDate}" /></p>
                 </c:if>
 
-                <h3>View Logs by Gym:</h3>
-                <ul>
-                    <c:forEach var="gym" items="${gyms}">
-                        <li>
-                            <a href="gymPage?gymId=${gym.id}">${gym.name}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-
-                <c:if test="${empty gyms}">
-                    <p>You haven’t logged any climbs yet. <a href="climb">Log one now!</a></p>
-                </c:if>
+                <h3>Your Gyms</h3>
+                <table id="gymsDashboardTable" class="display">
+                    <thead>
+                    <tr>
+                        <th>Gym Name</th>
+                        <th>View Logs</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:choose>
+                        <c:when test="${empty gyms}">
+                            <tr>
+                                <td colspan="2">You haven’t logged any climbs yet. <a href="climb">Log one now!</a></td>
+                            </tr>
+                        </c:when>
+                        <c:otherwise>
+                            <c:forEach var="gym" items="${gyms}">
+                                <tr>
+                                    <td>${gym.name}</td>
+                                    <td><a href="gymPage?gymId=${gym.id}">View Logs</a></td>
+                                </tr>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
+                    </tbody>
+                </table>
             </c:otherwise>
         </c:choose>
     </section>
 </div>
 
 <jsp:include page="footer.jsp" />
+
+<script>
+    $(document).ready(function() {
+        $('#gymsDashboardTable').DataTable({
+            responsive: true,
+            autoWidth: false
+        });
+    });
+</script>
 
 </body>
 </html>
