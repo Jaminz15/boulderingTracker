@@ -31,35 +31,29 @@ body {
 
 /* === HEADER STYLES === */
 .site-header {
-    background-color: #111;
-    color: white;
+    background-color: #111;  /* Dark header background */
+    color: white;  /* White text for visibility */
+    padding: 10px 0;  /* Adjust header padding */
 }
 
 .top-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;  /* Space out the logo and account info */
     align-items: center;
-    padding: 15px 0;
-    position: relative;
-}
-
-.logo-section {
-    text-align: center;
+    padding: 0 20px;
 }
 
 .logo-section h1 {
-    font-size: 1.8rem;
+    font-size: 1.8rem;  /* Increase logo size */
     margin-bottom: 4px;
 }
 
 .logo-section .tagline {
-    font-size: 0.85rem;
-    color: #ccc;
+    font-size: 0.85rem;  /* Tagline font size */
+    color: #ccc;  /* Lighter color for tagline */
 }
 
 .account-links {
-    position: absolute;
-    right: 20px;
     font-size: 0.85rem;
 }
 
@@ -73,35 +67,34 @@ body {
     text-decoration: underline;
 }
 
+/* === NAVBAR STYLES === */
 .main-nav {
-    background-color: #222;
-}
-
-.main-nav .container {
-    display: flex;
-    justify-content: center;
+    background-color: #333;  /* Dark background color for the nav */
+    padding: 0.5rem 0;  /* Adjust padding to fit better */
 }
 
 .main-nav ul {
-    list-style: none;
+    list-style: none;  /* Remove bullet points from list */
+    margin: 0;
+    padding: 0;
     display: flex;
-    padding: 10px 0;
-    gap: 1rem;
+    justify-content: center;  /* Center the links */
+    gap: 1rem;  /* Space between links */
+    flex-wrap: wrap;  /* Allows wrapping of links if necessary */
 }
 
 .main-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
+    color: #fff;  /* White text for the links */
+    text-decoration: none;  /* Remove underline from links */
+    padding: 0.5rem 1rem;  /* Add padding around the links */
+    display: block;  /* Make the link block-level for better clickability */
+    font-weight: bold;  /* Bold the links for prominence */
 }
 
 .main-nav a:hover {
-    background-color: #333;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
+    background-color: #555;  /* Add background on hover */
+    border-radius: 5px;  /* Round the corners of the hovered links */
 }
-
 
 /* === FOOTER STYLES === */
 .site-footer {
@@ -135,7 +128,6 @@ body {
 .support-btn:hover {
     background-color: #ddd;
 }
-
 
 /* === SECTION SPACING === */
 section {
