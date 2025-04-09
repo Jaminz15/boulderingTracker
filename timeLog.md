@@ -128,7 +128,7 @@ Connected dashboard links to pass gymId and confirmed correct data shows per use
 - 03/27/2025 - 1.5 hour - Implemented logout functionality with Cognito
 - 03/29/2025 – 3 hours – Created `GymWebService`, `ObjectMapperContextResolver`, and `RestApplication` for RESTful web services
 
-- ### **Group Project (BoulderBook)**
+- ### **Group Project (Urban Photography API**
 - 3/26/2025 - 3 hours - Met as a group, worked through everything for the week and finished the README
 
 ## **Week 10**
@@ -143,7 +143,17 @@ Implemented admin-only functionality for gym deletion (based on Cognito group me
 Updated GymPage controller to allow admins to view all user climbs at a gym, while regular users only see their own.
 - 04/07/2025 - 4 hours - Addressed all areas for improvement noted in my Checkpoint 3 review.
 
-- ### **Group Project ()**
+- ### **Group Project (Urban Photography API)**
 - 04/02/2025 - 1 hour - Met up with group and added things to the README that was missing and worked together 
 as a group to figure out what we will all work on for the week.
 - 04/03/2025 - 4 hour - Worked on the `LocationService`, `Location`, and `RestApplication`.
+
+## **Week 11**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- ### **Individual Project (BoulderBook)**
+- 
+
+- ### **Group Project (Urban Photography API)**
+- 04/08/2025 - 1.5 hour - Created a new branch and added `LocationService`, `RestApplication` and added it to 
+GitHub and created a pull request for it.
