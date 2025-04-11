@@ -157,3 +157,6 @@ as a group to figure out what we will all work on for the week.
 - ### **Group Project (Urban Photography API)**
 - 04/08/2025 - 1.5 hour - Created a new branch and added `LocationService`, `RestApplication` and added it to 
 GitHub and created a pull request for it.
+- 04/10/2025 - 4 hours - Implemented and tested DAO classes for Location, Subject, and Image entities. Added 
+necessary constructors to Coordinates, updated BestTime entity mapping, and configured .gitignore. Merged changes 
+via GitHub pull request.
