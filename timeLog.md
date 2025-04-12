@@ -151,6 +151,7 @@ as a group to figure out what we will all work on for the week.
 ## **Week 11**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
+- Work week for the Group Project
 - ### **Individual Project (BoulderBook)**
 - 
 
@@ -160,3 +161,10 @@ GitHub and created a pull request for it.
 - 04/10/2025 - 4 hours - Implemented and tested DAO classes for Location, Subject, and Image entities. Added 
 necessary constructors to Coordinates, updated BestTime entity mapping, and configured .gitignore. Merged changes 
 via GitHub pull request.
+- 04/11/2025 – 5 hours – Finished and tested GET and POST endpoints for the /locations service. Verified functionality 
+using Postman and added screenshots showing the new location being returned in the GET response. Made several key updates:
+Added LocationService methods for GET and POST
+Updated entity annotations (e.g., @JsonManagedReference, @JsonBackReference) to prevent infinite loops during JSON serialization
+Updated pom.xml with correct Jersey and Jackson dependencies and versions
+Created RestApplication to register base /services path
+Confirmed full functionality and created a pull request for review
