@@ -163,8 +163,8 @@ necessary constructors to Coordinates, updated BestTime entity mapping, and conf
 via GitHub pull request.
 - 04/11/2025 – 5 hours – Finished and tested GET and POST endpoints for the /locations service. Verified functionality 
 using Postman and added screenshots showing the new location being returned in the GET response. Made several key updates:
-Added LocationService methods for GET and POST
-Updated entity annotations (e.g., @JsonManagedReference, @JsonBackReference) to prevent infinite loops during JSON serialization
-Updated pom.xml with correct Jersey and Jackson dependencies and versions
-Created RestApplication to register base /services path
-Confirmed full functionality and created a pull request for review
+  - Added LocationService methods for GET and POST
+  - Updated entity annotations (e.g., @JsonManagedReference, @JsonBackReference) to prevent infinite loops during JSON serialization
+  - Updated pom.xml with correct Jersey and Jackson dependencies and versions
+  - Created RestApplication to register base /services path
+  - Confirmed full functionality and created a pull request for review
