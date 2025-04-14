@@ -34,12 +34,14 @@ public class EditClimb extends HttpServlet {
         }
 
         int climbId = Integer.parseInt(climbIdParam);
+        logger.debug("EditClimb requested for Climb ID: {}", climbId);
         GenericDao<Climb> climbDao = new GenericDao<>(Climb.class);
         GenericDao<Gym> gymDao = new GenericDao<>(Gym.class);
 
         Climb climb = climbDao.getById(climbId);
 
         if (climb == null) {
+            logger.warn("Climb not found — ID: {}", climbId);
             resp.sendRedirect("dashboard?error=climbNotFound");
             return;
         }
