@@ -81,18 +81,30 @@ public class GymManagement extends HttpServlet {
             String gymName = req.getParameter("gymName");
             String gymLocation = req.getParameter("gymLocation");
 
-            // Call OpenStreetMap API to get lat/lon
+            if (gymName == null || gymName.isBlank()) {
+                logger.warn("Gym name is missing.");
+                resp.sendRedirect("gymManagement?error=missingGymName");
+                return;
+            }
+
+            if (gymLocation == null || gymLocation.isBlank()) {
+                logger.warn("Gym location is missing.");
+                resp.sendRedirect("gymManagement?error=missingGymLocation");
+                return;
+            }
+
             OpenStreetMapDao geoDao = new OpenStreetMapDao();
             GeocodeResponse geocode = geoDao.getGeocode(gymLocation);
 
-            Gym newGym = new Gym(gymName, gymLocation);
-
-            if (geocode != null) {
-                newGym.setLatitude(geocode.getLatitude());
-                newGym.setLongitude(geocode.getLongitude());
-            } else {
+            if (geocode == null) {
                 logger.warn("No geocode data found for location: {}", gymLocation);
+                resp.sendRedirect("gymManagement?error=geocodeFailed");
+                return;
             }
+
+            Gym newGym = new Gym(gymName, gymLocation);
+            newGym.setLatitude(geocode.getLatitude());
+            newGym.setLongitude(geocode.getLongitude());
 
             gymDao.insert(newGym);
 
