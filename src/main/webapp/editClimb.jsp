@@ -12,6 +12,29 @@
       <input type="hidden" name="action" value="update">
       <input type="hidden" name="climbId" value="${climb.id}">
 
+      <!-- Error Message Display -->
+      <c:if test="${not empty param.error}">
+        <div class="error-message">
+          <c:choose>
+            <c:when test="${param.error == 'missingClimbType'}">
+              <p>Please enter a climb type.</p>
+            </c:when>
+            <c:when test="${param.error == 'invalidAttempts'}">
+              <p>Attempts must be a positive number.</p>
+            </c:when>
+            <c:when test="${param.error == 'missingGrade'}">
+              <p>Please select a grade.</p>
+            </c:when>
+            <c:when test="${param.error == 'invalidClimbId'}">
+              <p>Climb ID is invalid or missing.</p>
+            </c:when>
+            <c:otherwise>
+              <p>Something went wrong. Please try again.</p>
+            </c:otherwise>
+          </c:choose>
+        </div>
+      </c:if>
+
       <label for="date">Date:</label>
       <input type="date" id="date" name="date" value="${climb.date}" required>
 
