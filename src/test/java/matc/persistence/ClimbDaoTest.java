@@ -8,7 +8,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -99,5 +101,87 @@ class ClimbDaoTest {
         for (Climb climb : gymClimbs) {
             assertNull(climbDao.getById(climb.getId()));
         }
+    }
+
+    @Test
+    void findByUserCognitoSubSuccess() {
+        User user = userDao.getById(1);
+        List<Climb> climbs = climbDao.findByUserCognitoSub(user.getCognitoSub());
+
+        assertNotNull(climbs);
+        assertFalse(climbs.isEmpty());
+        assertEquals(user.getId(), climbs.get(0).getUser().getId());
+    }
+
+    @Test
+    void findByUserSuccess() {
+        User user = userDao.getById(1);
+        List<Climb> climbs = climbDao.findByPropertyEqual("user", user);
+
+        assertNotNull(climbs);
+        assertFalse(climbs.isEmpty());
+        for (Climb climb : climbs) {
+            assertEquals(user.getId(), climb.getUser().getId());
+        }
+    }
+
+    @Test
+    void findByUserAndGymSuccess() {
+        User user = userDao.getById(1);
+        Gym gym = gymDao.getById(1);
+
+        Map<String, Object> filters = new HashMap<>();
+        filters.put("user", user);
+        filters.put("gym", gym);
+
+        List<Climb> climbs = climbDao.findByPropertyEqual(filters);
+
+        assertNotNull(climbs);
+        assertFalse(climbs.isEmpty());
+        for (Climb climb : climbs) {
+            assertEquals(user.getId(), climb.getUser().getId());
+            assertEquals(gym.getId(), climb.getGym().getId());
+        }
+    }
+
+    @Test
+    void findByClimbTypeSuccess() {
+        List<Climb> climbs = climbDao.findByPropertyEqual("climbType", "Overhang");
+
+        assertNotNull(climbs);
+        assertFalse(climbs.isEmpty());
+        assertEquals("Overhang", climbs.get(0).getClimbType());
+    }
+
+    @Test
+    void findByGradeSuccess() {
+        List<Climb> climbs = climbDao.findByPropertyEqual("grade", "V5");
+
+        assertNotNull(climbs);
+        assertFalse(climbs.isEmpty());
+        assertEquals("V5", climbs.get(0).getGrade());
+    }
+
+    @Test
+    void updateAllFieldsSuccess() {
+        Climb climb = climbDao.getById(1);
+        Gym gym = gymDao.getById(2); // use a different gym than original
+
+        climb.setGym(gym);
+        climb.setClimbType("Overhang");
+        climb.setGrade("V4");
+        climb.setAttempts(3);
+        climb.setSuccess(false);
+        climb.setNotes("Testing full update");
+
+        climbDao.update(climb);
+        Climb updated = climbDao.getById(1);
+
+        assertEquals("Overhang", updated.getClimbType());
+        assertEquals("V4", updated.getGrade());
+        assertEquals(3, updated.getAttempts());
+        assertFalse(updated.isSuccess());
+        assertEquals("Testing full update", updated.getNotes());
+        assertEquals(gym.getId(), updated.getGym().getId());
     }
 }
