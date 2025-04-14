@@ -59,25 +59,48 @@ public class ClimbController extends HttpServlet {
         logger.debug("Received action: {}", action);
 
         if ("add".equals(action)) {
+            HttpSession session = req.getSession();
+            User user = (User) session.getAttribute("user");
+
+            if (user == null) {
+                logger.error("No user in session");
+                resp.sendRedirect("logIn.jsp");
+                return;
+            }
+
+            // Validate required fields before parsing
+            String climbType = req.getParameter("climbType");
+            String grade = req.getParameter("grade");
+            String attemptsParam = req.getParameter("attempts");
+
+            if (climbType == null || climbType.isBlank()) {
+                resp.sendRedirect("climb?error=missingClimbType");
+                return;
+            }
+
+            if (grade == null || grade.isBlank()) {
+                resp.sendRedirect("climb?error=missingGrade");
+                return;
+            }
+
+            int attempts;
+            try {
+                attempts = Integer.parseInt(attemptsParam);
+                if (attempts <= 0) {
+                    resp.sendRedirect("climb?error=invalidAttempts");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                logger.error("Invalid attempts value: {}", attemptsParam);
+                resp.sendRedirect("climb?error=invalidAttempts");
+                return;
+            }
+
             try {
                 int gymId = Integer.parseInt(req.getParameter("gymId"));
                 LocalDate date = LocalDate.parse(req.getParameter("date"));
-                String climbType = req.getParameter("climbType");
-                String grade = req.getParameter("grade");
-                int attempts = Integer.parseInt(req.getParameter("attempts"));
                 boolean success = Boolean.parseBoolean(req.getParameter("success"));
                 String notes = req.getParameter("notes");
-
-
-                // Get logged-in user's Cognito sub
-                HttpSession session = req.getSession();
-                User user = (User) session.getAttribute("user");
-
-                if (user == null) {
-                    logger.error("No user in session");
-                    resp.sendRedirect("error.jsp");
-                    return;
-                }
 
                 logger.debug("Climb form input - Gym ID: {}, Date: {}, Type: {}, Grade: {}, Attempts: {}, Success: {}, Notes: {}",
                         gymId, date, climbType, grade, attempts, success, notes);
@@ -89,6 +112,8 @@ public class ClimbController extends HttpServlet {
                 logger.info("Successfully added new climb: {}", newClimb);
             } catch (Exception e) {
                 logger.error("Error adding new climb", e);
+                resp.sendRedirect("climb?error=unexpected");
+                return;
             }
         } else if ("delete".equals(action)) {
             try {
@@ -104,26 +129,56 @@ public class ClimbController extends HttpServlet {
                 int climbId = Integer.parseInt(req.getParameter("climbId"));
                 Climb climbToUpdate = climbDao.getById(climbId);
 
-                if (climbToUpdate != null) {
-                    int gymId = Integer.parseInt(req.getParameter("gymId"));
-                    Gym gym = gymDao.getById(gymId);
-
-                    climbToUpdate.setDate(LocalDate.parse(req.getParameter("date")));
-                    climbToUpdate.setGym(gym);
-                    climbToUpdate.setClimbType(req.getParameter("climbType"));
-                    climbToUpdate.setGrade(req.getParameter("grade"));
-                    climbToUpdate.setAttempts(Integer.parseInt(req.getParameter("attempts")));
-                    climbToUpdate.setSuccess(Boolean.parseBoolean(req.getParameter("success")));
-                    climbToUpdate.setNotes(req.getParameter("notes"));
-
-                    climbDao.update(climbToUpdate);
-
-                    logger.info("Successfully updated climb ID: {}", climbId);
-                } else {
-                    logger.warn("Climb with ID {} not found for update", climbId);
+                if (climbToUpdate == null) {
+                    resp.sendRedirect("editClimb?climbId=" + climbId + "&error=invalidClimbId");
+                    return;
                 }
+
+                String climbType = req.getParameter("climbType");
+                String grade = req.getParameter("grade");
+                String attemptsParam = req.getParameter("attempts");
+
+                if (climbType == null || climbType.isBlank()) {
+                    resp.sendRedirect("editClimb?climbId=" + climbId + "&error=missingClimbType");
+                    return;
+                }
+
+                if (grade == null || grade.isBlank()) {
+                    resp.sendRedirect("editClimb?climbId=" + climbId + "&error=missingGrade");
+                    return;
+                }
+
+                int attempts;
+                try {
+                    attempts = Integer.parseInt(attemptsParam);
+                    if (attempts <= 0) {
+                        resp.sendRedirect("editClimb?climbId=" + climbId + "&error=invalidAttempts");
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    logger.error("Invalid attempts value: {}", attemptsParam);
+                    resp.sendRedirect("editClimb?climbId=" + climbId + "&error=invalidAttempts");
+                    return;
+                }
+
+                int gymId = Integer.parseInt(req.getParameter("gymId"));
+                Gym gym = gymDao.getById(gymId);
+
+                climbToUpdate.setDate(LocalDate.parse(req.getParameter("date")));
+                climbToUpdate.setGym(gym);
+                climbToUpdate.setClimbType(climbType);
+                climbToUpdate.setGrade(grade);
+                climbToUpdate.setAttempts(attempts);
+                climbToUpdate.setSuccess(Boolean.parseBoolean(req.getParameter("success")));
+                climbToUpdate.setNotes(req.getParameter("notes"));
+
+                climbDao.update(climbToUpdate);
+                logger.info("Successfully updated climb ID: {}", climbId);
+
             } catch (Exception e) {
                 logger.error("Error updating climb", e);
+                resp.sendRedirect("dashboard?error=updateFailed");
+                return;
             }
         }
         resp.sendRedirect("climb");
