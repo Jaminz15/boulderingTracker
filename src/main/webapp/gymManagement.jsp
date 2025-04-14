@@ -42,6 +42,27 @@
 
         <h3>Add a New Gym</h3>
         <form action="gymManagement" method="post">
+
+            <!-- Error message display -->
+            <c:if test="${not empty param.error}">
+                <div class="error-message">
+                    <c:choose>
+                        <c:when test="${param.error == 'missingGymName'}">
+                            <p>Please enter a gym name.</p>
+                        </c:when>
+                        <c:when test="${param.error == 'missingGymLocation'}">
+                            <p>Please enter a location.</p>
+                        </c:when>
+                        <c:when test="${param.error == 'geocodeFailed'}">
+                            <p>Unable to geocode this location. Please try a more specific address.</p>
+                        </c:when>
+                        <c:otherwise>
+                            <p>Something went wrong. Please try again.</p>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </c:if>
+
             <label for="gymName">Gym Name:</label>
             <input type="text" id="gymName" name="gymName" required>
 
