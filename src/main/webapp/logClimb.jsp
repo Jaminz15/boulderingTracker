@@ -15,6 +15,29 @@
         <form action="climb" method="post">
             <input type="hidden" name="action" value="add">
 
+            <!-- Error Message Display -->
+            <c:if test="${not empty param.error}">
+                <div class="error-message">
+                    <c:choose>
+                        <c:when test="${param.error == 'missingClimbType'}">
+                            <p>Please enter a climb type.</p>
+                        </c:when>
+                        <c:when test="${param.error == 'missingGrade'}">
+                            <p>Please select a grade.</p>
+                        </c:when>
+                        <c:when test="${param.error == 'invalidAttempts'}">
+                            <p>Attempts must be a positive number.</p>
+                        </c:when>
+                        <c:when test="${param.error == 'unexpected'}">
+                            <p>Something went wrong. Please try again.</p>
+                        </c:when>
+                        <c:otherwise>
+                            <p>Unknown error occurred.</p>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </c:if>
+
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
 
@@ -26,7 +49,7 @@
             </select>
 
             <label for="climbType">Climb Type:</label>
-            <input type="text" id="climbType" name="climbType" required>
+            <input type="text" id="climbType" name="climbType">
 
             <label for="grade">Grade:</label>
             <select id="grade" name="grade" required>
