@@ -3,6 +3,7 @@ package matc.controller;
 import matc.entity.*;
 import matc.persistence.GenericDao;
 import javax.servlet.*;
+import org.apache.logging.log4j.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.*;
 
 @WebServlet("/trackProgress")
 public class TrackProgress extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(TrackProgress.class);
     private GenericDao<Climb> climbDao;
 
     @Override
@@ -29,6 +31,8 @@ public class TrackProgress extends HttpServlet {
             return;
         }
 
+        logger.debug("TrackProgress: User {} is viewing progress", user.getUsername());
+
         // Load gyms for dropdown
         GenericDao<Gym> gymDao = new GenericDao<>(Gym.class);
         List<Gym> gyms = gymDao.getAll();
@@ -42,8 +46,11 @@ public class TrackProgress extends HttpServlet {
         // Apply gym filter
         if (gymIdParam != null && !gymIdParam.isEmpty()) {
             int gymId = Integer.parseInt(gymIdParam);
+            logger.debug("TrackProgress: Filtering by gym ID {}", gymId);
             userClimbs.removeIf(climb -> climb.getGym().getId() != gymId);
         }
+
+        logger.debug("TrackProgress: {} climbs loaded after filters", userClimbs.size());
 
         // Apply date range filter
         String startDateParam = req.getParameter("startDate");
