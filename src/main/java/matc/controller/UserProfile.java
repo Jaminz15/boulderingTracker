@@ -5,6 +5,7 @@ import matc.persistence.GenericDao;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import org.apache.logging.log4j.*;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 
 @WebServlet("/profile")
 public class UserProfile extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(UserProfile.class);
     private GenericDao<Climb> climbDao;
 
     @Override
@@ -44,6 +46,11 @@ public class UserProfile extends HttpServlet {
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
                 .orElse(null);
+
+        // logging
+        logger.debug("User {} loaded profile page. Total climbs: {}, Favorite Gym: {}",
+                user.getUsername(), userClimbs.size(),
+                favoriteGym != null ? favoriteGym.getName() : "None");
 
         req.setAttribute("user", user);
         req.setAttribute("totalClimbs", userClimbs.size());
