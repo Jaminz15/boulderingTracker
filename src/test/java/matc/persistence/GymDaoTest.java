@@ -75,4 +75,27 @@ class GymDaoTest {
             assertNull(climbDao.getById(climb.getId()));
         }
     }
+
+    @Test
+    void insertWithCoordinatesSuccess() {
+        Gym newGym = new Gym("South Boulder Spot", "456 Gravity Ave, Madison, WI");
+        newGym.setLatitude("43.0655");
+        newGym.setLongitude("-89.3901");
+
+        int id = gymDao.insert(newGym);
+        Gym inserted = gymDao.getById(id);
+
+        assertNotNull(inserted);
+        assertEquals("43.0655", inserted.getLatitude());
+        assertEquals("-89.3901", inserted.getLongitude());
+    }
+
+    @Test
+    void findByNameSuccess() {
+        List<Gym> gyms = gymDao.findByPropertyEqual("name", "East Side Boulders");
+
+        assertNotNull(gyms);
+        assertFalse(gyms.isEmpty());
+        assertEquals("East Side Boulders", gyms.get(0).getName());
+    }
 }
