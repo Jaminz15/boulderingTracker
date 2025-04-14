@@ -56,8 +56,8 @@ public class Dashboard extends HttpServlet {
         req.setAttribute("gyms", userGyms);
         req.setAttribute("lastLogDate", lastLogDate);
 
-        logger.debug("Dashboard loaded for user {} (Admin: {}) — Gyms: {}, Last log: {}",
-                user.getUsername(), user.isAdmin(), userGyms.size(), lastLogDate);
+        logger.debug("Dashboard loaded for user {} (Admin: {}) — Gyms: {}, Climbs: {}, Last log: {}",
+                user.getUsername(), user.isAdmin(), userGyms.size(), userClimbs.size(), lastLogDate);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
