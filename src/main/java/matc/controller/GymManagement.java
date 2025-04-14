@@ -95,6 +95,10 @@ public class GymManagement extends HttpServlet {
             }
 
             gymDao.insert(newGym);
+
+            logger.info("Gym added: {} at {} (Lat: {}, Lon: {})",
+                    gymName, gymLocation, newGym.getLatitude(), newGym.getLongitude());
+
         } else if ("delete".equals(action)) {
             if (!isAdmin) {
                 logger.warn("Unauthorized delete attempt by non-admin user.");
