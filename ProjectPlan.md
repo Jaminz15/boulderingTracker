@@ -97,9 +97,9 @@
 ---
 
 ## **Week 10 - Week 11 (3/31 - 4/13) - Refinement Weeks**
-- [ ] Improve **user interface (UI) and styling**
-- [ ] Implement **climb history filtering by gym/date**
-- [ ] Implement **tracking for hardest climbs and attempts**
+- [X] Improve **user interface (UI) and styling**
+- [X] Implement **climb history filtering by gym/date**
+- [X] Implement **tracking for hardest climbs and attempts**
 - [ ] Continue refining **logging and testing**
 - [ ] Ensure **error handling and form validation** are working properly
 - [ ] Weekly time log

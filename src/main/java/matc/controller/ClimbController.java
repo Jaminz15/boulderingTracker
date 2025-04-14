@@ -68,6 +68,7 @@ public class ClimbController extends HttpServlet {
                 boolean success = Boolean.parseBoolean(req.getParameter("success"));
                 String notes = req.getParameter("notes");
 
+
                 // Get logged-in user's Cognito sub
                 HttpSession session = req.getSession();
                 User user = (User) session.getAttribute("user");
@@ -77,6 +78,9 @@ public class ClimbController extends HttpServlet {
                     resp.sendRedirect("error.jsp");
                     return;
                 }
+
+                logger.debug("Climb form input - Gym ID: {}, Date: {}, Type: {}, Grade: {}, Attempts: {}, Success: {}, Notes: {}",
+                        gymId, date, climbType, grade, attempts, success, notes);
 
                 Gym gym = gymDao.getById(gymId);
                 Climb newClimb = new Climb(gym, user, date, climbType, grade, attempts, success, notes);

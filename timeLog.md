@@ -153,6 +153,9 @@ as a group to figure out what we will all work on for the week.
 - ### **Weekly Course Material**
 - Work week for the Group Project
 - ### **Individual Project (BoulderBook)**
+- 04/13/2025 - 2 hours - Added gym and date range filtering to the Track Progress page. Updated the controller to 
+calculate dynamic stats like total climbs, success rate, best grade, hardest climb, and most attempts. Displayed 
+filtered results in a climb log table with success/fail indicators.
 - 
 
 - ### **Group Project (Urban Photography API)**
