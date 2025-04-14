@@ -153,10 +153,22 @@ as a group to figure out what we will all work on for the week.
 - ### **Weekly Course Material**
 - Work week for the Group Project
 - ### **Individual Project (BoulderBook)**
-- 04/13/2025 - 2 hours - Added gym and date range filtering to the Track Progress page. Updated the controller to 
-calculate dynamic stats like total climbs, success rate, best grade, hardest climb, and most attempts. Displayed 
-filtered results in a climb log table with success/fail indicators.
-- 
+- **04/13/2025 – 3 hours**  
+  Added gym and date range filtering to the **Track Progress** page.  
+  Updated the controller to calculate dynamic stats like total climbs, success rate, best grade, hardest climb, and most attempts.  
+  Displayed filtered results in a climb log table with success/fail indicators.
+- **04/13/2025 – 2 hours**  
+  Improved logging across all major servlets to track user actions, climb events, and admin activity.  
+  Added and expanded DAO test coverage to include saving, updating, deleting, and filtered queries.
+- **04/13/2025 – 3 hours**  
+  Added full server-side validation and user feedback for climbing and gym forms.  
+  Implemented input checking, error redirects, and JSTL error message blocks in JSPs.
+  **Files updated:**
+  - `ClimbController.java`
+  - `logClimb.jsp`
+  - `editClimb.jsp`
+  - `GymManagement.java`
+  - `gymManagement.jsp`
 
 - ### **Group Project (Urban Photography API)**
 - 04/08/2025 - 1.5 hour - Created a new branch and added `LocationService`, `RestApplication` and added it to 

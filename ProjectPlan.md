@@ -100,9 +100,9 @@
 - [X] Improve **user interface (UI) and styling**
 - [X] Implement **climb history filtering by gym/date**
 - [X] Implement **tracking for hardest climbs and attempts**
-- [ ] Continue refining **logging and testing**
-- [ ] Ensure **error handling and form validation** are working properly
-- [ ] Weekly time log
+- [X] Continue refining **logging and testing**
+- [X] Ensure **error handling and form validation** are working properly
+- [X] Weekly time log
 
 ---
 

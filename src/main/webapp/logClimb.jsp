@@ -49,7 +49,7 @@
             </select>
 
             <label for="climbType">Climb Type:</label>
-            <input type="text" id="climbType" name="climbType">
+            <input type="text" id="climbType" name="climbType" required>
 
             <label for="grade">Grade:</label>
             <select id="grade" name="grade" required>
