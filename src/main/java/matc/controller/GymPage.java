@@ -21,6 +21,7 @@ public class GymPage extends HttpServlet {
         String gymIdParam = req.getParameter("gymId");
 
         if (gymIdParam == null) {
+            logger.warn("GymPage accessed with no gymId parameter");
             resp.sendRedirect("index.jsp?error=noGymSelected");
             return;
         }
@@ -33,6 +34,12 @@ public class GymPage extends HttpServlet {
 
         // Get gym by ID
         Gym selectedGym = gymDao.getById(gymId);
+
+        if (selectedGym == null) {
+            logger.warn("GymPage: No gym found with ID {}", gymId);
+            resp.sendRedirect("index.jsp?error=invalidGym");
+            return;
+        }
 
         // Get logged-in user from session
         HttpSession session = req.getSession();
