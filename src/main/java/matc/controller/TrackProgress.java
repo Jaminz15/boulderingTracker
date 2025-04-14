@@ -29,25 +29,65 @@ public class TrackProgress extends HttpServlet {
             return;
         }
 
+        // Load gyms for dropdown
+        GenericDao<Gym> gymDao = new GenericDao<>(Gym.class);
+        List<Gym> gyms = gymDao.getAll();
+        req.setAttribute("gyms", gyms);
+
+        // Handle filter inputs
+        String gymIdParam = req.getParameter("gymId");
+
         List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
 
+        // Apply gym filter
+        if (gymIdParam != null && !gymIdParam.isEmpty()) {
+            int gymId = Integer.parseInt(gymIdParam);
+            userClimbs.removeIf(climb -> climb.getGym().getId() != gymId);
+        }
+
+        // Apply date range filter
+        String startDateParam = req.getParameter("startDate");
+        String endDateParam = req.getParameter("endDate");
+
+        if ((startDateParam != null && !startDateParam.isEmpty()) ||
+                (endDateParam != null && !endDateParam.isEmpty())) {
+
+            userClimbs.removeIf(climb -> {
+                String climbDate = climb.getDate().toString();
+                return (startDateParam != null && !startDateParam.isEmpty() && climbDate.compareTo(startDateParam) < 0)
+                        || (endDateParam != null && !endDateParam.isEmpty() && climbDate.compareTo(endDateParam) > 0);
+            });
+        }
+
+        // Calculate stats
         int totalClimbs = userClimbs.size();
         int totalAttempts = userClimbs.stream().mapToInt(Climb::getAttempts).sum();
         double averageAttempts = totalClimbs > 0 ? (double) totalAttempts / totalClimbs : 0;
         long successfulClimbs = userClimbs.stream().filter(Climb::isSuccess).count();
         double successRate = totalClimbs > 0 ? (double) successfulClimbs / totalClimbs * 100 : 0;
 
-        // Best grade (sorted by V number)
         String bestGrade = userClimbs.stream()
                 .map(Climb::getGrade)
                 .max(Comparator.comparingInt(TrackProgress::extractGradeValue))
                 .orElse("N/A");
 
+        Climb hardestClimb = userClimbs.stream()
+                .max(Comparator.comparingInt(c -> extractGradeValue(c.getGrade())))
+                .orElse(null);
+
+        Climb mostAttempts = userClimbs.stream()
+                .max(Comparator.comparingInt(Climb::getAttempts))
+                .orElse(null);
+
+        // Send data to JSP
         req.setAttribute("totalClimbs", totalClimbs);
         req.setAttribute("totalAttempts", totalAttempts);
         req.setAttribute("averageAttempts", String.format("%.1f", averageAttempts));
         req.setAttribute("successRate", String.format("%.0f", successRate));
         req.setAttribute("bestGrade", bestGrade);
+        req.setAttribute("hardestClimb", hardestClimb);
+        req.setAttribute("mostAttempts", mostAttempts);
+        req.setAttribute("userClimbs", userClimbs);
 
         req.getRequestDispatcher("/trackProgress.jsp").forward(req, resp);
     }
