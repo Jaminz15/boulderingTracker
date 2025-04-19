@@ -107,8 +107,8 @@
 ---
 
 ## **Week 12 (4/14 - 4/20) - Code & UI Review**
-- [ ] Ensure **unit tests are comprehensive**
-- [ ] Fix any **bugs or performance issues** found during testing
+- [X] Ensure **unit tests are comprehensive**
+- [X] Fix any **bugs or performance issues** found during testing
 - [ ] Weekly time log
 
 ---

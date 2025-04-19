@@ -183,3 +183,14 @@ using Postman and added screenshots showing the new location being returned in t
   - Updated pom.xml with correct Jersey and Jackson dependencies and versions
   - Created RestApplication to register base /services path
   - Confirmed full functionality and created a pull request for review
+
+## **Week 12**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+-- 03/25/2025 - 2.5 hour - 
+-
+- ### **Individual Project (BoulderBook)**
+- 04/18/2025 – 2 hours – Completed unit test review, manual UI testing, servlet optimization check, and confirmed no performance issues or major bugs.
+
+- ### **Group Project (Urban Photography API**
+- 04/14/2025 – 2 hours – Held final group meeting to verify everything was working correctly and recorded our individual project presentation videos.
