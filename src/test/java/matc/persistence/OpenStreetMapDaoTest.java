@@ -14,8 +14,18 @@ public class OpenStreetMapDaoTest {
 
         assertNotNull(response, "Response should not be null");
         assertEquals("Madison", response.getName(), "City name should be Madison");
-        assertEquals("43.074761", response.getLatitude(), "Latitude should match Madison, WI");
-        assertEquals("-89.3837613", response.getLongitude(), "Longitude should match Madison, WI");
+        assertEquals(
+                43.074761,
+                Double.parseDouble(response.getLatitude()),
+                0.000001,
+                "Latitude should match Madison, WI"
+        );
+        assertEquals(
+                -89.3837613,
+                Double.parseDouble(response.getLongitude()),
+                0.000001,
+                "Longitude should match Madison, WI"
+        );
     }
 
     @Test
