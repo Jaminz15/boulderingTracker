@@ -9,14 +9,16 @@
 
 <div class="main-content">
     <section class="home-section">
-        <h1>Welcome to BoulderBook</h1>
-        <p>Track your bouldering progress!</p>
+        <div class="hero-message">
+            <h1>Welcome to BoulderBook</h1>
+            <p>Track your bouldering progress!</p>
+        </div>
 
         <c:choose>
             <c:when test="${empty sessionScope.user}">
-                <a href="logIn" class="btn btn-success" style="font-size: 18px; text-decoration: none; padding: 10px;">
-                    Log In
-                </a>
+                <div class="center-login-btn">
+                    <a href="logIn" class="login-btn">Log In</a>
+                </div>
             </c:when>
             <c:otherwise>
                 <h3>Welcome, ${sessionScope.user.username}!</h3>
