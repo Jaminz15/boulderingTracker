@@ -1,0 +1,70 @@
+/* === Gym Page Specific Styles === */
+
+/* Section wrapper */
+section {
+    padding: 30px 20px;
+}
+
+/* Filter Date Input */
+#filterDate {
+    margin-bottom: 20px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+/* Climbing Logs Table */
+#gymClimbsTable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+#gymClimbsTable th,
+#gymClimbsTable td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+#gymClimbsTable th {
+    background-color: #eee;
+}
+
+#gymClimbsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Delete/Edit Buttons */
+#gymClimbsTable button,
+#gymClimbsTable a {
+    margin: 0 5px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#gymClimbsTable button {
+    background-color: #dc3545; /* Bootstrap danger red */
+    color: white;
+}
+
+#gymClimbsTable button:hover {
+    background-color: #b02a37;
+}
+
+#gymClimbsTable a {
+    background-color: #0d6efd; /* Bootstrap primary blue */
+    color: white;
+}
+
+#gymClimbsTable a:hover {
+    background-color: #0a58ca;
+}

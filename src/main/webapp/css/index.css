@@ -1,0 +1,32 @@
+/* === Index Page Specific Styles === */
+
+.hero-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px 30px; /* top padding for spacing from nav */
+}
+
+.center-login-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login-btn {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #198754; /* Bootstrap success green */
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.login-btn:hover {
+    background-color: #146c43;
+    text-decoration: none;
+}

@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="head.jsp" %>
 
+<!-- Page-specific CSS -->
+<link rel="stylesheet" href="css/userProfile.css">
+
 <!DOCTYPE html>
 <html>
 <body>

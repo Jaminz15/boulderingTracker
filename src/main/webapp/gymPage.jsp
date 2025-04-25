@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 
+<!-- Page-specific CSS -->
+<link rel="stylesheet" href="css/gymPage.css">
+
 <html>
 <body>
 

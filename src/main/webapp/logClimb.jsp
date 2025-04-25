@@ -2,6 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="head.jsp" %>
 
+<!-- Page-specific CSS -->
+<link rel="stylesheet" href="css/logClimb.css">
+
 <html>
 
 <body>

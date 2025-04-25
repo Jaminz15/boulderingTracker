@@ -1,0 +1,92 @@
+/* === Log a Climb Page Specific Styles === */
+
+/* Section wrapper */
+section {
+    padding: 30px 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea {
+    padding: 8px;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+/* Make the notes box more natural */
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Buttons styling */
+form button[type="submit"],
+form button[type="button"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #198754; /* Bootstrap success green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover,
+form button[type="button"]:hover {
+    background-color: #146c43;
+}
+
+/* Error message styling */
+.error-message p {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Climb logs table */
+#climbsTable {
+    margin-top: 40px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+#climbsTable th,
+#climbsTable td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+#climbsTable th {
+    background-color: #eee;
+}
+
+#climbsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Logs Header spacing */
+.logs-header {
+    margin-top: 40px;
+}

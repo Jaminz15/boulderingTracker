@@ -20,7 +20,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
     <!-- Your global CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <c:if test="${includeLeaflet}">
         <!-- Leaflet CSS -->

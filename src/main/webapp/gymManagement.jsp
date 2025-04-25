@@ -3,6 +3,9 @@
 <c:set var="includeLeaflet" value="true" />
 <%@ include file="head.jsp" %>
 
+<!-- Page-specific CSS -->
+<link rel="stylesheet" href="css/gymManagement.css">
+
 <html>
 
 <body>
