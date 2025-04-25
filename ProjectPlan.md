@@ -115,7 +115,7 @@
 
 ## **Week 13 (4/21 - 4/27) - Asynchronous Messaging (Optional)**
 - [X] Work week
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 
