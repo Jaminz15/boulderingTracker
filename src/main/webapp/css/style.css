@@ -192,3 +192,48 @@ a:hover {
     background-color: #146c43;
     text-decoration: none;
 }
+
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-form label {
+    font-weight: bold;
+}
+
+.stats-summary p {
+    margin: 4px 0;
+}
+
+.track-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.track-table th,
+.track-table td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.track-table th {
+    background-color: #eee;
+}
+
+.track-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
