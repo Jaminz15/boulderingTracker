@@ -237,3 +237,22 @@ a:hover {
 .track-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+form textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 60px;
+    resize: vertical;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.logs-header {
+    margin-top: 40px;
+}

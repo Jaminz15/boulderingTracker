@@ -72,14 +72,18 @@
                 <option value="false">No</option>
             </select>
 
-            <label for="notes">Notes:</label>
-            <textarea id="notes" name="notes"></textarea>
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
 
             <button type="submit">Save Climb</button>
             <button type="button" onclick="window.location.href='index.jsp'">Cancel</button>
         </form>
 
-        <h2>Your Climbing Logs</h2>
+        <div class="logs-header">
+            <h2>Your Climbing Logs</h2>
+        </div>
         <table id="climbsTable" class="display">
             <thead>
             <tr>
