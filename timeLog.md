@@ -188,9 +188,19 @@ using Postman and added screenshots showing the new location being returned in t
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 -- 03/25/2025 - 2.5 hour - 
--
+- Work week
 - ### **Individual Project (BoulderBook)**
 - 04/18/2025 – 2 hours – Completed unit test review, manual UI testing, servlet optimization check, and confirmed no performance issues or major bugs.
 
 - ### **Group Project (Urban Photography API**
 - 04/14/2025 – 2 hours – Held final group meeting to verify everything was working correctly and recorded our individual project presentation videos.
+
+## **Week 13**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- Work week
+
+- ### **Individual Project (BoulderBook)**
+- 04/25/2025 – 3 hours – Updated header.jsp to center logo and move account links, styled and centered hero message and login 
+button on index.jsp, fixed OpenStreetMapDaoTest by adding latitude and longitude assertions to resolve test errors
+- 

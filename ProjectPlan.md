@@ -109,12 +109,12 @@
 ## **Week 12 (4/14 - 4/20) - Code & UI Review**
 - [X] Ensure **unit tests are comprehensive**
 - [X] Fix any **bugs or performance issues** found during testing
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 
 ## **Week 13 (4/21 - 4/27) - Asynchronous Messaging (Optional)**
-- [ ] Implement optional features like **asynchronous processing**
+- [X] Work week
 - [ ] Weekly time log
 
 ---
