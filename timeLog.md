@@ -205,3 +205,4 @@ button on index.jsp, fixed OpenStreetMapDaoTest by adding latitude and longitude
 - 04/25/2025 – 4 hours – Refactored CSS structure by moving global styles into main.css and creating separate CSS files for each 
 JSP page (index.css, trackProgress.css, logClimb.css, gymPage.css, gymManagement.css, userProfile.css, editClimb.css) updated all 
 JSPs to load the correct stylesheets improved layout and styling for trackProgress.jsp and logClimb.jsp
+- 04/25/2025 – 1 hours – Added confirmation dialogs to delete buttons in logClimb.jsp, gymPage.jsp, and gymManagement.jsp to prevent accidental deletions
