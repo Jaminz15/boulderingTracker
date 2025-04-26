@@ -13,16 +13,18 @@
 <jsp:include page="header.jsp" />
 
 <div class="main-content">
-    <section>
+    <section class="user-profile-section">
         <h2>User Profile</h2>
-        <p><strong>Username:</strong> ${user.username}</p>
-        <p><strong>Email:</strong> ${user.email}</p>
-        <p><strong>Account Created:</strong> ${formattedDate}</p>
-        <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
+        <div class="profile-details">
+            <p><strong>Username:</strong> ${user.username}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Account Created:</strong> ${formattedDate}</p>
+            <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
 
-        <c:if test="${not empty favoriteGym}">
-            <p><strong>Favorite Gym:</strong> ${favoriteGym.name}</p>
-        </c:if>
+            <c:if test="${not empty favoriteGym}">
+                <p><strong>Favorite Gym:</strong> ${favoriteGym.name}</p>
+            </c:if>
+        </div>
     </section>
 </div>
 

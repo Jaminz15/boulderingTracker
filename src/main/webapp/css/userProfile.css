@@ -35,3 +35,13 @@ p strong {
     font-weight: bold;
     color: #198754; /* Success green */
 }
+
+.user-profile-section {
+    text-align: center;
+}
+
+.profile-details {
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px;
+}

@@ -90,3 +90,7 @@ form button[type="button"]:hover {
 .logs-header {
     margin-top: 40px;
 }
+
+section h2 {
+    text-align: center;
+}
