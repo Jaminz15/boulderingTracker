@@ -186,8 +186,7 @@ using Postman and added screenshots showing the new location being returned in t
 
 ## **Week 12**
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
-- ### **Weekly Course Material**
--- 03/25/2025 - 2.5 hour - 
+- ### **Weekly Course Material** 
 - Work week
 - ### **Individual Project (BoulderBook)**
 - 04/18/2025 – 2 hours – Completed unit test review, manual UI testing, servlet optimization check, and confirmed no performance issues or major bugs.

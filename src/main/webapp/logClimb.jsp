@@ -113,7 +113,10 @@
                     <td>${climb.notes}</td>
                     <td>
                         <a href="editClimb?climbId=${climb.id}">Edit</a> |
-                        <form action="climb" method="post" style="display:inline;">
+                        <form action="climb"
+                              method="post"
+                              style="display:inline;"
+                              onsubmit="return confirm('Are you sure you want to delete this climb?');">
                             <input type="hidden" name="climbId" value="${climb.id}">
                             <button type="submit" name="action" value="delete">Delete</button>
                         </form>

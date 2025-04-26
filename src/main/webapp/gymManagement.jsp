@@ -32,7 +32,10 @@
                     <td>${gym.location}</td>
                     <c:if test="${isAdmin}">
                         <td>
-                            <form action="gymManagement" method="post" style="display:inline;">
+                            <form action="gymManagement"
+                                  method="post"
+                                  style="display:inline;"
+                                  onsubmit="return confirm('Are you sure you want to delete this gym?');">
                                 <input type="hidden" name="gymId" value="${gym.id}">
                                 <button type="submit" name="action" value="delete">Delete</button>
                             </form>
