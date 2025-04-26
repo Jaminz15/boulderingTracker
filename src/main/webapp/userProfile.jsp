@@ -13,17 +13,24 @@
 <jsp:include page="header.jsp" />
 
 <div class="main-content">
-    <section class="user-profile-section">
-        <h2>User Profile</h2>
-        <div class="profile-details">
-            <p><strong>Username:</strong> ${user.username}</p>
-            <p><strong>Email:</strong> ${user.email}</p>
-            <p><strong>Account Created:</strong> ${formattedDate}</p>
-            <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
+    <section class="profile-section">
+        <div class="profile-card">
+            <img src="images/climb-icon.jpg" alt="Climb Icon" class="profile-icon">
 
-            <c:if test="${not empty favoriteGym}">
-                <p><strong>Favorite Gym:</strong> ${favoriteGym.name}</p>
-            </c:if>
+            <h2>User Profile</h2>
+
+            <div class="profile-details">
+                <p><strong>Username:</strong> ${user.username}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Account Created:</strong> ${formattedDate}</p>
+                <p><strong>Total Climbs Logged:</strong> ${totalClimbs}</p>
+
+                <c:if test="${not empty favoriteGym}">
+                    <p><strong>Favorite Gym:</strong>
+                        <span class="gym-badge">${favoriteGym.name}</span>
+                    </p>
+                </c:if>
+            </div>
         </div>
     </section>
 </div>
