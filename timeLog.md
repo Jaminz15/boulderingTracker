@@ -220,5 +220,5 @@ card styling across pages.
 - 05/01/2025 – 2.5 hours – Removed duplicate Jersey servlet mapping from web.xml to resolve deployment conflict, redeployed and 
 confirmed REST endpoints worked correctly, verified unit tests still pass, and updated trackProgress.jsp and trackProgress.css 
 to combine the filter form and stats summary into a unified styled card with improved layout and responsiveness.
-- 05/01/2025 – 2.5 hours – Refined CSS across multiple pages to improve layout and visual consistency. Updated button styles, 
+- 05/01/2025 – 3.5 hours – Refined CSS across multiple pages to improve layout and visual consistency. Updated button styles, 
 adjusted spacing, and cleaned up page elements for a more polished user experience.
