@@ -119,6 +119,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         Algorithm algorithm = Algorithm.RSA256((RSAPublicKey) publicKey, null);
         JWTVerifier verifier = JWT.require(algorithm)
                 .withIssuer(String.format("https://cognito-idp.%s.amazonaws.com/%s", REGION, POOL_ID))
+                .acceptLeeway(60)
                 .withClaim("token_use", "id")
                 .build();
 
