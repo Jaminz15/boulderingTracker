@@ -9,14 +9,15 @@ section {
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* Reduced gap */
     max-width: 500px;
     margin: 0 auto;
 }
 
 form label {
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 4px; /* Reduced from 10px */
+    margin-bottom: 2px;
 }
 
 form input[type="text"],
@@ -24,8 +25,8 @@ form input[type="date"],
 form input[type="number"],
 form select,
 form textarea {
-    padding: 8px;
-    font-size: 1rem;
+    padding: 6px 10px; /* Slightly smaller padding */
+    font-size: 0.95rem;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -41,7 +42,7 @@ form textarea {
 /* Buttons styling */
 form button[type="submit"],
 form button[type="button"] {
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 10px 20px;
     font-weight: bold;
     background-color: #198754;
@@ -63,11 +64,14 @@ form button[type="button"]:hover {
     margin-bottom: 1em;
 }
 
+/* Table styling */
 #climbsTable th,
 #climbsTable td {
     padding: 8px 12px;
     border: 1px solid #ccc;
     text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 #climbsTable th {
@@ -78,35 +82,36 @@ form button[type="button"]:hover {
     background-color: #f9f9f9;
 }
 
+#climbsTable {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
 section h2 {
     text-align: center;
 }
 
-/* New section wrapper for form + table */
+/* Section wrapper for form + table */
 .log-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
+    padding-bottom: 60px;
 }
 
 /* Card styling for the form */
 .log-card {
     background-color: white;
-    padding: 30px 40px;
+    padding: 25px 30px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
     margin-bottom: 40px;
     text-align: center;
-}
-
-/* Keep existing form styling inside */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
 /* Center and space the "Your Climbing Logs" header */
@@ -118,44 +123,19 @@ form {
 
 .log-form-card {
     background-color: white;
-    padding: 30px 40px;
+    padding: 25px 30px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 500px;
-    margin: 0 auto 40px auto; /* center and add space below */
+    margin: 0 auto 40px auto;
 }
 
-#climbsTable td {
-    max-width: 300px;
-    word-wrap: break-word;
-    white-space: normal;
-}
-
-.log-section {
-    padding-bottom: 60px;
-}
-
+/* Responsive table container */
 .table-container {
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
     padding: 0 20px;
     box-sizing: border-box;
-}
-
-#climbsTable {
-    width: 100%;
-    min-width: 1000px;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
-
-#climbsTable th,
-#climbsTable td {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    text-align: left;
-    word-wrap: break-word;
-    white-space: normal;
 }
