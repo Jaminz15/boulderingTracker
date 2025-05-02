@@ -31,7 +31,7 @@
                     <a href="logout">Log Out</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="logIn">Log In</a> / <a href="signUp">Sign Up</a>
+                    <a href="logIn">Log In</a>
                 </c:otherwise>
             </c:choose>
         </div>

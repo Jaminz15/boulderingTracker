@@ -120,13 +120,13 @@
                         </td>
                         <td>${climb.notes}</td>
                         <td>
-                            <a href="editClimb?climbId=${climb.id}">Edit</a> |
+                            <a href="editClimb?climbId=${climb.id}" class="btn-edit">Edit</a>
                             <form action="climb"
                                   method="post"
                                   style="display:inline;"
                                   onsubmit="return confirm('Are you sure you want to delete this climb?');">
                                 <input type="hidden" name="climbId" value="${climb.id}">
-                                <button type="submit" name="action" value="delete">Delete</button>
+                                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
                             </form>
                         </td>
                     </tr>
