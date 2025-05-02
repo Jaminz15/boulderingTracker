@@ -210,3 +210,15 @@ accidental deletions
 - 04/25/2025 - 2 hours - Refined styling for logClimb.jsp and userProfile.jsp. Adjusted layout, spacing, and table responsiveness 
 to ensure content wraps cleanly and fits within the screen. Implemented CSS tweaks for a cleaner user experience and consistent 
 card styling across pages.
+
+## **Week 14**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- Work week
+- Peer reviews
+- ### **Individual Project (BoulderBook)**
+- 05/01/2025 – 2.5 hours – Removed duplicate Jersey servlet mapping from web.xml to resolve deployment conflict, redeployed and 
+confirmed REST endpoints worked correctly, verified unit tests still pass, and updated trackProgress.jsp and trackProgress.css 
+to combine the filter form and stats summary into a unified styled card with improved layout and responsiveness.
+- 05/01/2025 – 2.5 hours – Refined CSS across multiple pages to improve layout and visual consistency. Updated button styles, 
+adjusted spacing, and cleaned up page elements for a more polished user experience.
