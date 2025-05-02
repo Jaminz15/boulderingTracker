@@ -121,8 +121,8 @@
 
 ## **Week 14 (4/28 - 5/4) - Individual Project Code Reviews**
 - [ ] Review and refine **code based on feedback**
-- [ ] Ensure **unit tests are complete**
-- [ ] Address any **performance issues**
+- [X] Ensure **unit tests are complete**
+- [X] Address any **performance issues**
 - [ ] Weekly time log
 
 ---
