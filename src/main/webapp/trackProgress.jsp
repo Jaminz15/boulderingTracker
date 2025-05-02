@@ -18,40 +18,41 @@
     <section class="stats-section">
         <h2>Your Climbing Stats</h2>
 
-        <form method="get" action="trackProgress" class="filter-form">
-            <label for="gymId">Filter by Gym:</label>
-            <select name="gymId" id="gymId">
-                <option value="">All Gyms</option>
-                <c:forEach var="gym" items="${gyms}">
-                    <option value="${gym.id}" ${param.gymId == gym.id ? "selected" : ""}>${gym.name}</option>
-                </c:forEach>
-            </select>
+        <div class="stats-card">
+            <form method="get" action="trackProgress" class="filter-form">
+                <label for="gymId">Filter by Gym:</label>
+                <select name="gymId" id="gymId">
+                    <option value="">All Gyms</option>
+                    <c:forEach var="gym" items="${gyms}">
+                        <option value="${gym.id}" ${param.gymId == gym.id ? "selected" : ""}>${gym.name}</option>
+                    </c:forEach>
+                </select>
 
-            <label for="startDate">Start Date:</label>
-            <input type="date" name="startDate" id="startDate" value="${param.startDate}" />
+                <label for="startDate">Start Date:</label>
+                <input type="date" name="startDate" id="startDate" value="${param.startDate}" />
 
-            <label for="endDate">End Date:</label>
-            <input type="date" name="endDate" id="endDate" value="${param.endDate}" />
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate" id="endDate" value="${param.endDate}" />
 
-            <button type="submit">Apply Filters</button>
-        </form>
+                <button type="submit">Apply Filters</button>
+            </form>
 
-        <div class="stats-summary">
-            <p><strong>Total Climbs:</strong> ${totalClimbs}</p>
-            <p><strong>Total Attempts:</strong> ${totalAttempts}</p>
-            <p><strong>Average Attempts per Climb:</strong> ${averageAttempts}</p>
-            <p><strong>Success Rate:</strong> ${successRate}%</p>
-            <p><strong>Best Grade Climbed:</strong> ${bestGrade}</p>
+            <div class="stats-summary">
+                <p><strong>Total Climbs:</strong> ${totalClimbs}</p>
+                <p><strong>Total Attempts:</strong> ${totalAttempts}</p>
+                <p><strong>Average Attempts per Climb:</strong> ${averageAttempts}</p>
+                <p><strong>Success Rate:</strong> ${successRate}%</p>
+                <p><strong>Best Grade Climbed:</strong> ${bestGrade}</p>
 
-            <c:if test="${not empty hardestClimb}">
-                <p><strong>Hardest Climb Logged:</strong> ${hardestClimb.grade} at ${hardestClimb.gym.name}</p>
-            </c:if>
+                <c:if test="${not empty hardestClimb}">
+                    <p><strong>Hardest Climb Logged:</strong> ${hardestClimb.grade} at ${hardestClimb.gym.name}</p>
+                </c:if>
 
-            <c:if test="${not empty mostAttempts}">
-                <p><strong>Most Attempts:</strong> ${mostAttempts.attempts} on ${mostAttempts.grade} at ${mostAttempts.gym.name}</p>
-            </c:if>
+                <c:if test="${not empty mostAttempts}">
+                    <p><strong>Most Attempts:</strong> ${mostAttempts.attempts} on ${mostAttempts.grade} at ${mostAttempts.gym.name}</p>
+                </c:if>
+            </div>
         </div>
-
         <hr />
         <h3>Filtered Climb Logs</h3>
 
