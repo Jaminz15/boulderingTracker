@@ -215,7 +215,7 @@ card styling across pages.
 - **[Date]** - **[Time Spent]** - **[Task Completed]**
 - ### **Weekly Course Material**
 - Work week
-- Peer reviews
+- 05/03/2025 - 5 hours - Peer reviewed Jingle Gao’s project for Design/Code Review 2 and provided detailed feedback.
 - ### **Individual Project (BoulderBook)**
 - 05/01/2025 – 2.5 hours – Removed duplicate Jersey servlet mapping from web.xml to resolve deployment conflict, redeployed and 
 confirmed REST endpoints worked correctly, verified unit tests still pass, and updated trackProgress.jsp and trackProgress.css 
