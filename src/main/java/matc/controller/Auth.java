@@ -26,11 +26,9 @@ import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = {"/auth"})
 public class Auth extends HttpServlet implements PropertiesLoader {
-    private Properties properties;
     private String CLIENT_ID;
     private String CLIENT_SECRET;
     private String OAUTH_URL;
-    private String LOGIN_URL;
     private String REDIRECT_URL;
     private String REGION;
     private String POOL_ID;
@@ -46,7 +44,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         CLIENT_ID = (String) context.getAttribute("CLIENT_ID");
         CLIENT_SECRET = (String) context.getAttribute("CLIENT_SECRET");
         OAUTH_URL = (String) context.getAttribute("OAUTH_URL");
-        LOGIN_URL = (String) context.getAttribute("LOGIN_URL");
         REDIRECT_URL = (String) context.getAttribute("REDIRECT_URL");
         REGION = (String) context.getAttribute("REGION");
         POOL_ID = (String) context.getAttribute("POOL_ID");
@@ -71,7 +68,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             String displayName = validateAndSaveUser(tokenResponse, req);
             req.setAttribute("userName", displayName);
         } catch (IOException | InterruptedException e) {
-            logger.error("Error getting or validating the token: " + e.getMessage(), e);
+            logger.error("Error during token retrieval: {}", e.getMessage(), e);
             req.setAttribute("errorMessage", "Authentication failed.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
             dispatcher.forward(req, resp);
@@ -85,8 +82,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         HttpClient client = HttpClient.newHttpClient();
         HttpResponse<String> response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
 
-        logger.debug("Response headers: " + response.headers());
-        logger.debug("Response body: " + response.body());
+        logger.debug("Received response headers: {}", response.headers());
+        logger.debug("Received response body: {}", response.body());
 
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(response.body(), TokenResponse.class);
@@ -102,7 +99,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 .findFirst().orElse(null);
 
         if (correctKey == null) {
-            logger.error("No matching key found in JWKS for kid: " + keyId);
+            logger.error("No matching key found in JWKS for kid: {}", keyId);
             throw new IOException("No matching key found");
         }
 
@@ -112,7 +109,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(correctKey.getE()));
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
-            logger.error("Error creating public key: " + e.getMessage(), e);
+            logger.error("Error creating public key: {}", e.getMessage(), e);
             throw new IOException("Failed to create public key for token validation", e);
         }
 
@@ -136,10 +133,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         User user; // <--- Declare user here
         HttpSession session = req.getSession(); // <--- Declare session here
 
-        logger.info("User logged in - Cognito Sub: " + cognitoSub
-                + ", Email: " + email
-                + ", Username: " + username
-                + ", isAdmin: " + isAdmin);
+        logger.info("User logged in - Cognito Sub: {}, Email: {}, Username: {}, isAdmin: {}",
+                cognitoSub, email, username, isAdmin);
 
         // Check if the user exists in the database
         GenericDao<User> userDao = new GenericDao<>(User.class);
@@ -149,13 +144,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             user = new User(email, username, cognitoSub);
             user.setIsAdmin(isAdmin);
             int userId = userDao.insert(user);
-            logger.info("New user inserted with ID: " + userId);
+            logger.info("New user inserted with ID: {}", userId);
         } else {
             user = users.get(0);
             if (user.isAdmin() != isAdmin) {
                 user.setIsAdmin(isAdmin);
                 userDao.update(user); // or saveOrUpdate if you added it
-                logger.info("Updated isAdmin status for user: " + user.getEmail());
+                logger.info("Updated isAdmin status for user: {}", user.getEmail());
             }
         }
 
@@ -182,7 +177,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         return HttpRequest.newBuilder()
                 .uri(URI.create(OAUTH_URL))
-                .headers("Content-Type", "application/x-www-form-urlencoded", "Authorization", "Basic " + encoding)
+                .header("Content-Type", "application/x-www-form-urlencoded")
+                .header("Authorization", "Basic " + encoding)
                 .POST(HttpRequest.BodyPublishers.ofString(form))
                 .build();
     }
@@ -196,7 +192,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             jwks = mapper.readValue(jwksFile, Keys.class);
             logger.debug("JWKS loaded successfully.");
         } catch (IOException e) {
-            logger.error("Cannot load JWKS: " + e.getMessage(), e);
+            logger.error("Cannot load JWKS: {}", e.getMessage(), e);
         }
     }
 }

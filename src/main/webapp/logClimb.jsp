@@ -54,8 +54,8 @@
                     </c:forEach>
                 </select>
 
+                <c:set var="selectedType" value="${climb != null ? climb.climbType : ''}" />
                 <label for="climbType">Climb Type:</label>
-                <span>Select the type of climb from the list:</span>
                 <select id="climbType" name="climbType" required>
                     <option value="Slab" ${climb.climbType == 'Slab' ? 'selected' : ''}>Slab</option>
                     <option value="Overhang" ${climb.climbType == 'Overhang' ? 'selected' : ''}>Overhang</option>
