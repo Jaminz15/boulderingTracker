@@ -25,30 +25,44 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
 
 - **Security/Authentication**
   - AWS Cognito
+  - JSON Web Tokens (JWT) for secure authentication
 - **Database**
   - MySQL 8.x
 - **ORM Framework**
-  - Hibernate (JPA)
+  - Hibernate
 - **Dependency Management**
   - Maven
 - **Web Services Consumed Using Java**
   - OpenStreetMap Nominatim API
+- **RESTful Web Services**
+  - Jersey (JAX-RS) for building RESTful APIs
+  - Jackson for JSON serialization and deserialization
 - **CSS**
-  - Bootstrap or Materialize (TBD)
+  - Bootstrap for responsive design and UI components
+  - Custom CSS for page-specific styling
 - **Data Validation**
   - Bootstrap Validator (Front-end)
   - Hibernate Validator (Back-end)
 - **Logging**
-  - Log4J2
+  - Log4J2 for application logging
+- **Testing**
+  - JUnit (JUnit 4 and JUnit 5) for unit and integration testing
+- **Mapping and Geolocation**
+  - Leaflet.js for interactive maps
+- **Frontend Development**
+  - HTML, CSS, JSP for UI rendering
+  - JavaScript (ES6) for client-side interactivity
+  - AJAX and Fetch API for asynchronous data fetching
 - **Hosting**
-  - AWS
-- **Tech I'd like to explore as part of this work:**
-  - CI tools in AWS (AWS CodePipeline or GitHub Actions)
-  - OpenStreetMap API integration
-  - Hibernate Search (if full-text search is needed)
-- **Project Lombok**
+  - AWS Elastic Beanstalk for deployment (planned, but not used due to cost concerns)
+  - Local deployment for development and testing
+- **Development Tools**
+  - IntelliJ IDEA for coding and debugging
+  - MySQL Workbench for database management
+  - Postman for API testing
+  - Git/GitHub for version control
 - **Unit Testing**
-  - JUnit for test coverage
+  - JUnit for test coverage and validation
 - **IDE**
   - IntelliJ IDEA
 

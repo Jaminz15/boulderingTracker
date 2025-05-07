@@ -48,16 +48,6 @@ As a registered user, I want to reset my password if I forget it so that I can r
 
 ---
 
-## **Additional Features**
-
-### **Set Personal Goals**
-As a registered user, I want to set personal climbing goals so that I can stay motivated and improve my skills.
-
-### **Edit User Profile**
-As a registered user, I want to edit my profile information so that I can update details like my username or email.
-
----
-
 ## **Admin Features**
 
 ### **Admin - Manage Climbing Logs**
@@ -66,7 +56,3 @@ As an admin, I want to edit or delete any climbing log so that I can ensure the 
 ### **Admin - Manage Users**
 As an admin, I want to be able to deactivate or delete user accounts so that I can manage inappropriate or inactive
 accounts.
-
-### **Admin - Review Reported Issues**
-As an admin, I want to receive notifications about reported issues in climbing logs or gyms so that I can review and
-take action.
