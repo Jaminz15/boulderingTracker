@@ -39,11 +39,10 @@ public class GymManagement extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        @SuppressWarnings("unchecked")
         User user = (User) session.getAttribute("user");
 
         if (user == null) {
-            logger.error("No user in session — redirecting to login");
+            logger.error("No user in session during GET request — redirecting to login");
             resp.sendRedirect("logIn.jsp");
             return;
         }
@@ -66,11 +65,10 @@ public class GymManagement extends HttpServlet {
         String action = req.getParameter("action");
 
         HttpSession session = req.getSession();
-        @SuppressWarnings("unchecked")
         User user = (User) session.getAttribute("user");
 
         if (user == null) {
-            logger.error("No user in session — redirecting to login");
+            logger.error("No user in session during POST request — redirecting to login");
             resp.sendRedirect("logIn.jsp");
             return;
         }
