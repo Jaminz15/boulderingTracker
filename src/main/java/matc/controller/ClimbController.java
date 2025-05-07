@@ -32,7 +32,7 @@ public class ClimbController extends HttpServlet {
         User user = (User) session.getAttribute("user");
 
         if (user == null) {
-            logger.error("No user in session");
+            logger.error("No user in session during GET request");
             resp.sendRedirect("error.jsp");
             return;
         }
@@ -63,7 +63,7 @@ public class ClimbController extends HttpServlet {
             User user = (User) session.getAttribute("user");
 
             if (user == null) {
-                logger.error("No user in session");
+                logger.error("No user in session during POST request");
                 resp.sendRedirect("logIn.jsp");
                 return;
             }
@@ -91,7 +91,7 @@ public class ClimbController extends HttpServlet {
                     return;
                 }
             } catch (NumberFormatException e) {
-                logger.error("Invalid attempts value: {}", attemptsParam);
+                logger.error("Invalid attempts value while adding climb: {}", attemptsParam);
                 resp.sendRedirect("climb?error=invalidAttempts");
                 return;
             }
@@ -156,7 +156,7 @@ public class ClimbController extends HttpServlet {
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    logger.error("Invalid attempts value: {}", attemptsParam);
+                    logger.error("Invalid attempts value while updating climb: {}", attemptsParam);
                     resp.sendRedirect("editClimb?climbId=" + climbId + "&error=invalidAttempts");
                     return;
                 }
