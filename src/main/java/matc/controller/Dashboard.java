@@ -15,12 +15,10 @@ import org.apache.logging.log4j.*;
 public class Dashboard extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<Climb> climbDao;
-    private GenericDao<Gym> gymDao;
 
     @Override
     public void init() {
         climbDao = new GenericDao<>(Climb.class);
-        gymDao = new GenericDao<>(Gym.class);
     }
 
     @Override
