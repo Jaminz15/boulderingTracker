@@ -55,7 +55,14 @@
                 </select>
 
                 <label for="climbType">Climb Type:</label>
-                <input type="text" id="climbType" name="climbType" required>
+                <span>Select the type of climb from the list:</span>
+                <select id="climbType" name="climbType" required>
+                    <option value="Slab" ${climb.climbType == 'Slab' ? 'selected' : ''}>Slab</option>
+                    <option value="Overhang" ${climb.climbType == 'Overhang' ? 'selected' : ''}>Overhang</option>
+                    <option value="Dyno" ${climb.climbType == 'Dyno' ? 'selected' : ''}>Dyno</option>
+                    <option value="Vertical" ${climb.climbType == 'Vertical' ? 'selected' : ''}>Vertical</option>
+                    <option value="Roof" ${climb.climbType == 'Roof' ? 'selected' : ''}>Roof</option>
+                </select>
 
                 <label for="grade">Grade:</label>
                 <select id="grade" name="grade" required>

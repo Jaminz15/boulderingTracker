@@ -53,6 +53,5 @@ As a registered user, I want to reset my password if I forget it so that I can r
 ### **Admin - Manage Climbing Logs**
 As an admin, I want to edit or delete any climbing log so that I can ensure the accuracy and appropriateness of data.
 
-### **Admin - Manage Users**
-As an admin, I want to be able to deactivate or delete user accounts so that I can manage inappropriate or inactive
-accounts.
+### **Admin - Manage Gyms**
+As an admin, I want to be able to delete gyms so that I can manage the list of available climbing locations and ensure outdated or incorrect gym information is removed.

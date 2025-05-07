@@ -120,7 +120,7 @@
 ---
 
 ## **Week 14 (4/28 - 5/4) - Individual Project Code Reviews**
-- [ ] Review and refine **code based on feedback**
+- [X] Review and refine **code based on feedback**
 - [X] Ensure **unit tests are complete**
 - [X] Address any **performance issues**
 - [X] Weekly time log
@@ -128,11 +128,11 @@
 ---
 
 ## **Week 15 (5/5 - 5/11) - Final Presentation Prep**
-- [ ] Implement **feedback from review**
+- [X] Implement **feedback from review**
 - [ ] Prepare **final project presentation**
 - [ ] Create **video demo**, upload it, and add the link to `README.md`
-- [ ] Finalize **all documentation**
-- [ ] Code **quality check**
+- [X] Finalize **all documentation**
+- [X] Code **quality check**
 - [ ] Weekly time log
 
 ---
