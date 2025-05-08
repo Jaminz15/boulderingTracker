@@ -33,7 +33,7 @@ public class StartupServlet implements ServletContextListener, PropertiesLoader 
 
             logger.info("Cognito properties loaded successfully.");
         } catch (IOException e) {
-            logger.error("Error loading properties: " + e.getMessage(), e);
+            logger.error("Error loading properties: {}", e.getMessage(), e);
         }
     }
 

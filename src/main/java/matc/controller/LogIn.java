@@ -7,13 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
+/**
+ * LogIn Servlet - Begins the authentication process using AWS Cognito.
+ */
 @WebServlet(
         urlPatterns = {"/logIn"}
 )
-
-/*
- * Begins the authentication process using AWS Cognito
- */
 public class LogIn extends HttpServlet implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
     public static String CLIENT_ID;
