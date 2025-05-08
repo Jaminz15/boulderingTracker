@@ -2,17 +2,15 @@ package matc.persistence;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import matc.entity.GeocodeResponse;
-import matc.util.PropertiesLoader;
 import org.apache.logging.log4j.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
-import java.io.IOException;
 import java.util.*;
 
 public class OpenStreetMapDao {
 
     private static final Logger logger = LogManager.getLogger(OpenStreetMapDao.class);
-    private String baseUrl;
+    private final String baseUrl;
 
     public OpenStreetMapDao() {
         baseUrl = matc.util.AppConfig.getProperty("openstreetmap.api.url");
