@@ -129,7 +129,7 @@
 
 ## **Week 15 (5/5 - 5/11) - Final Presentation Prep**
 - [X] Implement **feedback from review**
-- [ ] Prepare **final project presentation**
+- [X] Prepare **final project presentation**
 - [ ] Create **video demo**, upload it, and add the link to `README.md`
 - [X] Finalize **all documentation**
 - [X] Code **quality check**

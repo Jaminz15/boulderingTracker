@@ -7,8 +7,6 @@ import java.util.List;
 import matc.entity.Gym;
 import matc.persistence.GenericDao;
 
-import java.util.List;
-
 @Path("/gyms")
 public class GymWebService {
 

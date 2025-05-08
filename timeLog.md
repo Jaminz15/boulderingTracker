@@ -222,3 +222,11 @@ confirmed REST endpoints worked correctly, verified unit tests still pass, and u
 to combine the filter form and stats summary into a unified styled card with improved layout and responsiveness.
 - 05/01/2025 – 3.5 hours – Refined CSS across multiple pages to improve layout and visual consistency. Updated button styles, 
 adjusted spacing, and cleaned up page elements for a more polished user experience.
+
+## **Week 15**
+- **[Date]** - **[Time Spent]** - **[Task Completed]**
+- ### **Weekly Course Material**
+- Work week
+- ### **Individual Project (BoulderBook)**
+-05/07/2025 - 5 hours - Finalized all project documentation, implemented feedback from the project review, prepared the final project presentation, 
+and conducted a code quality check.
