@@ -2,7 +2,6 @@ package matc.persistence;
 
 import java.util.*;
 import jakarta.persistence.criteria.*;
-import org.apache.logging.log4j.*;
 import org.hibernate.*;
 import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 
@@ -10,8 +9,7 @@ import org.hibernate.query.criteria.HibernateCriteriaBuilder;
  * A generic DAO for Hibernate CRUD operations.
  */
 public class GenericDao<T> {
-    private Class<T> type;
-    private final Logger logger = LogManager.getLogger(this.getClass());
+    private final Class<T> type;
 
     /**
      * Instantiates a new GenericDao.
@@ -128,10 +126,8 @@ public class GenericDao<T> {
 
     /**
      * Finds entities (like Climb) by the user's Cognito Sub field.
-     *
      * This assumes the entity has a `User` relationship mapped as "user",
      * and that User has a `cognitoSub` property.
-     *
      * Example usage:
      *     findByUserCognitoSub("11cb25b0-9011-7034-8885-4f7ffb871fe0")
      *
