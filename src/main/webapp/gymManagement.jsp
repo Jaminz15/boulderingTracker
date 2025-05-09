@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="includeLeaflet" value="true" />
-<%@ include file="head.jsp" %>
+<c:import url="head.jsp" />
 
 <!-- Page-specific CSS -->
 <link rel="stylesheet" href="css/gymManagement.css">
