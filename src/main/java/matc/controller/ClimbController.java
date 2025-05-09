@@ -11,7 +11,9 @@ import java.util.List;
 import java.io.IOException;
 
 /**
- * ClimbController - Handles logging, editing, and deleting climbs.
+ * ClimbController - Handles the logging, editing, and deleting of climbs.
+ * Manages the interaction between the user and the Climb entity.
+ * Supports adding, updating, and deleting climb records.
  */
 @WebServlet("/climb")
 public class ClimbController extends HttpServlet {
@@ -19,6 +21,10 @@ public class ClimbController extends HttpServlet {
     private GenericDao<Climb> climbDao;
     private GenericDao<Gym> gymDao;
 
+    /**
+     * Initializes the ClimbController servlet by setting up DAOs.
+     * Logs the initialization process.
+     */
     @Override
     public void init() {
         climbDao = new GenericDao<>(Climb.class);
@@ -26,6 +32,16 @@ public class ClimbController extends HttpServlet {
         logger.info("ClimbController initialized with DAOs");
     }
 
+    /**
+     * Handles GET requests to display the logClimb page.
+     * Retrieves the list of climbs and gyms based on user session information.
+     * Redirects to the error page if no user is logged in.
+     *
+     * @param req  the HttpServletRequest object
+     * @param resp the HttpServletResponse object
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an input or output error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -52,6 +68,14 @@ public class ClimbController extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
+    /**
+     * Handles POST requests to log, update, or delete a climb.
+     * Determines the action from the request parameter and processes accordingly.
+     *
+     * @param req  the HttpServletRequest object containing climb data
+     * @param resp the HttpServletResponse object for redirection and response handling
+     * @throws IOException if an input or output error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String action = req.getParameter("action");
