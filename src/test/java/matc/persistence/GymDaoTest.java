@@ -9,12 +9,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The type Gym dao test.
+ * Unit tests for the GymDao class, which handles CRUD operations for Gym entities.
+ * This class tests various scenarios for inserting, updating, deleting, and retrieving gyms.
  */
 class GymDaoTest {
 
     private GenericDao<Gym> gymDao;
 
+    /**
+     * Sets up the test environment by cleaning the database and initializing the Gym DAO.
+     */
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
@@ -22,6 +26,9 @@ class GymDaoTest {
         gymDao = new GenericDao<>(Gym.class);
     }
 
+    /**
+     * Verifies that a gym can be retrieved by ID.
+     */
     @Test
     void getByIdSuccess() {
         Gym retrievedGym = gymDao.getById(1);
@@ -30,12 +37,18 @@ class GymDaoTest {
         assertEquals("123 Boulder St, Madison, WI", retrievedGym.getLocation());
     }
 
+    /**
+     * Verifies that all gyms can be retrieved from the database.
+     */
     @Test
     void getAllSuccess() {
         List<Gym> gyms = gymDao.getAll();
         assertEquals(2, gyms.size());
     }
 
+    /**
+     * Tests successful insertion of a new gym record.
+     */
     @Test
     void insertSuccess() {
         Gym newGym = new Gym("West Side Boulders", "789 Climber Ln, Madison, WI");
@@ -46,6 +59,9 @@ class GymDaoTest {
         assertEquals("West Side Boulders", retrievedGym.getName());
     }
 
+    /**
+     * Verifies that a gym's name can be updated successfully.
+     */
     @Test
     void updateSuccess() {
         Gym gymToUpdate = gymDao.getById(1);
@@ -56,12 +72,18 @@ class GymDaoTest {
         assertEquals("East Side Rock Gym", retrievedGym.getName());
     }
 
+    /**
+     * Verifies that a gym can be deleted successfully.
+     */
     @Test
     void deleteSuccess() {
         gymDao.delete(gymDao.getById(2));
         assertNull(gymDao.getById(2));
     }
 
+    /**
+     * Verifies cascading delete of climbs when deleting a gym.
+     */
     @Test
     void deleteCascadeClimbs() {
         GenericDao<Climb> climbDao = new GenericDao<>(Climb.class);
@@ -76,6 +98,9 @@ class GymDaoTest {
         }
     }
 
+    /**
+     * Verifies successful insertion of a gym with coordinates.
+     */
     @Test
     void insertWithCoordinatesSuccess() {
         Gym newGym = new Gym("South Boulder Spot", "456 Gravity Ave, Madison, WI");
@@ -90,6 +115,9 @@ class GymDaoTest {
         assertEquals("-89.3901", inserted.getLongitude());
     }
 
+    /**
+     * Verifies that gyms can be found by name.
+     */
     @Test
     void findByNameSuccess() {
         List<Gym> gyms = gymDao.findByPropertyEqual("name", "East Side Boulders");
