@@ -82,3 +82,15 @@ When climbing indoors, **BoulderBook** will help climbers stay motivated, track 
 ## Documentation of Progress
 
 #### [TimeLog](timeLog.md)
+
+## Presentation
+
+### BoulderBook Video Presentation
+
+#### Part 1: Application Walkthrough
+- [Watch on YouTube](https://www.youtube.com/watch?v=jY6yUIKgd18)
+
+#### Part 2: Technical Details and Insights
+- [Watch on YouTube](https://youtu.be/zN6CQgyLziU)
+
+---

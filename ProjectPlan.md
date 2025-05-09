@@ -130,13 +130,13 @@
 ## **Week 15 (5/5 - 5/11) - Final Presentation Prep**
 - [X] Implement **feedback from review**
 - [X] Prepare **final project presentation**
-- [ ] Create **video demo**, upload it, and add the link to `README.md`
+- [X] Create **video demo**, upload it, and add the link to `README.md`
 - [X] Finalize **all documentation**
 - [X] Code **quality check**
-- [ ] Weekly time log
+- [X] Weekly time log
 
 ---
 
 ## **Week 16 (5/12 - 5/14) - Final Submission**
-- [ ] Submit **final individual project** by **5/14**
-- [ ] Weekly time log
+- [X] Submit **final individual project** by **5/14**
+- [X] Weekly time log

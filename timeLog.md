@@ -228,5 +228,6 @@ adjusted spacing, and cleaned up page elements for a more polished user experien
 - ### **Weekly Course Material**
 - Work week
 - ### **Individual Project (BoulderBook)**
--05/07/2025 - 5 hours - Finalized all project documentation, implemented feedback from the project review, prepared the final project presentation, 
+- 05/07/2025 - 5 hours - Finalized all project documentation, implemented feedback from the project review, prepared the final project presentation, 
 and conducted a code quality check.
+- 05/08/2025 - 4 hours - Came up with a plan to go over my project and recorded a video presentation for it.
