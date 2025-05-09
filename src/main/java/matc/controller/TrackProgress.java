@@ -9,16 +9,35 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * TrackProgress servlet to display a user's climbing progress.
+ * Supports filtering by gym and date range, and calculates statistics such as
+ * total climbs, success rate, average attempts, and hardest climb.
+ */
 @WebServlet("/trackProgress")
 public class TrackProgress extends HttpServlet {
     private static final Logger logger = LogManager.getLogger(TrackProgress.class);
     private GenericDao<Climb> climbDao;
 
+    /**
+     * Initializes the TrackProgress servlet by setting up the Climb DAO.
+     * Logs the initialization process.
+     */
     @Override
     public void init() {
         climbDao = new GenericDao<>(Climb.class);
     }
 
+    /**
+     * Handles GET requests to display the climbing progress page.
+     * Retrieves climb data for the logged-in user and applies filters if specified.
+     * Calculates statistics including success rate, total attempts, and hardest climb.
+     *
+     * @param req  the HttpServletRequest object
+     * @param resp the HttpServletResponse object
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an input or output error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -43,7 +62,7 @@ public class TrackProgress extends HttpServlet {
 
         List<Climb> userClimbs = climbDao.findByPropertyEqual("user", user);
 
-        // Apply gym filter
+        // Filter climbs by selected gym if a gym ID is specified
         if (gymIdParam != null && !gymIdParam.isEmpty()) {
             int gymId = Integer.parseInt(gymIdParam);
             logger.debug("TrackProgress: Filtering by gym ID {}", gymId);
@@ -56,6 +75,7 @@ public class TrackProgress extends HttpServlet {
         String startDateParam = req.getParameter("startDate");
         String endDateParam = req.getParameter("endDate");
 
+        // Filter climbs by date range if specified
         if ((startDateParam != null && !startDateParam.isEmpty()) ||
                 (endDateParam != null && !endDateParam.isEmpty())) {
 
@@ -71,6 +91,7 @@ public class TrackProgress extends HttpServlet {
         int totalAttempts = userClimbs.stream().mapToInt(Climb::getAttempts).sum();
         double averageAttempts = totalClimbs > 0 ? (double) totalAttempts / totalClimbs : 0;
         long successfulClimbs = userClimbs.stream().filter(Climb::isSuccess).count();
+        // Calculate the success rate as a percentage
         double successRate = totalClimbs > 0 ? (double) successfulClimbs / totalClimbs * 100 : 0;
 
         String bestGrade = userClimbs.stream()
@@ -99,7 +120,13 @@ public class TrackProgress extends HttpServlet {
         req.getRequestDispatcher("/trackProgress.jsp").forward(req, resp);
     }
 
-    // Method to convert grades like "V3" or "V7+" into sortable integers
+    /**
+     * Extracts a numeric value from a climb grade (e.g., "V3", "V7+").
+     * Converts the grade into an integer for comparison and sorting.
+     *
+     * @param grade the string representation of the climb grade
+     * @return the numeric value of the grade, or 0 if parsing fails
+     */
     private static int extractGradeValue(String grade) {
         if (grade == null || !grade.startsWith("V")) return 0;
         String number = grade.replace("V", "").replace("+", "");
