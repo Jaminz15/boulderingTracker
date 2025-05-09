@@ -8,7 +8,9 @@ import javax.servlet.http.*;
 import java.io.IOException;
 
 /**
- * LogIn Servlet - Begins the authentication process using AWS Cognito.
+ * LogIn servlet to initiate the authentication process via AWS Cognito.
+ * Redirects users to the AWS-hosted Cognito login page.
+ * Ensures that required configuration properties are loaded.
  */
 @WebServlet(
         urlPatterns = {"/logIn"}
@@ -19,6 +21,12 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
     public static String LOGIN_URL;
     public static String REDIRECT_URL;
 
+    /**
+     * Initializes the servlet by loading client configuration properties.
+     * Retrieves CLIENT_ID, LOGIN_URL, and REDIRECT_URL from the application context.
+     *
+     * @throws ServletException if an error occurs during initialization
+     */
     @Override
     public void init() throws ServletException {
         super.init();
@@ -30,14 +38,18 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * Route to the AWS-hosted Cognito login page.
-     * @param req servlet request
-     * @param resp servlet response
+     * Handles GET requests to redirect users to the AWS Cognito login page.
+     * Verifies that required configuration properties are available.
+     * Redirects to the error page if properties are missing.
+     *
+     * @param req  the HttpServletRequest object
+     * @param resp the HttpServletResponse object
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs during redirection
+     * @throws IOException      if an input or output error occurs
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Check for missing authentication properties before redirecting
         if (CLIENT_ID == null || LOGIN_URL == null || REDIRECT_URL == null ||
                 CLIENT_ID.isEmpty() || LOGIN_URL.isEmpty() || REDIRECT_URL.isEmpty()) {
 
@@ -49,6 +61,7 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
             return;
         }
 
+        // Construct the AWS Cognito login URL and redirect the user
         String url = LOGIN_URL + "?response_type=code&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
         resp.sendRedirect(url);
     }
