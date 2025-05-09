@@ -8,13 +8,21 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * This class loads Cognito properties once at application startup and stores them in the application scope.
+ * StartupServlet - Initializes application-wide properties on startup.
+ * Loads AWS Cognito configuration from a properties file and stores them in the application scope.
+ * Implements ServletContextListener to ensure properties are available throughout the application.
  */
 @WebListener
 public class StartupServlet implements ServletContextListener, PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private Properties properties;
 
+    /**
+     * Called when the application context is initialized.
+     * Loads Cognito properties from a file and sets them as application attributes.
+     *
+     * @param sce the ServletContextEvent containing the context that is being initialized
+     */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext context = sce.getServletContext();
@@ -37,6 +45,12 @@ public class StartupServlet implements ServletContextListener, PropertiesLoader 
         }
     }
 
+    /**
+     * Called when the application context is destroyed.
+     * No cleanup is required in this implementation.
+     *
+     * @param sce the ServletContextEvent containing the context that is being destroyed
+     */
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         // No cleanup needed
