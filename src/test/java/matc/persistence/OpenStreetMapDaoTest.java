@@ -5,8 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for the OpenStreetMapDao class.
+ * Verifies the geocoding functionality using valid and invalid city names.
+ */
 public class OpenStreetMapDaoTest {
-
+    /**
+     * Tests the successful retrieval of geocode data for a valid city (Madison, WI).
+     */
     @Test
     void getGeocodeSuccess() {
         OpenStreetMapDao dao = new OpenStreetMapDao();
@@ -28,6 +34,9 @@ public class OpenStreetMapDaoTest {
         );
     }
 
+    /**
+     * Tests the behavior of the geocode method when the city name does not exist.
+     */
     @Test
     void getGeocodeNotFound() {
         OpenStreetMapDao dao = new OpenStreetMapDao();
