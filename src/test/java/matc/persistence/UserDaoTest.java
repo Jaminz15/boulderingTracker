@@ -10,11 +10,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for the UserDao class, which handles CRUD operations for User entities.
+ * This class tests various scenarios for inserting, updating, deleting, and retrieving users.
+ */
 class UserDaoTest {
 
     private GenericDao<User> userDao;
     private GenericDao<Climb> climbDao;
 
+    /**
+     * Sets up the test environment by cleaning the database and initializing the User and Climb DAOs.
+     */
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
@@ -23,6 +30,9 @@ class UserDaoTest {
         climbDao = new GenericDao<>(Climb.class);
     }
 
+    /**
+     * Verifies that a user can be retrieved by their Cognito Sub.
+     */
     @Test
     void getByCognitoSubSuccess() {
         List<User> users = userDao.findByPropertyEqual("cognitoSub", "test-cognito-sub");
@@ -30,6 +40,9 @@ class UserDaoTest {
         assertEquals("test-cognito-sub", users.get(0).getCognitoSub());
     }
 
+    /**
+     * Verifies that a user can be retrieved by ID.
+     */
     @Test
     void getByIdSuccess() {
         User retrievedUser = userDao.getById(1);
@@ -39,6 +52,9 @@ class UserDaoTest {
         assertEquals("test-cognito-sub", retrievedUser.getCognitoSub());
     }
 
+    /**
+     * Tests successful insertion of a new user record.
+     */
     @Test
     void insertSuccess() {
         User newUser = new User("newclimber@example.com", "newclimber", "unique-cognito-sub-123"); // Added username
@@ -51,6 +67,9 @@ class UserDaoTest {
         assertEquals("unique-cognito-sub-123", retrievedUser.getCognitoSub());
     }
 
+    /**
+     * Verifies that a user's information can be updated successfully.
+     */
     @Test
     void updateSuccess() {
         User userToUpdate = userDao.getById(1);
@@ -65,12 +84,18 @@ class UserDaoTest {
         assertEquals("updated-cognito-sub", retrievedUser.getCognitoSub());
     }
 
+    /**
+     * Verifies that a user can be deleted successfully.
+     */
     @Test
     void deleteSuccess() {
         userDao.delete(userDao.getById(2));
         assertNull(userDao.getById(2));
     }
 
+    /**
+     * Verifies that deleting a user cascades to deleting associated climbs.
+     */
     @Test
     void deleteCascadeClimbs() {
         User user = userDao.getById(1);
@@ -84,12 +109,18 @@ class UserDaoTest {
         }
     }
 
+    /**
+     * Verifies that all users can be retrieved from the database.
+     */
     @Test
     void getAllSuccess() {
         List<User> users = userDao.getAll();
         assertEquals(2, users.size()); // Assuming cleanDB.sql starts with 2 users
     }
 
+    /**
+     * Verifies that a user can be found by email property.
+     */
     @Test
     void getByPropertyEqual() {
         List<User> users = userDao.findByPropertyEqual("email", "climber123@example.com");
@@ -97,6 +128,9 @@ class UserDaoTest {
         assertEquals(1, users.get(0).getId());
     }
 
+    /**
+     * Verifies that the admin flag is correctly inserted and retrieved.
+     */
     @Test
     void isAdminInsertedAndRetrievedCorrectly() {
         User newAdmin = new User("admin@example.com", "adminUser", "admin-sub-001");
@@ -110,6 +144,9 @@ class UserDaoTest {
         assertEquals("admin@example.com", retrieved.getEmail());
     }
 
+    /**
+     * Verifies that the admin flag of a user can be updated.
+     */
     @Test
     void updateIsAdminFlag() {
         User user = userDao.getById(1);
