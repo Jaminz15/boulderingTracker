@@ -24,6 +24,10 @@ import java.security.spec.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Auth servlet to handle user authentication via AWS Cognito.
+ * Retrieves and verifies JWT tokens and handles session management.
+ */
 @WebServlet(urlPatterns = {"/auth"})
 public class Auth extends HttpServlet implements PropertiesLoader {
     private String CLIENT_ID;
@@ -36,6 +40,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Initializes the servlet by loading configuration and public keys.
+     *
+     * @throws ServletException if an error occurs during initialization.
+     */
     @Override
     public void init() throws ServletException {
         super.init();
@@ -51,6 +60,15 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         loadKey();
     }
 
+    /**
+     * Handles GET requests for user authentication.
+     * Retrieves the authorization code, exchanges it for tokens, and validates the user.
+     *
+     * @param req  the HttpServletRequest object.
+     * @param resp the HttpServletResponse object.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException      if an input or output error occurs.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
@@ -78,6 +96,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         resp.sendRedirect("dashboard");
     }
 
+    /**
+     * Retrieves a token from the OAuth server.
+     *
+     * @param authRequest the HTTP request containing the authorization code.
+     * @return a TokenResponse object containing access and ID tokens.
+     * @throws IOException          if an I/O error occurs.
+     * @throws InterruptedException if the request is interrupted.
+     */
     private TokenResponse getToken(HttpRequest authRequest) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpResponse<String> response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
@@ -89,6 +115,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         return mapper.readValue(response.body(), TokenResponse.class);
     }
 
+    /**
+     * Validates the user's ID token and saves user information in the session.
+     *
+     * @param tokenResponse the token response containing the ID token.
+     * @param req           the HTTP servlet request to set session attributes.
+     * @return the display name of the user (username or email).
+     * @throws IOException if the user validation or public key loading fails.
+     */
     private String validateAndSaveUser(TokenResponse tokenResponse, HttpServletRequest req) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
@@ -160,6 +194,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         return user.getUsername() != null ? user.getUsername() : user.getEmail();
     }
 
+    /**
+     * Builds an HTTP request to exchange the authorization code for an access token.
+     *
+     * @param authCode the authorization code from the OAuth provider.
+     * @return an HttpRequest object for the token exchange.
+     */
     private HttpRequest buildAuthRequest(String authCode) {
         String keys = CLIENT_ID + ":" + CLIENT_SECRET;
         HashMap<String, String> parameters = new HashMap<>();
@@ -183,6 +223,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 .build();
     }
 
+    /**
+     * Loads the JSON Web Key Set (JWKS) from the AWS Cognito endpoint.
+     * Retrieves the RSA public keys for JWT validation.
+     */
     private void loadKey() {
         ObjectMapper mapper = new ObjectMapper();
         try {
