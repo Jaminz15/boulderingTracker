@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Gym Management Controller - Handles listing, adding, and deleting gyms.
+ * GymManagement servlet to handle the management of gyms.
+ * Supports listing, adding, and deleting gyms.
+ * Restricts certain actions to admin users.
  */
 @WebServlet("/gymManagement")
 public class GymManagement extends HttpServlet {
@@ -20,7 +22,11 @@ public class GymManagement extends HttpServlet {
     private GenericDao<Gym> gymDao;
 
     /**
-     * Initializes the DAO for database access.
+     * Initializes the GymManagement servlet by setting up the Gym DAO.
+     * Loads all gyms and stores them in the application scope.
+     * Logs the number of gyms loaded.
+     *
+     * @throws ServletException if an error occurs during initialization
      */
     @Override
     public void init() throws ServletException {
@@ -34,7 +40,14 @@ public class GymManagement extends HttpServlet {
     }
 
     /**
-     * Handles GET request to display the list of gyms.
+     * Handles GET requests to display the list of gyms.
+     * Retrieves gym data from the database and displays it on the management page.
+     * Redirects to the login page if the user session is not present.
+     *
+     * @param req  the HttpServletRequest object
+     * @param resp the HttpServletResponse object
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an input or output error occurs
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,7 +71,15 @@ public class GymManagement extends HttpServlet {
     }
 
     /**
-     * Handles POST request for adding and deleting gyms.
+     * Handles POST requests for adding and deleting gyms.
+     * - Add: Validates the gym name and location, fetches geocode data, and inserts the gym.
+     * - Delete: Removes a gym by ID, restricted to admin users.
+     * Refreshes the gym list after changes.
+     *
+     * @param req  the HttpServletRequest object containing gym data
+     * @param resp the HttpServletResponse object for redirection
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an input or output error occurs
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -79,6 +100,7 @@ public class GymManagement extends HttpServlet {
             String gymName = req.getParameter("gymName");
             String gymLocation = req.getParameter("gymLocation");
 
+            // Validate gym name and location inputs
             if (gymName == null || gymName.isBlank()) {
                 logger.warn("Gym name is missing.");
                 resp.sendRedirect("gymManagement?error=missingGymName");
@@ -110,6 +132,7 @@ public class GymManagement extends HttpServlet {
                     gymName, gymLocation, newGym.getLatitude(), newGym.getLongitude());
 
         } else if ("delete".equals(action)) {
+            // Check admin privileges before deleting a gym
             if (!isAdmin) {
                 logger.warn("Unauthorized delete attempt by non-admin user.");
                 resp.sendRedirect("gymManagement");
@@ -121,7 +144,7 @@ public class GymManagement extends HttpServlet {
             gymDao.delete(gym);
         }
 
-        // Refresh gym list in application scope
+        // Refresh gym list in application scope after adding or deleting
         getServletContext().setAttribute("gyms", gymDao.getAll());
 
         // Redirect to avoid form resubmission
